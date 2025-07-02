@@ -1,7 +1,7 @@
 ---
 weight: 2
 ---
-# Tutorials
+# Tutoriales
 
 This section contains step-by-step guides to help you use the External API effectively.
 
