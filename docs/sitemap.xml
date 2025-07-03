@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lijemutu.github.io/facturotas.docs/tutorials/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/guias/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/api/endpoints/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/endpoints_timbrado/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/schemas/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/tutorials/authentication/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/guias/authentication/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/tutorials/getting-started/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/guias/getting-started/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/categories/</loc>
   </url><url>
