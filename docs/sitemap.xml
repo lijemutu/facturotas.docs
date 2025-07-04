@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lijemutu.github.io/facturotas.docs/guias/</loc>
+    <loc>http://localhost:1313/facturotas.docs/guias/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/</loc>
+    <loc>http://localhost:1313/facturotas.docs/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/api/</loc>
+    <loc>http://localhost:1313/facturotas.docs/api/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/api/endpoints_timbrado/</loc>
+    <loc>http://localhost:1313/facturotas.docs/api/endpoints_timbrado/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/api/schemas/</loc>
+    <loc>http://localhost:1313/facturotas.docs/api/schemas/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/guias/authentication/</loc>
+    <loc>http://localhost:1313/facturotas.docs/guias/authentication/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/guias/getting-started/</loc>
+    <loc>http://localhost:1313/facturotas.docs/guias/getting-started/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/categories/</loc>
+    <loc>http://localhost:1313/facturotas.docs/categories/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/tags/</loc>
+    <loc>http://localhost:1313/facturotas.docs/tags/</loc>
   </url>
 </urlset>

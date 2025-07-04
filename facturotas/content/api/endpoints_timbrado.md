@@ -6,14 +6,14 @@ Esta sección detalla la operación del servicio de timbrado, permitiendo proces
 
 ### Descripción de la Operación
 
-Esta operación permite timbrar un CFDI en sus versiones 3.3 o 4.0 y retornar el XML timbrado completo del comprobante fiscal.
+Esta operación permite timbrar un (Comprobante Fiscal Digital por Internet) CFDI en sus versiones 3.3 o 4.0 y retornar el XML timbrado completo del comprobante fiscal junto con su folio fiscal UUID y sello digital por el SAT.
 
 ### Parámetros de Entrada (Input)
 
-| Parámetro | Tipo de Dato | Descripción                                       |
-| :-------- | :----------- | :------------------------------------------------ |
-| `apikey`  | `string`     | Credencial de acceso al servicio (32 caracteres). |
-| `xmlCFDI` | `string`     | Contenido del documento XML del CFDI v3.3 o v4.0. |
+| Parámetro | Tipo de Dato | Descripción                                                            |
+| :-------- | :----------- | :--------------------------------------------------------------------- |
+| `apikey`  | `string`     | Credencial de acceso al servicio ([Solicita aquí](../../#Requisitos)). |
+| `xmlCFDI` | `string`     | Contenido del documento XML del CFDI v3.3 o v4.0.                      |
 
 ### Parámetros de Salida (Output) - RespuestaTimbrado
 
@@ -55,37 +55,64 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
         <?xml version="1.0" encoding="UTF-8"?>
         <cfdi:Comprobante
             xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 cfdv40.xsd" 
             Version="4.0"
             Serie="F"
             Folio="123"
             Fecha="2025-07-02T12:00:00"
             SubTotal="100.00"
+            TipoCambio="1.0"
+            Serie="A"
             Moneda="MXN"
+            Descuento="0.00"
             Total="116.00"
             TipoDeComprobante="I"
             Exportacion="01"
             MetodoPago="PUE"
+            CondicionesDePago="CONDICIONES"
             FormaPago="01"
+            Confirmacion="A1234"
+            NoCertificado="30001000000300023708"
+            Certificado=""
+            Sello=""
             LugarExpedicion="64000">
-            <cfdi:Emisor Rfc="ABC010101XYZ" Nombre="Empresa Ejemplo" RegimenFiscal="601"/>
+            <cfdi:InformacionGlobal Meses="18" Año="2025" Periodicidad="05" />
+            <cfdi:CfdiRelacionados TipoRelacion="09">
+               <cfdi:CfdiRelacionado UUID="ED1752FE-E865-4FF2-BFE1-0F552E770DC9" />
+            </cfdi:CfdiRelacionados>
+            <cfdi:Emisor FacAtrAdquirente="0123456789" Rfc="ABC010101XYZ" Nombre="Empresa Ejemplo" RegimenFiscal="601"/>
             <cfdi:Receptor Rfc="XAXX010101000" Nombre="Publico en General" 
-                          DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" UsoCFDI="G03"/>
+                          DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" 
+                          ResidenciaFiscal="MEX"
+                          UsoCFDI="G03"/>
             <cfdi:Conceptos>
-                <cfdi:Concepto ClaveProdServ="84111506" Cantidad="1" ClaveUnidad="ACT" 
-                              Descripcion="Servicio de Ejemplo" ValorUnitario="100.00" Importe="100.00">
+                <cfdi:Concepto ObjetoImp="01" ClaveProdServ="01010101" ClaveUnidad="C81" 
+                      NoIdentificacion="00001" Cantidad="1.5" 
+                        Unidad="TONELADA" Descripcion="ACERO" ValorUnitario="1500000" Importe="2250000">
                     <cfdi:Impuestos>
                         <cfdi:Traslados>
                             <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" 
                                          TasaOCuota="0.160000" Importe="16.00"/>
                         </cfdi:Traslados>
+                        <cfdi:Retenciones>
+                           <cfdi:Retencion Base="2250000" Impuesto="001" TipoFactor="Tasa" TasaOCuota="0.300000" Importe="247500"/>
+                        </cfdi:Retenciones>
                     </cfdi:Impuestos>
+                    <cfdi:CuentaPredial Numero="51888"/>
                 </cfdi:Concepto>
             </cfdi:Conceptos>
-            <cfdi:Impuestos TotalImpuestosTrasladados="16.00">
-                <cfdi:Traslados>
-                    <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
-                </cfdi:Traslados>
+            <cfdi:Impuestos TotalImpuestosRetenidos="247500"      
+                            TotalImpuestosTrasladados="360000">
+                <cfdi:Retenciones>
+                  <cfdi:Retencion Impuesto="001" Importe="247000"/>
+                  <cfdi:Retencion Impuesto="003" Importe="500"/>
+               </cfdi:Retenciones>
+               <cfdi:Traslados>
+                     <cfdi:Traslado Base="1.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="1.600000" Importe="360000"/>
+               </cfdi:Traslados>
             </cfdi:Impuestos>
+            <cfdi:Complemento></cfdi:Complemento>
         </cfdi:Comprobante>
         """;
 
@@ -95,13 +122,13 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
    /// <param name="apiKey">La credencial de acceso al servicio.</param>
    /// <param name="xmlCfdi">El contenido del CFDI a timbrar.</param>
    /// <returns>Un objeto RespuestaTimbrado con el resultado de la operación.</returns>
-   public async Task<RespuestaTimbrado> TimbrarAsync(string apiKey)
+   public async Task<RespuestaTimbrado> TimbrarAsync(string apiKey, string xmlCfdi)
     {
         using var client = new ServicioTimbradoWSPortTypeClient("ServicioTimbradoWSPort");
         
         try
         {            
-            var response = await client.timbrarAsync(apiKey, TimbrarCfdi());
+            var response = await client.timbrarAsync(apiKey, xmlCfdi);
                         
             return new RespuestaTimbrado
             {
@@ -137,6 +164,34 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
       public string? Data { get; set; }
    }
 
+   // Ejemplo de uso de TimbrarAsync
+   public async Task EjemploUsoTimbrarAsync()
+   {
+       string apiKey = "TU_API_KEY_AQUI";
+       string xmlCfdi = TimbrarCfdi();
+
+       try
+       {
+           var resultado = await TimbrarAsync(apiKey, xmlCfdi);
+           if (resultado.Code == "200")
+           {
+               Console.WriteLine("¡Timbrado Exitoso!");
+               Console.WriteLine("Mensaje: " + resultado.Message);
+               Console.WriteLine("--- XML Timbrado ---");
+               Console.WriteLine(resultado.Data);
+           }
+           else
+           {
+               Console.WriteLine("Error durante el timbrado:");
+               Console.WriteLine("Código: " + resultado.Code);
+               Console.WriteLine("Mensaje: " + resultado.Message);
+           }
+       }
+       catch (Exception ex)
+       {
+           Console.WriteLine("Ocurrió una excepción: " + ex.Message);
+       }
+   }
   ```
     
   
@@ -207,40 +262,67 @@ public class TimbradoService {
         // Nota: Se agregó ObjetoImp="02" en el concepto, requerido en CFDI 4.0.
         return """
             <?xml version="1.0" encoding="UTF-8"?>
-            <cfdi:Comprobante
-                xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
-                Version="4.0"
-                Serie="F"
-                Folio="123"
-                Fecha="%s"
-                SubTotal="100.00"
-                Moneda="MXN"
-                Total="116.00"
-                TipoDeComprobante="I"
-                Exportacion="01"
-                MetodoPago="PUE"
-                FormaPago="01"
-                LugarExpedicion="64000">
-                <cfdi:Emisor Rfc="ABC010101XYZ" Nombre="Empresa Ejemplo" RegimenFiscal="601"/>
-                <cfdi:Receptor Rfc="XAXX010101000" Nombre="Publico en General"
-                                DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" UsoCFDI="G03"/>
-                <cfdi:Conceptos>
-                    <cfdi:Concepto ClaveProdServ="84111506" Cantidad="1" ClaveUnidad="ACT" ObjetoImp="02"
-                                   Descripcion="Servicio de Ejemplo" ValorUnitario="100.00" Importe="100.00">
-                        <cfdi:Impuestos>
-                            <cfdi:Traslados>
-                                <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa"
-                                               TasaOCuota="0.160000" Importe="16.00"/>
-                            </cfdi:Traslados>
-                        </cfdi:Impuestos>
-                    </cfdi:Concepto>
-                </cfdi:Conceptos>
-                <cfdi:Impuestos TotalImpuestosTrasladados="16.00">
-                    <cfdi:Traslados>
-                        <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
-                    </cfdi:Traslados>
-                </cfdi:Impuestos>
-            </cfdi:Comprobante>
+        <cfdi:Comprobante
+            xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 cfdv40.xsd" 
+            Version="4.0"
+            Serie="F"
+            Folio="123"
+            Fecha="%s"
+            SubTotal="100.00"
+            TipoCambio="1.0"
+            Serie="A"
+            Moneda="MXN"
+            Descuento="0.00"
+            Total="116.00"
+            TipoDeComprobante="I"
+            Exportacion="01"
+            MetodoPago="PUE"
+            CondicionesDePago="CONDICIONES"
+            FormaPago="01"
+            Confirmacion="A1234"
+            NoCertificado="30001000000300023708"
+            Certificado=""
+            Sello=""
+            LugarExpedicion="64000">
+            <cfdi:InformacionGlobal Meses="18" Año="2025" Periodicidad="05" />
+            <cfdi:CfdiRelacionados TipoRelacion="09">
+               <cfdi:CfdiRelacionado UUID="ED1752FE-E865-4FF2-BFE1-0F552E770DC9" />
+            </cfdi:CfdiRelacionados>
+            <cfdi:Emisor FacAtrAdquirente="0123456789" Rfc="ABC010101XYZ" Nombre="Empresa Ejemplo" RegimenFiscal="601"/>
+            <cfdi:Receptor Rfc="XAXX010101000" Nombre="Publico en General" 
+                          DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" 
+                          ResidenciaFiscal="MEX"
+                          UsoCFDI="G03"/>
+            <cfdi:Conceptos>
+                <cfdi:Concepto ObjetoImp="01" ClaveProdServ="01010101" ClaveUnidad="C81" 
+                      NoIdentificacion="00001" Cantidad="1.5" 
+                        Unidad="TONELADA" Descripcion="ACERO" ValorUnitario="1500000" Importe="2250000">
+                    <cfdi:Impuestos>
+                        <cfdi:Traslados>
+                            <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" 
+                                         TasaOCuota="0.160000" Importe="16.00"/>
+                        </cfdi:Traslados>
+                        <cfdi:Retenciones>
+                           <cfdi:Retencion Base="2250000" Impuesto="001" TipoFactor="Tasa" TasaOCuota="0.300000" Importe="247500"/>
+                        </cfdi:Retenciones>
+                    </cfdi:Impuestos>
+                    <cfdi:CuentaPredial Numero="51888"/>
+                </cfdi:Concepto>
+            </cfdi:Conceptos>
+            <cfdi:Impuestos TotalImpuestosRetenidos="247500"      
+                            TotalImpuestosTrasladados="360000">
+                <cfdi:Retenciones>
+                  <cfdi:Retencion Impuesto="001" Importe="247000"/>
+                  <cfdi:Retencion Impuesto="003" Importe="500"/>
+               </cfdi:Retenciones>
+               <cfdi:Traslados>
+                     <cfdi:Traslado Base="1.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="1.600000" Importe="360000"/>
+               </cfdi:Traslados>
+            </cfdi:Impuestos>
+            <cfdi:Complemento></cfdi:Complemento>
+        </cfdi:Comprobante>
             """.formatted(fechaActual);
     }
 
@@ -319,7 +401,6 @@ public class Main {
     }
 }
 
-```
   {{< /tab >}}
   {{< tab >}}
   
@@ -327,7 +408,7 @@ public class Main {
 Para interactuar con servicios SOAP en Python, la librería zeep es una excelente opción. Proporciona una interfaz limpia y moderna.
 
 Instala la librería usando pip:
-```
+```****
 pip install zeep
 ```
 
@@ -375,40 +456,67 @@ class TimbradoService:
         # Nota: Se agregó ObjetoImp="02" en el concepto, requerido en CFDI 4.0.
         return f"""
 <?xml version="1.0" encoding="UTF-8"?>
-<cfdi:Comprobante
-    xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
-    Version="4.0"
-    Serie="F"
-    Folio="123"
-    Fecha="{fecha_actual}"
-    SubTotal="100.00"
-    Moneda="MXN"
-    Total="116.00"
-    TipoDeComprobante="I"
-    Exportacion="01"
-    MetodoPago="PUE"
-    FormaPago="01"
-    LugarExpedicion="64000">
-    <cfdi:Emisor Rfc="ABC010101XYZ" Nombre="Empresa Ejemplo" RegimenFiscal="601"/>
-    <cfdi:Receptor Rfc="XAXX010101000" Nombre="Publico en General"
-                    DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" UsoCFDI="G03"/>
-    <cfdi:Conceptos>
-        <cfdi:Concepto ClaveProdServ="84111506" Cantidad="1" ClaveUnidad="ACT" ObjetoImp="02"
-                       Descripcion="Servicio de Ejemplo" ValorUnitario="100.00" Importe="100.00">
-            <cfdi:Impuestos>
-                <cfdi:Traslados>
-                    <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa"
-                                   TasaOCuota="0.160000" Importe="16.00"/>
-                </cfdi:Traslados>
+        <cfdi:Comprobante
+            xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 cfdv40.xsd" 
+            Version="4.0"
+            Serie="F"
+            Folio="123"
+            Fecha="{fecha_actual}"
+            SubTotal="100.00"
+            TipoCambio="1.0"
+            Serie="A"
+            Moneda="MXN"
+            Descuento="0.00"
+            Total="116.00"
+            TipoDeComprobante="I"
+            Exportacion="01"
+            MetodoPago="PUE"
+            CondicionesDePago="CONDICIONES"
+            FormaPago="01"
+            Confirmacion="A1234"
+            NoCertificado="30001000000300023708"
+            Certificado=""
+            Sello=""
+            LugarExpedicion="64000">
+            <cfdi:InformacionGlobal Meses="18" Año="2025" Periodicidad="05" />
+            <cfdi:CfdiRelacionados TipoRelacion="09">
+               <cfdi:CfdiRelacionado UUID="ED1752FE-E865-4FF2-BFE1-0F552E770DC9" />
+            </cfdi:CfdiRelacionados>
+            <cfdi:Emisor FacAtrAdquirente="0123456789" Rfc="ABC010101XYZ" Nombre="Empresa Ejemplo" RegimenFiscal="601"/>
+            <cfdi:Receptor Rfc="XAXX010101000" Nombre="Publico en General" 
+                          DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" 
+                          ResidenciaFiscal="MEX"
+                          UsoCFDI="G03"/>
+            <cfdi:Conceptos>
+                <cfdi:Concepto ObjetoImp="01" ClaveProdServ="01010101" ClaveUnidad="C81" 
+                      NoIdentificacion="00001" Cantidad="1.5" 
+                        Unidad="TONELADA" Descripcion="ACERO" ValorUnitario="1500000" Importe="2250000">
+                    <cfdi:Impuestos>
+                        <cfdi:Traslados>
+                            <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" 
+                                         TasaOCuota="0.160000" Importe="16.00"/>
+                        </cfdi:Traslados>
+                        <cfdi:Retenciones>
+                           <cfdi:Retencion Base="2250000" Impuesto="001" TipoFactor="Tasa" TasaOCuota="0.300000" Importe="247500"/>
+                        </cfdi:Retenciones>
+                    </cfdi:Impuestos>
+                    <cfdi:CuentaPredial Numero="51888"/>
+                </cfdi:Concepto>
+            </cfdi:Conceptos>
+            <cfdi:Impuestos TotalImpuestosRetenidos="247500"      
+                            TotalImpuestosTrasladados="360000">
+                <cfdi:Retenciones>
+                  <cfdi:Retencion Impuesto="001" Importe="247000"/>
+                  <cfdi:Retencion Impuesto="003" Importe="500"/>
+               </cfdi:Retenciones>
+               <cfdi:Traslados>
+                     <cfdi:Traslado Base="1.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="1.600000" Importe="360000"/>
+               </cfdi:Traslados>
             </cfdi:Impuestos>
-        </cfdi:Concepto>
-    </cfdi:Conceptos>
-    <cfdi:Impuestos TotalImpuestosTrasladados="16.00">
-        <cfdi:Traslados>
-            <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
-        </cfdi:Traslados>
-    </cfdi:Impuestos>
-</cfdi:Comprobante>
+            <cfdi:Complemento></cfdi:Complemento>
+        </cfdi:Comprobante>
 """
 
     async def timbrar_async(self, api_key: str, xml_cfdi: str) -> RespuestaTimbrado:
@@ -511,40 +619,67 @@ class TimbradoService {
         // Nota: Se agregó ObjetoImp="02" en el concepto, requerido en CFDI 4.0.
         return <<<XML
 <?xml version="1.0" encoding="UTF-8"?>
-<cfdi:Comprobante
-    xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
-    Version="4.0"
-    Serie="F"
-    Folio="123"
-    Fecha="{$fechaActual}"
-    SubTotal="100.00"
-    Moneda="MXN"
-    Total="116.00"
-    TipoDeComprobante="I"
-    Exportacion="01"
-    MetodoPago="PUE"
-    FormaPago="01"
-    LugarExpedicion="64000">
-    <cfdi:Emisor Rfc="ABC010101XYZ" Nombre="Empresa Ejemplo" RegimenFiscal="601"/>
-    <cfdi:Receptor Rfc="XAXX010101000" Nombre="Publico en General"
-                    DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" UsoCFDI="G03"/>
-    <cfdi:Conceptos>
-        <cfdi:Concepto ClaveProdServ="84111506" Cantidad="1" ClaveUnidad="ACT" ObjetoImp="02"
-                       Descripcion="Servicio de Ejemplo" ValorUnitario="100.00" Importe="100.00">
-            <cfdi:Impuestos>
-                <cfdi:Traslados>
-                    <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa"
-                                   TasaOCuota="0.160000" Importe="16.00"/>
-                </cfdi:Traslados>
+        <cfdi:Comprobante
+            xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 cfdv40.xsd" 
+            Version="4.0"
+            Serie="F"
+            Folio="123"
+            Fecha="{$fechaActual}"
+            SubTotal="100.00"
+            TipoCambio="1.0"
+            Serie="A"
+            Moneda="MXN"
+            Descuento="0.00"
+            Total="116.00"
+            TipoDeComprobante="I"
+            Exportacion="01"
+            MetodoPago="PUE"
+            CondicionesDePago="CONDICIONES"
+            FormaPago="01"
+            Confirmacion="A1234"
+            NoCertificado="30001000000300023708"
+            Certificado=""
+            Sello=""
+            LugarExpedicion="64000">
+            <cfdi:InformacionGlobal Meses="18" Año="2025" Periodicidad="05" />
+            <cfdi:CfdiRelacionados TipoRelacion="09">
+               <cfdi:CfdiRelacionado UUID="ED1752FE-E865-4FF2-BFE1-0F552E770DC9" />
+            </cfdi:CfdiRelacionados>
+            <cfdi:Emisor FacAtrAdquirente="0123456789" Rfc="ABC010101XYZ" Nombre="Empresa Ejemplo" RegimenFiscal="601"/>
+            <cfdi:Receptor Rfc="XAXX010101000" Nombre="Publico en General" 
+                          DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" 
+                          ResidenciaFiscal="MEX"
+                          UsoCFDI="G03"/>
+            <cfdi:Conceptos>
+                <cfdi:Concepto ObjetoImp="01" ClaveProdServ="01010101" ClaveUnidad="C81" 
+                      NoIdentificacion="00001" Cantidad="1.5" 
+                        Unidad="TONELADA" Descripcion="ACERO" ValorUnitario="1500000" Importe="2250000">
+                    <cfdi:Impuestos>
+                        <cfdi:Traslados>
+                            <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" 
+                                         TasaOCuota="0.160000" Importe="16.00"/>
+                        </cfdi:Traslados>
+                        <cfdi:Retenciones>
+                           <cfdi:Retencion Base="2250000" Impuesto="001" TipoFactor="Tasa" TasaOCuota="0.300000" Importe="247500"/>
+                        </cfdi:Retenciones>
+                    </cfdi:Impuestos>
+                    <cfdi:CuentaPredial Numero="51888"/>
+                </cfdi:Concepto>
+            </cfdi:Conceptos>
+            <cfdi:Impuestos TotalImpuestosRetenidos="247500"      
+                            TotalImpuestosTrasladados="360000">
+                <cfdi:Retenciones>
+                  <cfdi:Retencion Impuesto="001" Importe="247000"/>
+                  <cfdi:Retencion Impuesto="003" Importe="500"/>
+               </cfdi:Retenciones>
+               <cfdi:Traslados>
+                     <cfdi:Traslado Base="1.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="1.600000" Importe="360000"/>
+               </cfdi:Traslados>
             </cfdi:Impuestos>
-        </cfdi:Concepto>
-    </cfdi:Conceptos>
-    <cfdi:Impuestos TotalImpuestosTrasladados="16.00">
-        <cfdi:Traslados>
-            <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
-        </cfdi:Traslados>
-    </cfdi:Impuestos>
-</cfdi:Comprobante>
+            <cfdi:Complemento></cfdi:Complemento>
+        </cfdi:Comprobante>
 XML;
     }
 
@@ -631,4 +766,6 @@ if ($resultado->code === '200') {
   {{< /tab >}}
 
 {{< /tabs >}}
+
+#### Respuesta (Response)
 
