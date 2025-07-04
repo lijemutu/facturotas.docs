@@ -80,7 +80,7 @@ Ejemplo de Código
   <meta itemprop="description" content="Endpoints TimbradoEsta sección detalla la operación del servicio de timbrado, permitiendo procesar y obtener el XML timbrado de un Comprobante Fiscal Digital (CFDI).
 timbrar Descripción de la Operación Esta operación permite timbrar un CFDI en sus versiones 3.3 o 4.0 y retornar el XML timbrado completo del comprobante fiscal.
 Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey string Credencial de acceso al servicio (32 caracteres). xmlCFDI string Contenido del documento XML del CFDI v3.3 o v4.0. Parámetros de Salida (Output) - RespuestaTimbrado Atributo Tipo de Dato Descripción code string Código de respuesta de la operación. message string Mensaje detallado de la respuesta. data string XML del CFDI timbrado en caso de éxito. Ejemplo de Código A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta utilizando el servicio Web.">
-  <meta itemprop="wordCount" content="359">
+  <meta itemprop="wordCount" content="2001">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Facturotas">
   <meta name="twitter:description" content="Endpoints TimbradoEsta sección detalla la operación del servicio de timbrado, permitiendo procesar y obtener el XML timbrado de un Comprobante Fiscal Digital (CFDI).
@@ -448,6 +448,11 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
     <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span> <span style="color:#75715e">/// Agregar los parámetros necesarios</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// Genera un XML de ejemplo para un CFDI 4.0.</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// En una aplicación real, este XML se construiría dinámicamente.</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// &lt;returns&gt;Un string con el contenido del CFDI.&lt;/returns&gt;</span>
 </span></span><span style="display:flex;"><span> <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> TimbrarCfdi() =&gt; <span style="color:#e6db74">&#34;&#34;&#34; 
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span>      &lt;?xml version=<span style="color:#e6db74">&#34;1.0&#34;</span> encoding=<span style="color:#e6db74">&#34;UTF-8&#34;</span>?&gt;
 </span></span><span style="display:flex;"><span>      &lt;cfdi:Comprobante
@@ -486,13 +491,19 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
 </span></span><span style="display:flex;"><span>      &lt;/cfdi:Comprobante&gt;
 </span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;&#34;&#34;;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span>
-</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;RespuestaTimbrado&gt; TimbrarAsync()
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// Invoca al servicio web para timbrar un CFDI de forma asíncrona.</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// &lt;param name=&#34;apiKey&#34;&gt;La credencial de acceso al servicio.&lt;/param&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// &lt;param name=&#34;xmlCfdi&#34;&gt;El contenido del CFDI a timbrar.&lt;/param&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// &lt;returns&gt;Un objeto RespuestaTimbrado con el resultado de la operación.&lt;/returns&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;RespuestaTimbrado&gt; TimbrarAsync(<span style="color:#66d9ef">string</span> apiKey)
 </span></span><span style="display:flex;"><span>  {
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">using</span> var client = <span style="color:#66d9ef">new</span> ServicioTimbradoWSPortTypeClient(<span style="color:#e6db74">&#34;ServicioTimbradoWSPort&#34;</span>);
 </span></span><span style="display:flex;"><span>      
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span>
 </span></span><span style="display:flex;"><span>      {            
-</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">var</span> response = <span style="color:#66d9ef">await</span> client.timbrarAsync(<span style="color:#e6db74">&#34;APIKEY&#34;</span>, TimbrarCfdi());
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">var</span> response = <span style="color:#66d9ef">await</span> client.timbrarAsync(apiKey, TimbrarCfdi());
 </span></span><span style="display:flex;"><span>                      
 </span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> RespuestaTimbrado
 </span></span><span style="display:flex;"><span>          {
@@ -516,7 +527,209 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
 </span></span><span style="display:flex;"><span>          _logger.LogError(ex, <span style="color:#e6db74">&#34;Timeout en la comunicación&#34;</span>);
 </span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">throw</span>;
 </span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>  }</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// Define la estructura del objeto de respuesta para mayor claridad.</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RespuestaTimbrado</span>
+</span></span><span style="display:flex;"><span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string?</span> Code { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string?</span> Message { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string?</span> Data { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span> }</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+</div>
+
+
+  <div
+  class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+  id="tabs-panel-1"
+  role="tabpanel"><h3>Herramienta wsimport<span class="hx-absolute -hx-mt-20" id="herramienta-wsimport"></span>
+    <a href="#herramienta-wsimport" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Java incluye la herramienta wsimport en el JDK para generar las clases cliente a partir de un WSDL.</p>
+<p>Ejecuta el siguiente comando en tu terminal para el ambiente de DESARROLLO:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>wsimport -keep -p com.facturaloplus.cliente https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<p>-keep: Conserva los archivos fuente .java generados.</p>
+<p>-p: Especifica el paquete (package) donde se guardarán las clases.</p>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// --- Archivo: RespuestaTimbrado.java ---</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> com.facturaloplus.cliente;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// POJO (Plain Old Java Object) para encapsular la respuesta.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RespuestaTimbrado</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String code;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String message;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> String data;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Getters y Setters</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getCode</span>() { <span style="color:#66d9ef">return</span> code; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setCode</span>(String code) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">code</span> <span style="color:#f92672">=</span> code; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getMessage</span>() { <span style="color:#66d9ef">return</span> message; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setMessage</span>(String message) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> message; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getData</span>() { <span style="color:#66d9ef">return</span> data; }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setData</span>(String data) { <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> data; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// --- Archivo: TimbradoService.java ---</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> com.facturaloplus.cliente;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.xml.ws.Service;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.xml.ws.WebServiceException;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> javax.xml.ws.soap.SOAPFaultException;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.time.LocalDateTime;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.time.format.DateTimeFormatter;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.CompletableFuture;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.ExecutorService;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.Executors;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.logging.Level;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.logging.Logger;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimbradoService</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Logger logger <span style="color:#f92672">=</span> Logger.<span style="color:#a6e22e">getLogger</span>(TimbradoService.<span style="color:#a6e22e">class</span>.<span style="color:#a6e22e">getName</span>());
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Se recomienda un ExecutorService para manejar los hilos de las tareas asíncronas.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> ExecutorService executor <span style="color:#f92672">=</span> Executors.<span style="color:#a6e22e">newFixedThreadPool</span>(5);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">generarXmlCfdiEjemplo</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Usar la fecha y hora actual en formato UTC, requerido por el SAT.</span>
+</span></span><span style="display:flex;"><span>      String fechaActual <span style="color:#f92672">=</span> LocalDateTime.<span style="color:#a6e22e">now</span>().<span style="color:#a6e22e">format</span>(DateTimeFormatter.<span style="color:#a6e22e">ofPattern</span>(<span style="color:#e6db74">&#34;yyyy-MM-dd&#39;T&#39;HH:mm:ss&#34;</span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Uso de Text Blocks (Java 15+) para el XML.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Nota: Se agregó ObjetoImp=&#34;02&#34; en el concepto, requerido en CFDI 4.0.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Comprobante
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              xmlns:cfdi=&#34;http://www.sat.gob.mx/cfd/4&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              Version=&#34;4.0&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              Serie=&#34;F&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              Folio=&#34;123&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              Fecha=&#34;%s&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              SubTotal=&#34;100.00&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              Moneda=&#34;MXN&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              Total=&#34;116.00&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              TipoDeComprobante=&#34;I&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              Exportacion=&#34;01&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              MetodoPago=&#34;PUE&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              FormaPago=&#34;01&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              LugarExpedicion=&#34;64000&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;cfdi:Emisor Rfc=&#34;ABC010101XYZ&#34; Nombre=&#34;Empresa Ejemplo&#34; RegimenFiscal=&#34;601&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;cfdi:Receptor Rfc=&#34;XAXX010101000&#34; Nombre=&#34;Publico en General&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                              DomicilioFiscalReceptor=&#34;64000&#34; RegimenFiscalReceptor=&#34;616&#34; UsoCFDI=&#34;G03&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;cfdi:Conceptos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  &lt;cfdi:Concepto ClaveProdServ=&#34;84111506&#34; Cantidad=&#34;1&#34; ClaveUnidad=&#34;ACT&#34; ObjetoImp=&#34;02&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                                 Descripcion=&#34;Servicio de Ejemplo&#34; ValorUnitario=&#34;100.00&#34; Importe=&#34;100.00&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                      &lt;cfdi:Impuestos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                          &lt;cfdi:Traslados&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                              &lt;cfdi:Traslado Base=&#34;100.00&#34; Impuesto=&#34;002&#34; TipoFactor=&#34;Tasa&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                                             TasaOCuota=&#34;0.160000&#34; Importe=&#34;16.00&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                          &lt;/cfdi:Traslados&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                      &lt;/cfdi:Impuestos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  &lt;/cfdi:Concepto&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;/cfdi:Conceptos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;cfdi:Impuestos TotalImpuestosTrasladados=&#34;16.00&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  &lt;cfdi:Traslados&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                      &lt;cfdi:Traslado Impuesto=&#34;002&#34; TipoFactor=&#34;Tasa&#34; TasaOCuota=&#34;0.160000&#34; Importe=&#34;16.00&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  &lt;/cfdi:Traslados&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;/cfdi:Impuestos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/cfdi:Comprobante&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;&#34;&#34;</span>.<span style="color:#a6e22e">formatted</span>(fechaActual);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> CompletableFuture<span style="color:#f92672">&lt;</span>RespuestaTimbrado<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">timbrarAsync</span>(String apiKey, String xmlCfdi) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> CompletableFuture.<span style="color:#a6e22e">supplyAsync</span>(() <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>              <span style="color:#75715e">// Las clases ServicioTimbradoWS y ServicioTimbradoWSPortType son generadas por wsimport.</span>
+</span></span><span style="display:flex;"><span>              ServicioTimbradoWS service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServicioTimbradoWS();
+</span></span><span style="display:flex;"><span>              ServicioTimbradoWSPortType port <span style="color:#f92672">=</span> service.<span style="color:#a6e22e">getServicioTimbradoWSPort</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>              logger.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#34;Iniciando timbrado para CFDI.&#34;</span>);
+</span></span><span style="display:flex;"><span>              Respuesta response <span style="color:#f92672">=</span> port.<span style="color:#a6e22e">timbrar</span>(apiKey, xmlCfdi); <span style="color:#75715e">// &#39;Respuesta&#39; es la clase generada por wsimport.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>              RespuestaTimbrado resultado <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RespuestaTimbrado();
+</span></span><span style="display:flex;"><span>              resultado.<span style="color:#a6e22e">setCode</span>(response.<span style="color:#a6e22e">getCode</span>());
+</span></span><span style="display:flex;"><span>              resultado.<span style="color:#a6e22e">setMessage</span>(response.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>              resultado.<span style="color:#a6e22e">setData</span>(response.<span style="color:#a6e22e">getData</span>());
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">return</span> resultado;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          } <span style="color:#66d9ef">catch</span> (SOAPFaultException ex) {
+</span></span><span style="display:flex;"><span>              logger.<span style="color:#a6e22e">log</span>(Level.<span style="color:#a6e22e">SEVERE</span>, <span style="color:#e6db74">&#34;Error SOAP (SOAPFaultException): &#34;</span> <span style="color:#f92672">+</span> ex.<span style="color:#a6e22e">getFault</span>().<span style="color:#a6e22e">getFaultString</span>(), ex);
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(<span style="color:#e6db74">&#34;Error del servicio: &#34;</span> <span style="color:#f92672">+</span> ex.<span style="color:#a6e22e">getFault</span>().<span style="color:#a6e22e">getFaultString</span>(), ex);
+</span></span><span style="display:flex;"><span>          } <span style="color:#66d9ef">catch</span> (WebServiceException ex) {
+</span></span><span style="display:flex;"><span>              logger.<span style="color:#a6e22e">log</span>(Level.<span style="color:#a6e22e">SEVERE</span>, <span style="color:#e6db74">&#34;Error de comunicación con el servicio de timbrado.&#34;</span>, ex);
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(<span style="color:#e6db74">&#34;Error de comunicación.&#34;</span>, ex);
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      }, executor);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">shutdown</span>() {
+</span></span><span style="display:flex;"><span>      executor.<span style="color:#a6e22e">shutdown</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// --- Archivo: Main.java (Ejemplo de uso) ---</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> com.facturaloplus.cliente;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.CompletableFuture;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>      TimbradoService timbradoService <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TimbradoService();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// El API Key debe obtenerse de una fuente segura, no estar en el código.</span>
+</span></span><span style="display:flex;"><span>      String miApiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>;
+</span></span><span style="display:flex;"><span>      String xmlParaTimbrar <span style="color:#f92672">=</span> timbradoService.<span style="color:#a6e22e">generarXmlCfdiEjemplo</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;--- Intentando timbrar el siguiente CFDI: ---&#34;</span>);
+</span></span><span style="display:flex;"><span>      System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(xmlParaTimbrar);
+</span></span><span style="display:flex;"><span>      System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;------------------------------------------&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      CompletableFuture<span style="color:#f92672">&lt;</span>RespuestaTimbrado<span style="color:#f92672">&gt;</span> future <span style="color:#f92672">=</span> timbradoService.<span style="color:#a6e22e">timbrarAsync</span>(miApiKey, xmlParaTimbrar);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      future.<span style="color:#a6e22e">whenComplete</span>((resultado, ex) <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> (ex <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>              System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;\nOcurrió una excepción no controlada: &#34;</span> <span style="color:#f92672">+</span> ex.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>          } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#34;200&#34;</span>.<span style="color:#a6e22e">equals</span>(resultado.<span style="color:#a6e22e">getCode</span>())) {
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;\n¡Timbrado Exitoso!&#34;</span>);
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Mensaje: &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;\n--- XML Timbrado ---&#34;</span>);
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(resultado.<span style="color:#a6e22e">getData</span>());
+</span></span><span style="display:flex;"><span>              } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;\nError durante el timbrado:&#34;</span>);
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Código: &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getCode</span>());
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Mensaje: &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// Es importante cerrar el ExecutorService cuando la aplicación termina.</span>
+</span></span><span style="display:flex;"><span>          timbradoService.<span style="color:#a6e22e">shutdown</span>();
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Mantiene el programa principal vivo mientras se completa la tarea asíncrona.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// En una aplicación real (ej. un servidor de aplicaciones), esto no sería necesario.</span>
+</span></span><span style="display:flex;"><span>      future.<span style="color:#a6e22e">join</span>(); 
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -529,16 +742,336 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
 </div>
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
-  id="tabs-panel-1"
-  role="tabpanel"><strong>Java</strong>: YAML is a human-readable data serialization language.</div>
-  <div
-  class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-2"
-  role="tabpanel"><strong>Python</strong>: TOML aims to be a minimal configuration file format that&rsquo;s easy to read due to obvious semantics.</div>
+  role="tabpanel"><h3>Herramienta Zeep<span class="hx-absolute -hx-mt-20" id="herramienta-zeep"></span>
+    <a href="#herramienta-zeep" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Para interactuar con servicios SOAP en Python, la librería zeep es una excelente opción. Proporciona una interfaz limpia y moderna.</p>
+<p>Instala la librería usando pip:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>pip install zeep</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>El siguiente código muestra una implementación robusta utilizando zeep y asyncio para realizar llamadas asíncronas al servicio web.</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># --- Archivo: timbrado_service.py ---</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> logging
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> zeep <span style="color:#f92672">import</span> Client
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> zeep.asyncio <span style="color:#f92672">import</span> AsyncClient
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> zeep.exceptions <span style="color:#f92672">import</span> Fault, TransportError
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configuración básica de logging</span>
+</span></span><span style="display:flex;"><span>logging<span style="color:#f92672">.</span>basicConfig(level<span style="color:#f92672">=</span>logging<span style="color:#f92672">.</span>INFO, format<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">%(asctime)s</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">%(levelname)s</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">%(message)s</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>WSDL_URL_DESARROLLO <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://dev.facturaloplus.com/ws/servicio.do?wsdl&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@dataclass</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RespuestaTimbrado</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Clase de datos para encapsular la respuesta del servicio.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  code: str <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>  message: str <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>  data: str <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimbradoService</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Clase que encapsula la lógica para interactuar con el servicio de timbrado.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, wsdl_url: str):
+</span></span><span style="display:flex;"><span>      self<span style="color:#f92672">.</span>wsdl_url <span style="color:#f92672">=</span> wsdl_url
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># El cliente asíncrono se crea al momento de usarlo</span>
+</span></span><span style="display:flex;"><span>      self<span style="color:#f92672">.</span>async_client <span style="color:#f92672">=</span> AsyncClient(self<span style="color:#f92672">.</span>wsdl_url)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generar_xml_cfdi_ejemplo</span>(self) <span style="color:#f92672">-&gt;</span> str:
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      Genera un XML de ejemplo para un CFDI 4.0.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      En una aplicación real, este XML se construiría dinámicamente.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Usar la fecha y hora actual en formato UTC, requerido por el SAT.</span>
+</span></span><span style="display:flex;"><span>      fecha_actual <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>utcnow()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">T%H:%M:%S&#39;</span>)
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Uso de f-strings para formatear el XML.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Nota: Se agregó ObjetoImp=&#34;02&#34; en el concepto, requerido en CFDI 4.0.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;cfdi:Comprobante
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  xmlns:cfdi=&#34;http://www.sat.gob.mx/cfd/4&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Version=&#34;4.0&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Serie=&#34;F&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Folio=&#34;123&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Fecha=&#34;</span><span style="color:#e6db74">{</span>fecha_actual<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SubTotal=&#34;100.00&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Moneda=&#34;MXN&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Total=&#34;116.00&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  TipoDeComprobante=&#34;I&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Exportacion=&#34;01&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  MetodoPago=&#34;PUE&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  FormaPago=&#34;01&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  LugarExpedicion=&#34;64000&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;cfdi:Emisor Rfc=&#34;ABC010101XYZ&#34; Nombre=&#34;Empresa Ejemplo&#34; RegimenFiscal=&#34;601&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;cfdi:Receptor Rfc=&#34;XAXX010101000&#34; Nombre=&#34;Publico en General&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  DomicilioFiscalReceptor=&#34;64000&#34; RegimenFiscalReceptor=&#34;616&#34; UsoCFDI=&#34;G03&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;cfdi:Conceptos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;cfdi:Concepto ClaveProdServ=&#34;84111506&#34; Cantidad=&#34;1&#34; ClaveUnidad=&#34;ACT&#34; ObjetoImp=&#34;02&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                     Descripcion=&#34;Servicio de Ejemplo&#34; ValorUnitario=&#34;100.00&#34; Importe=&#34;100.00&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Impuestos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;cfdi:Traslados&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  &lt;cfdi:Traslado Base=&#34;100.00&#34; Impuesto=&#34;002&#34; TipoFactor=&#34;Tasa&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                                 TasaOCuota=&#34;0.160000&#34; Importe=&#34;16.00&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;/cfdi:Traslados&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/cfdi:Impuestos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/cfdi:Concepto&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/cfdi:Conceptos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;cfdi:Impuestos TotalImpuestosTrasladados=&#34;16.00&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;cfdi:Traslados&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Traslado Impuesto=&#34;002&#34; TipoFactor=&#34;Tasa&#34; TasaOCuota=&#34;0.160000&#34; Importe=&#34;16.00&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/cfdi:Traslados&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/cfdi:Impuestos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/cfdi:Comprobante&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">timbrar_async</span>(self, api_key: str, xml_cfdi: str) <span style="color:#f92672">-&gt;</span> RespuestaTimbrado:
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;&#34;&#34;Invoca al servicio web para timbrar un CFDI de forma asíncrona.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>          logging<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;Iniciando timbrado para CFDI.&#34;</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e"># El nombre del servicio &#39;ServicioTimbradoWSPort&#39; y la operación &#39;timbrar&#39;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e"># son definidos por el WSDL.</span>
+</span></span><span style="display:flex;"><span>          response <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> self<span style="color:#f92672">.</span>async_client<span style="color:#f92672">.</span>service<span style="color:#f92672">.</span>timbrar(apikey<span style="color:#f92672">=</span>api_key, xmlCFDI<span style="color:#f92672">=</span>xml_cfdi)
+</span></span><span style="display:flex;"><span>          
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e"># Zeep convierte la respuesta en un objeto similar a un diccionario.</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> RespuestaTimbrado(
+</span></span><span style="display:flex;"><span>              code<span style="color:#f92672">=</span>response<span style="color:#f92672">.</span>code,
+</span></span><span style="display:flex;"><span>              message<span style="color:#f92672">=</span>response<span style="color:#f92672">.</span>message,
+</span></span><span style="display:flex;"><span>              data<span style="color:#f92672">=</span>response<span style="color:#f92672">.</span>data
+</span></span><span style="display:flex;"><span>          )
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">except</span> Fault <span style="color:#66d9ef">as</span> ex:
+</span></span><span style="display:flex;"><span>          logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error SOAP (Fault): Code=</span><span style="color:#e6db74">{</span>ex<span style="color:#f92672">.</span>code<span style="color:#e6db74">}</span><span style="color:#e6db74">, Message=</span><span style="color:#e6db74">{</span>ex<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ConnectionError</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error del servicio: </span><span style="color:#e6db74">{</span>ex<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>) <span style="color:#f92672">from</span> ex
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">except</span> TransportError <span style="color:#66d9ef">as</span> ex:
+</span></span><span style="display:flex;"><span>          logging<span style="color:#f92672">.</span>error(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error de comunicación con el servicio de timbrado: </span><span style="color:#e6db74">{</span>ex<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">raise</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --- Archivo: main.py (Ejemplo de uso) ---</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;&#34;&#34;Función principal para ejecutar el ejemplo.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  service <span style="color:#f92672">=</span> TimbradoService(WSDL_URL_DESARROLLO)
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># El API Key debe obtenerse de una fuente segura, no estar en el código.</span>
+</span></span><span style="display:flex;"><span>  mi_api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>
+</span></span><span style="display:flex;"><span>  xml_para_timbrar <span style="color:#f92672">=</span> service<span style="color:#f92672">.</span>generar_xml_cfdi_ejemplo()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;--- Intentando timbrar el siguiente CFDI: ---&#34;</span>)
+</span></span><span style="display:flex;"><span>  print(xml_para_timbrar)
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;------------------------------------------&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>      resultado <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> service<span style="color:#f92672">.</span>timbrar_async(mi_api_key, xml_para_timbrar)
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> resultado<span style="color:#f92672">.</span>code <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;200&#34;</span>:
+</span></span><span style="display:flex;"><span>          print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[92m</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">¡Timbrado Exitoso!</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0m&#34;</span>) <span style="color:#75715e"># Color verde</span>
+</span></span><span style="display:flex;"><span>          print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Mensaje: </span><span style="color:#e6db74">{</span>resultado<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>          print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">--- XML Timbrado ---&#34;</span>)
+</span></span><span style="display:flex;"><span>          print(resultado<span style="color:#f92672">.</span>data)
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>          print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[91m</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Error durante el timbrado:</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0m&#34;</span>) <span style="color:#75715e"># Color rojo</span>
+</span></span><span style="display:flex;"><span>          print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Código: </span><span style="color:#e6db74">{</span>resultado<span style="color:#f92672">.</span>code<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>          print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Mensaje: </span><span style="color:#e6db74">{</span>resultado<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> ex:
+</span></span><span style="display:flex;"><span>      print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[91m</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Ocurrió una excepción no controlada: </span><span style="color:#e6db74">{</span>ex<span style="color:#e6db74">}</span><span style="color:#ae81ff">\033</span><span style="color:#e6db74">[0m&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>  asyncio<span style="color:#f92672">.</span>run(main())</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+</div>
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-3"
-  role="tabpanel"><strong>PHP</strong>: TOML aims to be a minimal configuration file format that&rsquo;s easy to read due to obvious semantics.</div>
+  role="tabpanel"><h3>Herramienta SoapClient<span class="hx-absolute -hx-mt-20" id="herramienta-soapclient"></span>
+    <a href="#herramienta-soapclient" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>PHP tiene soporte nativo para SOAP a través de la extensión SOAP. Asegúrate de que la extensión php-soap esté habilitada en tu archivo php.ini.</p>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>El siguiente código muestra una implementación orientada a objetos para consumir el servicio de timbrado.</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// --- Archivo: Timbrado.php ---
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Habilitar la visualización de errores para depuración
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">ini_set</span>(<span style="color:#e6db74">&#39;display_errors&#39;</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">error_reporting</span>(<span style="color:#66d9ef">E_ALL</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * Clase DTO (Data Transfer Object) para encapsular la respuesta del servicio.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RespuestaTimbrado</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#f92672">?</span><span style="color:#a6e22e">string</span> $code <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#f92672">?</span><span style="color:#a6e22e">string</span> $message <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#f92672">?</span><span style="color:#a6e22e">string</span> $data <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> * Clase que encapsula la lógica para interactuar con el servicio de timbrado.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimbradoService</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">string</span> $wsdlUrl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">__construct</span>(<span style="color:#a6e22e">string</span> $wsdlUrl) {
+</span></span><span style="display:flex;"><span>      $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">wsdlUrl</span> <span style="color:#f92672">=</span> $wsdlUrl;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   * Genera un XML de ejemplo para un CFDI 4.0.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">generarXmlCfdiEjemplo</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Usar la fecha y hora actual en formato UTC, requerido por el SAT.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      $fechaActual <span style="color:#f92672">=</span> <span style="color:#a6e22e">gmdate</span>(<span style="color:#e6db74">&#39;Y-m-d\TH:i:s&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Nota: Se agregó ObjetoImp=&#34;02&#34; en el concepto, requerido en CFDI 4.0.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&lt;&lt;&lt;</span><span style="color:#e6db74">XML</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;cfdi:Comprobante
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  xmlns:cfdi=&#34;http://www.sat.gob.mx/cfd/4&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Version=&#34;4.0&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Serie=&#34;F&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Folio=&#34;123&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Fecha=&#34;{$fechaActual}&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  SubTotal=&#34;100.00&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Moneda=&#34;MXN&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Total=&#34;116.00&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  TipoDeComprobante=&#34;I&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  Exportacion=&#34;01&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  MetodoPago=&#34;PUE&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  FormaPago=&#34;01&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  LugarExpedicion=&#34;64000&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;cfdi:Emisor Rfc=&#34;ABC010101XYZ&#34; Nombre=&#34;Empresa Ejemplo&#34; RegimenFiscal=&#34;601&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;cfdi:Receptor Rfc=&#34;XAXX010101000&#34; Nombre=&#34;Publico en General&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  DomicilioFiscalReceptor=&#34;64000&#34; RegimenFiscalReceptor=&#34;616&#34; UsoCFDI=&#34;G03&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;cfdi:Conceptos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;cfdi:Concepto ClaveProdServ=&#34;84111506&#34; Cantidad=&#34;1&#34; ClaveUnidad=&#34;ACT&#34; ObjetoImp=&#34;02&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                     Descripcion=&#34;Servicio de Ejemplo&#34; ValorUnitario=&#34;100.00&#34; Importe=&#34;100.00&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Impuestos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;cfdi:Traslados&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  &lt;cfdi:Traslado Base=&#34;100.00&#34; Impuesto=&#34;002&#34; TipoFactor=&#34;Tasa&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                                 TasaOCuota=&#34;0.160000&#34; Importe=&#34;16.00&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;/cfdi:Traslados&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/cfdi:Impuestos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/cfdi:Concepto&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/cfdi:Conceptos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;cfdi:Impuestos TotalImpuestosTrasladados=&#34;16.00&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;cfdi:Traslados&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Traslado Impuesto=&#34;002&#34; TipoFactor=&#34;Tasa&#34; TasaOCuota=&#34;0.160000&#34; Importe=&#34;16.00&#34;/&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/cfdi:Traslados&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/cfdi:Impuestos&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/cfdi:Comprobante&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">XML</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   * Invoca al servicio web para timbrar un CFDI.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">timbrar</span>(<span style="color:#a6e22e">string</span> $apiKey, <span style="color:#a6e22e">string</span> $xmlCfdi)<span style="color:#f92672">:</span> <span style="color:#a6e22e">RespuestaTimbrado</span> {
+</span></span><span style="display:flex;"><span>      $respuesta <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">RespuestaTimbrado</span>();
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// Opciones para el cliente SOAP. &#39;trace&#39; es útil para depurar.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          $options <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#39;trace&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#39;exceptions&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>, <span style="color:#75715e">// Lanza SoapFault en caso de error
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>              <span style="color:#e6db74">&#39;cache_wsdl&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">WSDL_CACHE_NONE</span>
+</span></span><span style="display:flex;"><span>          ];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// Crear el cliente SOAP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          $soapClient <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SoapClient</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">wsdlUrl</span>, $options);
+</span></span><span style="display:flex;"><span>          
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// Los parámetros deben estar en un array asociativo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          $params <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#39;apikey&#39;</span>  <span style="color:#f92672">=&gt;</span> $apiKey,
+</span></span><span style="display:flex;"><span>              <span style="color:#e6db74">&#39;xmlCFDI&#39;</span> <span style="color:#f92672">=&gt;</span> $xmlCfdi
+</span></span><span style="display:flex;"><span>          ];
+</span></span><span style="display:flex;"><span>          
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// Llamar a la operación &#39;timbrar&#39; del servicio
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          $response <span style="color:#f92672">=</span> $soapClient<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timbrar</span>($params);
+</span></span><span style="display:flex;"><span>          
+</span></span><span style="display:flex;"><span>          $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>          $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>          $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">SoapFault</span> $e) {
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// Capturar errores específicos de SOAP
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          <span style="color:#a6e22e">error_log</span>(<span style="color:#e6db74">&#34;Error SOAP (SoapFault): &#34;</span> <span style="color:#f92672">.</span> $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>          $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;FAULT&#34;</span>;
+</span></span><span style="display:flex;"><span>          $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Error en la comunicación SOAP: &#34;</span> <span style="color:#f92672">.</span> $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessage</span>();
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> $e) {
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// Capturar otros errores
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          <span style="color:#a6e22e">error_log</span>(<span style="color:#e6db74">&#34;Error general: &#34;</span> <span style="color:#f92672">.</span> $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>          $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;EXCEPTION&#34;</span>;
+</span></span><span style="display:flex;"><span>          $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Ocurrió una excepción: &#34;</span> <span style="color:#f92672">.</span> $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessage</span>();
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> $respuesta;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// --- Archivo: index.php (Ejemplo de uso) ---
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Incluir la clase del servicio
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// require_once &#39;Timbrado.php&#39;;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>$wsdlDesarrollo <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://dev.facturaloplus.com/ws/servicio.do?wsdl&#34;</span>;
+</span></span><span style="display:flex;"><span>$timbradoService <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TimbradoService</span>($wsdlDesarrollo);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// El API Key debe obtenerse de una fuente segura, como una variable de entorno.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$miApiKey <span style="color:#f92672">=</span> <span style="color:#a6e22e">getenv</span>(<span style="color:#e6db74">&#39;TIMBRADO_API_KEY&#39;</span>) <span style="color:#f92672">?:</span> <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>;
+</span></span><span style="display:flex;"><span>$xmlParaTimbrar <span style="color:#f92672">=</span> $timbradoService<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">generarXmlCfdiEjemplo</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Imprimir en formato de texto plano para una mejor visualización en consola o web
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#39;Content-Type: text/plain; charset=utf-8&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;--- Intentando timbrar el siguiente CFDI: ---</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> $xmlParaTimbrar;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">------------------------------------------</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$resultado <span style="color:#f92672">=</span> $timbradoService<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timbrar</span>($miApiKey, $xmlParaTimbrar);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ($resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;200&#39;</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;¡Timbrado Exitoso!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Mensaje: </span><span style="color:#e6db74">{</span>$resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">--- XML Timbrado ---</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> $resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Error durante el timbrado:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Código: </span><span style="color:#e6db74">{</span>$resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span><span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Mensaje: </span><span style="color:#e6db74">{</span>$resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+</div>
 
 </div>
 
