@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon shortcut" href="/facturotas.docs/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/facturotas.docs/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/facturotas.docs/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
+<link rel="icon" href="/facturotas.docs/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="/facturotas.docs/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/facturotas.docs/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="/facturotas.docs/site.webmanifest" rel="manifest" />
+<title>Facturotas</title>
+  <meta name="description" content="timbrarJSON2Esta operación extiende la funcionalidad de timbrarJSON, permitiendo no solo generar y timbrar un CFDI a partir de un layout JSON, sino también obtener una representación en formato PDF del comprobante utilizando una plantilla predefinida.
+Descripción de la Operación Esta operación toma un layout JSON, lo convierte en un CFDI (versión 3.3 o 4.0), lo sella con los certificados proporcionados y lo timbra. Como resultado, devuelve una estructura JSON que contiene tanto el XML del CFDI timbrado como el contenido del PDF generado en formato Base64." /><link rel="canonical" href="https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarjson2/" itemprop="url" />
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="timbrarJSON2Esta operación extiende la funcionalidad de timbrarJSON, permitiendo no solo generar y timbrar un CFDI a partir de un layout JSON, sino también obtener una representación en formato PDF del comprobante utilizando una plantilla predefinida.
+Descripción de la Operación
+    Esta operación toma un layout JSON, lo convierte en un CFDI (versión 3.3 o 4.0), lo sella con los certificados proporcionados y lo timbra. Como resultado, devuelve una estructura JSON que contiene tanto el XML del CFDI timbrado como el contenido del PDF generado en formato Base64." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarjson2/" /><meta property="article:section" content="api" />
+
+
+
+  <meta itemprop="name" content="Facturotas">
+  <meta itemprop="description" content="timbrarJSON2Esta operación extiende la funcionalidad de timbrarJSON, permitiendo no solo generar y timbrar un CFDI a partir de un layout JSON, sino también obtener una representación en formato PDF del comprobante utilizando una plantilla predefinida.
+Descripción de la Operación Esta operación toma un layout JSON, lo convierte en un CFDI (versión 3.3 o 4.0), lo sella con los certificados proporcionados y lo timbra. Como resultado, devuelve una estructura JSON que contiene tanto el XML del CFDI timbrado como el contenido del PDF generado en formato Base64.">
+  <meta itemprop="wordCount" content="2152">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Facturotas">
+  <meta name="twitter:description" content="timbrarJSON2Esta operación extiende la funcionalidad de timbrarJSON, permitiendo no solo generar y timbrar un CFDI a partir de un layout JSON, sino también obtener una representación en formato PDF del comprobante utilizando una plantilla predefinida.
+Descripción de la Operación Esta operación toma un layout JSON, lo convierte en un CFDI (versión 3.3 o 4.0), lo sella con los certificados proporcionados y lo timbra. Como resultado, devuelve una estructura JSON que contiene tanto el XML del CFDI timbrado como el contenido del PDF generado en formato Base64.">
+
+    <link rel="preload" href="/facturotas.docs/css/compiled/main.min.e0bb0f28123bf084d555fc9253c6d2aa1443b2dfcde6044741a207eabdc3ddb8.css" as="style" integrity="sha256-4LsPKBI78ITVVfySU8bSqhRDst/N5gRHQaIH6r3D3bg=" />
+    <link href="/facturotas.docs/css/compiled/main.min.e0bb0f28123bf084d555fc9253c6d2aa1443b2dfcde6044741a207eabdc3ddb8.css" rel="stylesheet" integrity="sha256-4LsPKBI78ITVVfySU8bSqhRDst/N5gRHQaIH6r3D3bg=" />
+
+
+
+  <link href="/facturotas.docs/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" rel="stylesheet" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU=" />
+
+
+  <script>
+     
+    const defaultTheme = 'system';
+
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
+    }
+
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
+    }
+  </script>
+
+  
+</head>
+<body dir="ltr"><div class="nav-container hx-sticky hx-top-0 hx-z-20 hx-w-full hx-bg-transparent print:hx-hidden">
+  <div class="nav-container-blur hx-pointer-events-none hx-absolute hx-z-[-1] hx-h-full hx-w-full hx-bg-white dark:hx-bg-dark hx-shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] contrast-more:hx-shadow-[0_0_0_1px_#000] dark:hx-shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] contrast-more:dark:hx-shadow-[0_0_0_1px_#fff]"></div>
+
+  <nav class="hx-mx-auto hx-flex hx-items-center hx-justify-end hx-gap-2 hx-h-16 hx-px-6 hx-max-w-[90rem]">
+    <a class="hx-flex hx-items-center hover:hx-opacity-75 ltr:hx-mr-auto rtl:hx-ml-auto" href="/facturotas.docs/">
+        <img class="hx-mr-2 hx-block dark:hx-hidden" src="/facturotas.docs/images/logo.svg" alt="Facturotas" height="20" width="20" />
+        <img class="hx-mr-2 hx-hidden dark:hx-block" src="/facturotas.docs/images/logo.svg" alt="Facturotas" height="20" width="20" />
+        <span class="hx-mr-2 hx-font-extrabold hx-inline hx-select-none" title="Facturotas">Facturotas</span>
+    </a><button type="button" aria-label="Menu" class="hamburger-menu -hx-mr-2 hx-rounded hx-p-2 active:hx-bg-gray-400/20 md:hx-hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+  </nav>
+</div>
+
+  <div class='hx-mx-auto hx-flex hx-max-w-screen-xl'>
+    <div class="mobile-menu-overlay [transition:background-color_1.5s_ease] hx-fixed hx-inset-0 hx-z-10 hx-bg-black/80 dark:hx-bg-black/60 hx-hidden"></div>
+<aside class="sidebar-container hx-flex hx-flex-col print:hx-hidden md:hx-top-16 md:hx-shrink-0 md:hx-w-64 md:hx-self-start max-md:[transform:translate3d(0,-100%,0)] md:hx-sticky">
+  
+  <div class="hx-px-4 hx-pt-4 md:hx-hidden">
+    <div class="search-wrapper hx-relative md:hx-w-64">
+  <div class="hx-relative hx-flex hx-items-center hx-text-gray-900 contrast-more:hx-text-gray-800 dark:hx-text-gray-300 contrast-more:dark:hx-text-gray-300">
+    <input
+      placeholder="Search..."
+      class="search-input hx-block hx-w-full hx-appearance-none hx-rounded-lg hx-px-3 hx-py-2 hx-transition-colors hx-text-base hx-leading-tight md:hx-text-sm hx-bg-black/[.05] dark:hx-bg-gray-50/10 focus:hx-bg-white dark:focus:hx-bg-dark placeholder:hx-text-gray-500 dark:placeholder:hx-text-gray-400 contrast-more:hx-border contrast-more:hx-border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx-absolute hx-my-1.5 hx-select-none ltr:hx-right-1.5 rtl:hx-left-1.5 hx-h-5 hx-rounded hx-bg-white hx-px-1.5 hx-font-mono hx-text-[10px] hx-font-medium hx-text-gray-500 hx-border dark:hx-border-gray-100/20 dark:hx-bg-dark/50 contrast-more:hx-border-current contrast-more:hx-text-current contrast-more:dark:hx-border-current hx-items-center hx-gap-1 hx-transition-opacity hx-pointer-events-none hx-hidden sm:hx-flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="search-results hextra-scrollbar hx-hidden hx-border hx-border-gray-200 hx-bg-white hx-text-gray-100 dark:hx-border-neutral-800 dark:hx-bg-neutral-900 hx-absolute hx-top-full hx-z-20 hx-mt-2 hx-overflow-auto hx-overscroll-contain hx-rounded-xl hx-py-2.5 hx-shadow-xl hx-max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] md:hx-max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx-inset-x-0 ltr:md:hx-left-auto rtl:md:hx-right-auto contrast-more:hx-border contrast-more:hx-border-gray-900 contrast-more:dark:hx-border-gray-50 hx-w-screen hx-min-h-[100px] hx-max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+  </div>
+  <div class="hextra-scrollbar hx-overflow-y-auto hx-overflow-x-hidden hx-p-4 hx-grow md:hx-h-[calc(100vh-var(--navbar-height)-var(--menu-height))]">
+    <ul class="hx-flex hx-flex-col hx-gap-1 md:hx-hidden">
+      
+      
+          <li class=""><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/guias/"
+    
+  >Guias
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a><div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/guias/authentication/"
+    
+  >Authentication
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/guias/getting-started/"
+    
+  >Getting Started
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class="open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/"
+    
+  >API
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a><div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/"
+    
+  >Timbrado
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbrado/"
+    
+  >Timbrado
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbradotfd/"
+    
+  >Timbrado Tfd
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbrarjson/"
+    
+  >Timbrar JSON
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+    href="/facturotas.docs/api/timbrado/timbrarjson2/"
+    
+  >Timbrar Json2
+    </a>
+  
+    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
+              <a
+                href="#"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              ></a>
+            </li>
+          </ul>
+  
+              
+            </li></ul>
+      </div>
+            </li></ul>
+      </div></li>
+    </ul>
+
+    <ul class="hx-flex hx-flex-col hx-gap-1 max-md:hx-hidden">
+        
+          <li class=""><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/guias/"
+    
+  >Guias
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a><div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/guias/authentication/"
+    
+  >Authentication
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/guias/getting-started/"
+    
+  >Getting Started
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class="open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/"
+    
+  >API
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a><div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/"
+    
+  >Timbrado
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
+    </a>
+              <div class="ltr:hx-pr-0 hx-overflow-hidden">
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbrado/"
+    
+  >Timbrado
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbradotfd/"
+    
+  >Timbrado Tfd
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbrarjson/"
+    
+  >Timbrar JSON
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+    href="/facturotas.docs/api/timbrado/timbrarjson2/"
+    
+  >Timbrar Json2
+    </a>
+              
+            </li></ul>
+      </div>
+            </li></ul>
+      </div></li>
+        
+      </ul>
+    </div>
+  
+  
+    <div class="  hx-sticky hx-bottom-0 hx-bg-white dark:hx-bg-dark hx-mx-4 hx-py-4 hx-shadow-[0_-12px_16px_#fff] hx-flex hx-items-center hx-gap-2 dark:hx-border-neutral-800 dark:hx-shadow-[0_-12px_16px_#111] contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-shadow-none hx-border-t" data-toggle-animation="show"><div class="hx-flex hx-grow hx-flex-col"><button
+  title="Change theme"
+  data-theme="light"
+  class="theme-toggle hx-group hx-h-7 hx-rounded-md hx-px-2 hx-text-left hx-text-xs hx-font-medium hx-text-gray-600 hx-transition-colors dark:hx-text-gray-400 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50"
+  type="button"
+  aria-label="Change theme"
+>
+  <div class="hx-flex hx-items-center hx-gap-2 hx-capitalize"><svg height=12 class="group-data-[theme=light]:hx-hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="group-data-[theme=light]:hx-hidden">Light</span><svg height=12 class="group-data-[theme=dark]:hx-hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="group-data-[theme=dark]:hx-hidden">Dark</span></div>
+</button>
+</div></div></aside>
+    
+<nav class="hextra-toc hx-order-last hx-hidden hx-w-64 hx-shrink-0 xl:hx-block print:hx-hidden hx-px-4" aria-label="table of contents">
+    <div class="hextra-scrollbar hx-sticky hx-top-16 hx-overflow-y-auto hx-pr-4 hx-pt-6 hx-text-sm [hyphens:auto] hx-max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] ltr:hx--mr-4 rtl:hx--ml-4"><p class="hx-mb-4 hx-font-semibold hx-tracking-tight">On this page</p><ul>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#descripci%c3%b3n-de-la-operaci%c3%b3n">Descripción de la Operación
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#par%c3%a1metros-de-entrada-input">Parámetros de Entrada (Input)
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#par%c3%a1metros-de-salida-output---respuestatimbrado">Parámetros de Salida (Output) - RespuestaTimbrado
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#estructura-del-json-de-entrada">Estructura del JSON de Entrada
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#ejemplo-de-c%c3%b3digo">Ejemplo de Código
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-8 rtl:hx-pr-8 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#respuesta-response">Respuesta (Response)
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-12 rtl:hx-pr-12 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#c%c3%b3digos-de-respuesta">Códigos de respuesta
+        </a>
+      </li></ul>
+      <div class="hx-mt-8 hx-border-t hx-bg-white hx-pt-8 hx-shadow-[0_-12px_16px_white] dark:hx-bg-dark dark:hx-shadow-[0_-12px_16px_#111] hx-sticky hx-bottom-0 hx-flex hx-flex-col hx-items-start hx-gap-2 hx-pb-8 dark:hx-border-neutral-800 contrast-more:hx-border-t contrast-more:hx-border-neutral-400 contrast-more:hx-shadow-none contrast-more:dark:hx-border-neutral-400">
+        <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx-transition-all hx-duration-75 hx-opacity-0 hx-text-xs hx-font-medium hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-100 contrast-more:hx-text-gray-800 contrast-more:dark:hx-text-gray-50">
+          <span>Scroll to top</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx-inline ltr:hx-ml-1 rtl:hx-mr-1 hx-h-3.5 hx-w-3.5 hx-border hx-rounded-full hx-border-gray-500 hover:hx-border-gray-900 dark:hx-border-gray-400 dark:hover:hx-border-gray-100 contrast-more:hx-border-gray-800 contrast-more:dark:hx-border-gray-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+    <article class="hx-w-full hx-break-words hx-flex hx-min-h-[calc(100vh-var(--navbar-height))] hx-min-w-0 hx-justify-center hx-pb-8 hx-pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx-w-full hx-min-w-0 hx-max-w-6xl hx-px-6 hx-pt-4 md:hx-px-12">
+        
+  <div class="hx-mt-1.5 hx-flex hx-items-center hx-gap-1 hx-overflow-hidden hx-text-sm hx-text-gray-500 dark:hx-text-gray-400 contrast-more:hx-text-current">
+        <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
+          <a href="/facturotas.docs/api/">API</a>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
+          <a href="/facturotas.docs/api/timbrado/">Timbrado</a>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Timbrar Json2</div>
+  </div>
+
+        <div class="content">
+          
+          <h1>timbrarJSON2</h1><p>Esta operación extiende la funcionalidad de <code>timbrarJSON</code>, permitiendo no solo generar y timbrar un CFDI a partir de un layout JSON, sino también obtener una representación en formato PDF del comprobante utilizando una plantilla predefinida.</p>
+<h3>Descripción de la Operación<span class="hx-absolute -hx-mt-20" id="descripción-de-la-operación"></span>
+    <a href="#descripci%c3%b3n-de-la-operaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Esta operación toma un layout JSON, lo convierte en un CFDI (versión 3.3 o 4.0), lo sella con los certificados proporcionados y lo timbra. Como resultado, devuelve una estructura JSON que contiene tanto el XML del CFDI timbrado como el contenido del PDF generado en formato Base64.</p>
+<h3>Parámetros de Entrada (Input)<span class="hx-absolute -hx-mt-20" id="parámetros-de-entrada-input"></span>
+    <a href="#par%c3%a1metros-de-entrada-input" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Parámetro</th>
+          <th style="text-align: left">Tipo de Dato</th>
+          <th style="text-align: left">Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>apikey</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">Credencial de acceso al servicio (<a href="../../../#Requisitos" >Solicita aquí</a>).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>jsonB64</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">Cadena en formato Base64 que contiene el layout JSON con la información del CFDI a generar.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>keyPEM</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">Contenido del archivo de la llave privada (<code>.key</code>) en formato PEM.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>cerPEM</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">Contenido del archivo del certificado de llave pública (<code>.cer</code>) en formato PEM.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>plantilla</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">Identificador numérico de la plantilla a utilizar para la generación del PDF.</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Parámetros de Salida (Output) - RespuestaTimbrado<span class="hx-absolute -hx-mt-20" id="parámetros-de-salida-output---respuestatimbrado"></span>
+    <a href="#par%c3%a1metros-de-salida-output---respuestatimbrado" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Atributo</th>
+          <th style="text-align: left">Tipo de Dato</th>
+          <th style="text-align: left">Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>code</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">Código de respuesta de la operación.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>message</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">Mensaje detallado de la respuesta.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>data</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left"><strong>JSON string</strong> que contiene el XML del CFDI timbrado y el contenido del PDF en Base64. Debe ser decodificado para acceder a sus valores.</td>
+      </tr>
+  </tbody>
+</table>
+<h3>Estructura del JSON de Entrada<span class="hx-absolute -hx-mt-20" id="estructura-del-json-de-entrada"></span>
+    <a href="#estructura-del-json-de-entrada" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>El JSON enviado en el parámetro <code>jsonB64</code> debe seguir la siguiente estructura. Los valores vacíos deben enviarse como <code>&quot;&quot;</code>.</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Comprobante&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;4.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Serie&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Folio&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Fecha&#34;</span>: <span style="color:#e6db74">&#34;2025-07-04T12:00:00&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;FormaPago&#34;</span>: <span style="color:#e6db74">&#34;01&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;NoCertificado&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;CondicionesDePago&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;SubTotal&#34;</span>: <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Descuento&#34;</span>: <span style="color:#e6db74">&#34;0.00&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Moneda&#34;</span>: <span style="color:#e6db74">&#34;MXN&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;TipoCambio&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Total&#34;</span>: <span style="color:#e6db74">&#34;116.00&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;TipoDeComprobante&#34;</span>: <span style="color:#e6db74">&#34;I&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Exportacion&#34;</span>: <span style="color:#e6db74">&#34;01&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;MetodoPago&#34;</span>: <span style="color:#e6db74">&#34;PUE&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;LugarExpedicion&#34;</span>: <span style="color:#e6db74">&#34;64000&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Confirmacion&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Emisor&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Rfc&#34;</span>: <span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Nombre&#34;</span>: <span style="color:#e6db74">&#34;Empresa Ejemplo SA de CV&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;RegimenFiscal&#34;</span>: <span style="color:#e6db74">&#34;601&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Receptor&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Rfc&#34;</span>: <span style="color:#e6db74">&#34;XAXX010101000&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Nombre&#34;</span>: <span style="color:#e6db74">&#34;Publico en General&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;DomicilioFiscalReceptor&#34;</span>: <span style="color:#e6db74">&#34;64000&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;RegimenFiscalReceptor&#34;</span>: <span style="color:#e6db74">&#34;616&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;UsoCFDI&#34;</span>: <span style="color:#e6db74">&#34;G03&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Conceptos&#34;</span>: [
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;ClaveProdServ&#34;</span>: <span style="color:#e6db74">&#34;01010101&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Cantidad&#34;</span>: <span style="color:#e6db74">&#34;1.0&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;ClaveUnidad&#34;</span>: <span style="color:#e6db74">&#34;ACT&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Descripcion&#34;</span>: <span style="color:#e6db74">&#34;Producto de prueba&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;ValorUnitario&#34;</span>: <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Importe&#34;</span>: <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;ObjetoImp&#34;</span>: <span style="color:#e6db74">&#34;02&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Impuestos&#34;</span>: {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;Traslados&#34;</span>: [
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&#34;Base&#34;</span>: <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&#34;Impuesto&#34;</span>: <span style="color:#e6db74">&#34;002&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&#34;TipoFactor&#34;</span>: <span style="color:#e6db74">&#34;Tasa&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&#34;TasaOCuota&#34;</span>: <span style="color:#e6db74">&#34;0.160000&#34;</span>,
+</span></span><span style="display:flex;"><span>              <span style="color:#f92672">&#34;Importe&#34;</span>: <span style="color:#e6db74">&#34;16.00&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>          ]
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    ],
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Impuestos&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;TotalImpuestosTrasladados&#34;</span>: <span style="color:#e6db74">&#34;16.00&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Traslados&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;Base&#34;</span>: <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;Impuesto&#34;</span>: <span style="color:#e6db74">&#34;002&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;TipoFactor&#34;</span>: <span style="color:#e6db74">&#34;Tasa&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;TasaOCuota&#34;</span>: <span style="color:#e6db74">&#34;0.160000&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;Importe&#34;</span>: <span style="color:#e6db74">&#34;16.00&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<h3>Ejemplo de Código<span class="hx-absolute -hx-mt-20" id="ejemplo-de-código"></span>
+    <a href="#ejemplo-de-c%c3%b3digo" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain">
+  <div class="hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800"><button
+        class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+        role="tab"
+        type="button"
+        aria-controls="tabs-panel-0" aria-selected="true"  tabindex="0"  data-state="selected">C#</button><button
+        class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+        role="tab"
+        type="button"
+        aria-controls="tabs-panel-1">Java</button><button
+        class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+        role="tab"
+        type="button"
+        aria-controls="tabs-panel-2">Python</button><button
+        class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
+        role="tab"
+        type="button"
+        aria-controls="tabs-panel-3">PHP</button></div>
+</div>
+<div>
+
+  <div
+  class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+  id="tabs-panel-0"
+  role="tabpanel" tabindex="0"  data-state="selected" ><h3>Herramienta svcutil<span class="hx-absolute -hx-mt-20" id="herramienta-svcutil"></span>
+    <a href="#herramienta-svcutil" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Descarga e instala la herramienta <a href="https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-svcutil-guide?tabs=dotnetsvcutil2x" target="_blank" rel="noopener">svcutil</a></p>
+<p>Ejecuta el comando siguiente (<strong>DESARROLLO</strong>)</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>svcutil.exe https://dev.facturaloplus.com/ws/servicio.do?wsdl /out:ServicioTimbradoClient.cs /config:app.config</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<p>Esto genera dos archivos: ServicioTimbradoClient.cs y la configuración en app.config</p>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#75715e">// Se requiere la librería System.Text.Json</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Text.Json;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// Genera dinámicamente el layout del CFDI en formato JSON.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// En una aplicación real, los valores se obtendrían de una base de datos o de la entrada del usuario.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;/summary&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/// &lt;returns&gt;Un string con el JSON del CFDI.&lt;/returns&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> GetJsonLayout()
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Usar un objeto anónimo para construir la estructura y luego serializarla.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> cfdiLayout = <span style="color:#66d9ef">new</span>
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>          Comprobante = <span style="color:#66d9ef">new</span>
+</span></span><span style="display:flex;"><span>          {
+</span></span><span style="display:flex;"><span>              Version = <span style="color:#e6db74">&#34;4.0&#34;</span>,
+</span></span><span style="display:flex;"><span>              Serie = <span style="color:#e6db74">&#34;F&#34;</span>,
+</span></span><span style="display:flex;"><span>              Folio = <span style="color:#e6db74">&#34;123&#34;</span>,
+</span></span><span style="display:flex;"><span>              Fecha = <span style="color:#e6db74">&#34;2025-07-04T12:00:00&#34;</span>,
+</span></span><span style="display:flex;"><span>              FormaPago = <span style="color:#e6db74">&#34;01&#34;</span>,
+</span></span><span style="display:flex;"><span>              SubTotal = <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>              Moneda = <span style="color:#e6db74">&#34;MXN&#34;</span>,
+</span></span><span style="display:flex;"><span>              Total = <span style="color:#e6db74">&#34;116.00&#34;</span>,
+</span></span><span style="display:flex;"><span>              TipoDeComprobante = <span style="color:#e6db74">&#34;I&#34;</span>,
+</span></span><span style="display:flex;"><span>              Exportacion = <span style="color:#e6db74">&#34;01&#34;</span>,
+</span></span><span style="display:flex;"><span>              MetodoPago = <span style="color:#e6db74">&#34;PUE&#34;</span>,
+</span></span><span style="display:flex;"><span>              LugarExpedicion = <span style="color:#e6db74">&#34;64000&#34;</span>,
+</span></span><span style="display:flex;"><span>              Emisor = <span style="color:#66d9ef">new</span>
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                  Rfc = <span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span>,
+</span></span><span style="display:flex;"><span>                  Nombre = <span style="color:#e6db74">&#34;Empresa Ejemplo SA de CV&#34;</span>,
+</span></span><span style="display:flex;"><span>                  RegimenFiscal = <span style="color:#e6db74">&#34;601&#34;</span>
+</span></span><span style="display:flex;"><span>              },
+</span></span><span style="display:flex;"><span>              Receptor = <span style="color:#66d9ef">new</span>
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                  Rfc = <span style="color:#e6db74">&#34;XAXX010101000&#34;</span>,
+</span></span><span style="display:flex;"><span>                  Nombre = <span style="color:#e6db74">&#34;Publico en General&#34;</span>,
+</span></span><span style="display:flex;"><span>                  DomicilioFiscalReceptor = <span style="color:#e6db74">&#34;64000&#34;</span>,
+</span></span><span style="display:flex;"><span>                  RegimenFiscalReceptor = <span style="color:#e6db74">&#34;616&#34;</span>,
+</span></span><span style="display:flex;"><span>                  UsoCFDI = <span style="color:#e6db74">&#34;G03&#34;</span>
+</span></span><span style="display:flex;"><span>              },
+</span></span><span style="display:flex;"><span>              Conceptos = <span style="color:#66d9ef">new</span>[]
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                  <span style="color:#66d9ef">new</span>
+</span></span><span style="display:flex;"><span>                  {
+</span></span><span style="display:flex;"><span>                      ClaveProdServ = <span style="color:#e6db74">&#34;01010101&#34;</span>,
+</span></span><span style="display:flex;"><span>                      Cantidad = <span style="color:#e6db74">&#34;1.0&#34;</span>,
+</span></span><span style="display:flex;"><span>                      ClaveUnidad = <span style="color:#e6db74">&#34;ACT&#34;</span>,
+</span></span><span style="display:flex;"><span>                      Descripcion = <span style="color:#e6db74">&#34;Producto de prueba&#34;</span>,
+</span></span><span style="display:flex;"><span>                      ValorUnitario = <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>                      Importe = <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>                      ObjetoImp = <span style="color:#e6db74">&#34;02&#34;</span>,
+</span></span><span style="display:flex;"><span>                      Impuestos = <span style="color:#66d9ef">new</span>
+</span></span><span style="display:flex;"><span>                      {
+</span></span><span style="display:flex;"><span>                          Traslados = <span style="color:#66d9ef">new</span>[]
+</span></span><span style="display:flex;"><span>                          {
+</span></span><span style="display:flex;"><span>                              <span style="color:#66d9ef">new</span>
+</span></span><span style="display:flex;"><span>                              {
+</span></span><span style="display:flex;"><span>                                  Base = <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>                                  Impuesto = <span style="color:#e6db74">&#34;002&#34;</span>,
+</span></span><span style="display:flex;"><span>                                  TipoFactor = <span style="color:#e6db74">&#34;Tasa&#34;</span>,
+</span></span><span style="display:flex;"><span>                                  TasaOCuota = <span style="color:#e6db74">&#34;0.160000&#34;</span>,
+</span></span><span style="display:flex;"><span>                                  Importe = <span style="color:#e6db74">&#34;16.00&#34;</span>
+</span></span><span style="display:flex;"><span>                              }
+</span></span><span style="display:flex;"><span>                          }
+</span></span><span style="display:flex;"><span>                      }
+</span></span><span style="display:flex;"><span>                  }
+</span></span><span style="display:flex;"><span>              },
+</span></span><span style="display:flex;"><span>              Impuestos = <span style="color:#66d9ef">new</span>
+</span></span><span style="display:flex;"><span>              {
+</span></span><span style="display:flex;"><span>                  TotalImpuestosTrasladados = <span style="color:#e6db74">&#34;16.00&#34;</span>,
+</span></span><span style="display:flex;"><span>                  Traslados = <span style="color:#66d9ef">new</span>[]
+</span></span><span style="display:flex;"><span>                  {
+</span></span><span style="display:flex;"><span>                      <span style="color:#66d9ef">new</span>
+</span></span><span style="display:flex;"><span>                      {
+</span></span><span style="display:flex;"><span>                          Base = <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>                          Impuesto = <span style="color:#e6db74">&#34;002&#34;</span>,
+</span></span><span style="display:flex;"><span>                          TipoFactor = <span style="color:#e6db74">&#34;Tasa&#34;</span>,
+</span></span><span style="display:flex;"><span>                          TasaOCuota = <span style="color:#e6db74">&#34;0.160000&#34;</span>,
+</span></span><span style="display:flex;"><span>                          Importe = <span style="color:#e6db74">&#34;16.00&#34;</span>
+</span></span><span style="display:flex;"><span>                      }
+</span></span><span style="display:flex;"><span>                  }
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      };
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> JsonSerializer.Serialize(cfdiLayout);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Clase para deserializar la respuesta en el campo &#39;data&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RespuestaData</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Xml { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Pdf { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;RespuestaTimbrado&gt; TimbrarJson2Async(<span style="color:#66d9ef">string</span> apiKey, <span style="color:#66d9ef">string</span> jsonLayout, <span style="color:#66d9ef">string</span> keyPem, <span style="color:#66d9ef">string</span> cerPem, <span style="color:#66d9ef">string</span> plantilla)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> jsonB64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(jsonLayout));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">using</span> var client = <span style="color:#66d9ef">new</span> ServicioTimbradoWSPortTypeClient(<span style="color:#e6db74">&#34;ServicioTimbradoWSPort&#34;</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Asumiendo que la operación se llama &#39;timbrarJSON2&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> response = <span style="color:#66d9ef">await</span> client.timbrarJSON2Async(apiKey, jsonB64, keyPem, cerPem, plantilla);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> RespuestaTimbrado { Code = response.code, Message = response.message, Data = response.data };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Ejemplo de uso</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task EjemploUsoTimbrarJson2Async()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> apiKey = <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> jsonLayout = GetJsonLayout(); <span style="color:#75715e">// Generación dinámica</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> keyPem = File.ReadAllText(<span style="color:#e6db74">&#34;ruta/a/llave.key.pem&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> cerPem = File.ReadAllText(<span style="color:#e6db74">&#34;ruta/a/certificado.cer.pem&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">string</span> plantilla = <span style="color:#e6db74">&#34;1&#34;</span>; <span style="color:#75715e">// ID de la plantilla a usar</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> resultado = <span style="color:#66d9ef">await</span> TimbrarJson2Async(apiKey, jsonLayout, keyPem, cerPem, plantilla);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (resultado?.Code == <span style="color:#e6db74">&#34;200&#34;</span> &amp;&amp; !<span style="color:#66d9ef">string</span>.IsNullOrEmpty(resultado.Data))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;¡Timbrado con JSON y PDF Exitoso!&#34;</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Deserializar el JSON de la respuesta</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> respuestaData = JsonSerializer.Deserialize&lt;RespuestaData&gt;(resultado.Data);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;--- XML Timbrado ---&#34;</span>);
+</span></span><span style="display:flex;"><span>        Console.WriteLine(respuestaData.Xml);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Guardar el PDF</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> pdfBytes = Convert.FromBase64String(respuestaData.Pdf);
+</span></span><span style="display:flex;"><span>        File.WriteAllBytes(<span style="color:#e6db74">&#34;comprobante.pdf&#34;</span>, pdfBytes);
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;\nPDF guardado como comprobante.pdf&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">$&#34;Error: {resultado?.Code} - {resultado?.Message}&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+</div>
+
+  <div
+  class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+  id="tabs-panel-1"
+  role="tabpanel"><h3>Herramienta wsimport<span class="hx-absolute -hx-mt-20" id="herramienta-wsimport"></span>
+    <a href="#herramienta-wsimport" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Java incluye la herramienta wsimport en el JDK para generar las clases cliente a partir de un WSDL.</p>
+<p>Ejecuta el siguiente comando en tu terminal para el ambiente de DESARROLLO:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>wsimport -keep -p com.facturaloplus.cliente https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<p>-keep: Conserva los archivos fuente .java generados.</p>
+<p>-p: Especifica el paquete (package) donde se guardarán las clases.</p>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Se recomienda usar una librería como Gson o Jackson para parsear el JSON de respuesta.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// import com.google.gson.Gson;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   * Genera dinámicamente el layout del CFDI en formato JSON.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">getJsonLayout</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Usamos un Text Block de Java 15+ para legibilidad.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;Comprobante&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Version&#34;: &#34;4.0&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Serie&#34;: &#34;F&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Folio&#34;: &#34;123&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Fecha&#34;: &#34;2025-07-04T12:00:00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;FormaPago&#34;: &#34;01&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;SubTotal&#34;: &#34;100.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Moneda&#34;: &#34;MXN&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Total&#34;: &#34;116.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;TipoDeComprobante&#34;: &#34;I&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Exportacion&#34;: &#34;01&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;MetodoPago&#34;: &#34;PUE&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;LugarExpedicion&#34;: &#34;64000&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Emisor&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;Rfc&#34;: &#34;ABC010101XYZ&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;Nombre&#34;: &#34;Empresa Ejemplo SA de CV&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;RegimenFiscal&#34;: &#34;601&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          },
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Receptor&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;Rfc&#34;: &#34;XAXX010101000&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;Nombre&#34;: &#34;Publico en General&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;DomicilioFiscalReceptor&#34;: &#34;64000&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;RegimenFiscalReceptor&#34;: &#34;616&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;UsoCFDI&#34;: &#34;G03&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          },
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Conceptos&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;ClaveProdServ&#34;: &#34;01010101&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;Cantidad&#34;: &#34;1.0&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;ClaveUnidad&#34;: &#34;ACT&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;Descripcion&#34;: &#34;Producto de prueba&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;ValorUnitario&#34;: &#34;100.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;Importe&#34;: &#34;100.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;ObjetoImp&#34;: &#34;02&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;Impuestos&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Traslados&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;Base&#34;: &#34;100.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;Impuesto&#34;: &#34;002&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;TipoFactor&#34;: &#34;Tasa&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;TasaOCuota&#34;: &#34;0.160000&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;Importe&#34;: &#34;16.00&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          ],
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Impuestos&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;TotalImpuestosTrasladados&#34;: &#34;16.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;Traslados&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Base&#34;: &#34;100.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Impuesto&#34;: &#34;002&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;TipoFactor&#34;: &#34;Tasa&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;TasaOCuota&#34;: &#34;0.160000&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Importe&#34;: &#34;16.00&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Clase para mapear el JSON en el campo &#39;data&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RespuestaData</span> {
+</span></span><span style="display:flex;"><span>    String xml;
+</span></span><span style="display:flex;"><span>    String pdf;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> CompletableFuture<span style="color:#f92672">&lt;</span>RespuestaTimbrado<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">timbrarJson2Async</span>(String apiKey, String jsonLayout, String keyPem, String cerPem, String plantilla) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> CompletableFuture.<span style="color:#a6e22e">supplyAsync</span>(() <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>            String jsonB64 <span style="color:#f92672">=</span> Base64.<span style="color:#a6e22e">getEncoder</span>().<span style="color:#a6e22e">encodeToString</span>(jsonLayout.<span style="color:#a6e22e">getBytes</span>(StandardCharsets.<span style="color:#a6e22e">UTF_8</span>));
+</span></span><span style="display:flex;"><span>            ServicioTimbradoWSPortType port <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServicioTimbradoWS().<span style="color:#a6e22e">getServicioTimbradoWSPort</span>();
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Asumiendo que la operación se llama &#39;timbrarJSON2&#39;</span>
+</span></span><span style="display:flex;"><span>            Respuesta response <span style="color:#f92672">=</span> port.<span style="color:#a6e22e">timbrarJSON2</span>(apiKey, jsonB64, keyPem, cerPem, plantilla);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            RespuestaTimbrado resultado <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RespuestaTimbrado();
+</span></span><span style="display:flex;"><span>            resultado.<span style="color:#a6e22e">setCode</span>(response.<span style="color:#a6e22e">getCode</span>());
+</span></span><span style="display:flex;"><span>            resultado.<span style="color:#a6e22e">setMessage</span>(response.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>            resultado.<span style="color:#a6e22e">setData</span>(response.<span style="color:#a6e22e">getData</span>());
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> resultado;
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (Exception e) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(<span style="color:#e6db74">&#34;Error en timbrarJSON2&#34;</span>, e);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }, executor);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Ejemplo de uso</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ... (inicialización de service, apiKey, etc.)</span>
+</span></span><span style="display:flex;"><span>    String jsonLayout <span style="color:#f92672">=</span> getJsonLayout(); <span style="color:#75715e">// Generación dinámica</span>
+</span></span><span style="display:flex;"><span>    String plantilla <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    service.<span style="color:#a6e22e">timbrarJson2Async</span>(apiKey, jsonLayout, keyPem, cerPem, plantilla).<span style="color:#a6e22e">whenComplete</span>((resultado, ex) <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (ex <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#e6db74">&#34;200&#34;</span>.<span style="color:#a6e22e">equals</span>(resultado.<span style="color:#a6e22e">getCode</span>())) {
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;¡Timbrado con JSON y PDF Exitoso!&#34;</span>);
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Parsear el JSON de respuesta</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Gson gson = new Gson();</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// RespuestaData data = gson.fromJson(resultado.getData(), RespuestaData.class);</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// System.out.println(&#34;XML: &#34; + data.xml);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// byte[] pdfBytes = Base64.getDecoder().decode(data.pdf);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// Files.write(Paths.get(&#34;comprobante.pdf&#34;), pdfBytes);</span>
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;PDF guardado correctamente.&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> { <span style="color:#75715e">/* ... manejo de error ... */</span> }
+</span></span><span style="display:flex;"><span>        service.<span style="color:#a6e22e">shutdown</span>();
+</span></span><span style="display:flex;"><span>    }).<span style="color:#a6e22e">join</span>();
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+</div>
+
+  <div
+  class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+  id="tabs-panel-2"
+  role="tabpanel"><h3>Herramienta Zeep<span class="hx-absolute -hx-mt-20" id="herramienta-zeep"></span>
+    <a href="#herramienta-zeep" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Para interactuar con servicios SOAP en Python, la librería zeep es una excelente opción. Proporciona una interfaz limpia y moderna.</p>
+<p>Instala la librería usando pip:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>pip install zeep</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># ... (Definición de RespuestaTimbrado y configuración de logging)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_json_layout</span>() <span style="color:#f92672">-&gt;</span> dict:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Genera dinámicamente el layout del CFDI como un diccionario de Python.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    En una aplicación real, los valores se obtendrían de una base de datos o de la entrada del usuario.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Comprobante&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;4.0&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Serie&#34;</span>: <span style="color:#e6db74">&#34;F&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Folio&#34;</span>: <span style="color:#e6db74">&#34;123&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Fecha&#34;</span>: <span style="color:#e6db74">&#34;2025-07-04T12:00:00&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;FormaPago&#34;</span>: <span style="color:#e6db74">&#34;01&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;SubTotal&#34;</span>: <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Moneda&#34;</span>: <span style="color:#e6db74">&#34;MXN&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Total&#34;</span>: <span style="color:#e6db74">&#34;116.00&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;TipoDeComprobante&#34;</span>: <span style="color:#e6db74">&#34;I&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Exportacion&#34;</span>: <span style="color:#e6db74">&#34;01&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;MetodoPago&#34;</span>: <span style="color:#e6db74">&#34;PUE&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;LugarExpedicion&#34;</span>: <span style="color:#e6db74">&#34;64000&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Emisor&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Rfc&#34;</span>: <span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Nombre&#34;</span>: <span style="color:#e6db74">&#34;Empresa Ejemplo SA de CV&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;RegimenFiscal&#34;</span>: <span style="color:#e6db74">&#34;601&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Receptor&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Rfc&#34;</span>: <span style="color:#e6db74">&#34;XAXX010101000&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Nombre&#34;</span>: <span style="color:#e6db74">&#34;Publico en General&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;DomicilioFiscalReceptor&#34;</span>: <span style="color:#e6db74">&#34;64000&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;RegimenFiscalReceptor&#34;</span>: <span style="color:#e6db74">&#34;616&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;UsoCFDI&#34;</span>: <span style="color:#e6db74">&#34;G03&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Conceptos&#34;</span>: [
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;ClaveProdServ&#34;</span>: <span style="color:#e6db74">&#34;01010101&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;Cantidad&#34;</span>: <span style="color:#e6db74">&#34;1.0&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;ClaveUnidad&#34;</span>: <span style="color:#e6db74">&#34;ACT&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;Descripcion&#34;</span>: <span style="color:#e6db74">&#34;Producto de prueba&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;ValorUnitario&#34;</span>: <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;Importe&#34;</span>: <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;ObjetoImp&#34;</span>: <span style="color:#e6db74">&#34;02&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#34;Impuestos&#34;</span>: {
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;Traslados&#34;</span>: [
+</span></span><span style="display:flex;"><span>                            {
+</span></span><span style="display:flex;"><span>                                <span style="color:#e6db74">&#34;Base&#34;</span>: <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>                                <span style="color:#e6db74">&#34;Impuesto&#34;</span>: <span style="color:#e6db74">&#34;002&#34;</span>,
+</span></span><span style="display:flex;"><span>                                <span style="color:#e6db74">&#34;TipoFactor&#34;</span>: <span style="color:#e6db74">&#34;Tasa&#34;</span>,
+</span></span><span style="display:flex;"><span>                                <span style="color:#e6db74">&#34;TasaOCuota&#34;</span>: <span style="color:#e6db74">&#34;0.160000&#34;</span>,
+</span></span><span style="display:flex;"><span>                                <span style="color:#e6db74">&#34;Importe&#34;</span>: <span style="color:#e6db74">&#34;16.00&#34;</span>
+</span></span><span style="display:flex;"><span>                            }
+</span></span><span style="display:flex;"><span>                        ]
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Impuestos&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;TotalImpuestosTrasladados&#34;</span>: <span style="color:#e6db74">&#34;16.00&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;Traslados&#34;</span>: [
+</span></span><span style="display:flex;"><span>                    {
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;Base&#34;</span>: <span style="color:#e6db74">&#34;100.00&#34;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;Impuesto&#34;</span>: <span style="color:#e6db74">&#34;002&#34;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;TipoFactor&#34;</span>: <span style="color:#e6db74">&#34;Tasa&#34;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;TasaOCuota&#34;</span>: <span style="color:#e6db74">&#34;0.160000&#34;</span>,
+</span></span><span style="display:flex;"><span>                        <span style="color:#e6db74">&#34;Importe&#34;</span>: <span style="color:#e6db74">&#34;16.00&#34;</span>
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                ]
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">timbrar_json2_async</span>(self, api_key: str, json_layout: dict, key_pem: str, cer_pem: str, plantilla: str) <span style="color:#f92672">-&gt;</span> RespuestaTimbrado:
+</span></span><span style="display:flex;"><span>    json_b64 <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64encode(json<span style="color:#f92672">.</span>dumps(json_layout)<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>))<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Asumiendo que la operación se llama &#39;timbrarJSON2&#39;</span>
+</span></span><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> self<span style="color:#f92672">.</span>async_client<span style="color:#f92672">.</span>service<span style="color:#f92672">.</span>timbrarJSON2(
+</span></span><span style="display:flex;"><span>        apikey<span style="color:#f92672">=</span>api_key, jsonB64<span style="color:#f92672">=</span>json_b64, keyPEM<span style="color:#f92672">=</span>key_pem, cerPEM<span style="color:#f92672">=</span>cer_pem, plantilla<span style="color:#f92672">=</span>plantilla
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> RespuestaTimbrado(code<span style="color:#f92672">=</span>response<span style="color:#f92672">.</span>code, message<span style="color:#f92672">=</span>response<span style="color:#f92672">.</span>message, data<span style="color:#f92672">=</span>response<span style="color:#f92672">.</span>data)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ejemplo de uso</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ... (inicialización de service, apiKey, etc.)</span>
+</span></span><span style="display:flex;"><span>    layout <span style="color:#f92672">=</span> get_json_layout() <span style="color:#f92672">//</span> Generación dinámica
+</span></span><span style="display:flex;"><span>    plantilla <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    resultado <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> service<span style="color:#f92672">.</span>timbrar_json2_async(api_key, layout, key_pem, cer_pem, plantilla)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> resultado<span style="color:#f92672">.</span>code <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;200&#34;</span> <span style="color:#f92672">and</span> resultado<span style="color:#f92672">.</span>data:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;¡Timbrado con JSON y PDF Exitoso!&#34;</span>)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Decodificar el JSON de la respuesta</span>
+</span></span><span style="display:flex;"><span>        respuesta_data <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(resultado<span style="color:#f92672">.</span>data)
+</span></span><span style="display:flex;"><span>        xml_timbrado <span style="color:#f92672">=</span> respuesta_data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;xml&#39;</span>)
+</span></span><span style="display:flex;"><span>        pdf_b64 <span style="color:#f92672">=</span> respuesta_data<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;pdf&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;--- XML Timbrado ---&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(xml_timbrado)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Guardar el PDF</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;comprobante.pdf&#34;</span>, <span style="color:#e6db74">&#34;wb&#34;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>            f<span style="color:#f92672">.</span>write(base64<span style="color:#f92672">.</span>b64decode(pdf_b64))
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">PDF guardado como comprobante.pdf&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error: </span><span style="color:#e6db74">{</span>resultado<span style="color:#f92672">.</span>code<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">{</span>resultado<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+</div>
+
+  <div
+  class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
+  id="tabs-panel-3"
+  role="tabpanel"><h3>Herramienta SoapClient<span class="hx-absolute -hx-mt-20" id="herramienta-soapclient"></span>
+    <a href="#herramienta-soapclient" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>PHP tiene soporte nativo para SOAP a través de la extensión SOAP. Asegúrate de que la extensión php-soap esté habilitada en tu archivo php.ini.</p>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   * Genera dinámicamente el layout del CFDI como un string JSON.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   * En una aplicación real, los valores se obtendrían de una base de datos 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   * o se construiría un array asociativo y se convertiría con json_encode.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getJsonLayout</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&lt;&lt;&lt;</span><span style="color:#e6db74">JSON</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;Comprobante&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Version&#34;: &#34;4.0&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Serie&#34;: &#34;F&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Folio&#34;: &#34;123&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Fecha&#34;: &#34;2025-07-04T12:00:00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;FormaPago&#34;: &#34;01&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;SubTotal&#34;: &#34;100.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Moneda&#34;: &#34;MXN&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Total&#34;: &#34;116.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;TipoDeComprobante&#34;: &#34;I&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Exportacion&#34;: &#34;01&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;MetodoPago&#34;: &#34;PUE&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;LugarExpedicion&#34;: &#34;64000&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Emisor&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;Rfc&#34;: &#34;ABC010101XYZ&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;Nombre&#34;: &#34;Empresa Ejemplo SA de CV&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;RegimenFiscal&#34;: &#34;601&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          },
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Receptor&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;Rfc&#34;: &#34;XAXX010101000&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;Nombre&#34;: &#34;Publico en General&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;DomicilioFiscalReceptor&#34;: &#34;64000&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;RegimenFiscalReceptor&#34;: &#34;616&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;UsoCFDI&#34;: &#34;G03&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          },
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Conceptos&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;ClaveProdServ&#34;: &#34;01010101&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;Cantidad&#34;: &#34;1.0&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;ClaveUnidad&#34;: &#34;ACT&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;Descripcion&#34;: &#34;Producto de prueba&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;ValorUnitario&#34;: &#34;100.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;Importe&#34;: &#34;100.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;ObjetoImp&#34;: &#34;02&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &#34;Impuestos&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Traslados&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;Base&#34;: &#34;100.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;Impuesto&#34;: &#34;002&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;TipoFactor&#34;: &#34;Tasa&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;TasaOCuota&#34;: &#34;0.160000&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &#34;Importe&#34;: &#34;16.00&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                  }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          ],
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;Impuestos&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;TotalImpuestosTrasladados&#34;: &#34;16.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;Traslados&#34;: [
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Base&#34;: &#34;100.00&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Impuesto&#34;: &#34;002&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;TipoFactor&#34;: &#34;Tasa&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;TasaOCuota&#34;: &#34;0.160000&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;Importe&#34;: &#34;16.00&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      </span><span style="color:#e6db74">JSON</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">timbrarJson2</span>(<span style="color:#a6e22e">string</span> $apiKey, <span style="color:#a6e22e">string</span> $jsonLayout, <span style="color:#a6e22e">string</span> $keyPem, <span style="color:#a6e22e">string</span> $cerPem, <span style="color:#a6e22e">string</span> $plantilla)<span style="color:#f92672">:</span> <span style="color:#a6e22e">RespuestaTimbrado</span> {
+</span></span><span style="display:flex;"><span>    $respuesta <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">RespuestaTimbrado</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        $jsonB64 <span style="color:#f92672">=</span> <span style="color:#a6e22e">base64_encode</span>($jsonLayout);
+</span></span><span style="display:flex;"><span>        $soapClient <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SoapClient</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">wsdlUrl</span>, [<span style="color:#e6db74">&#39;trace&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;exceptions&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>]);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        $params <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;apikey&#39;</span> <span style="color:#f92672">=&gt;</span> $apiKey, <span style="color:#e6db74">&#39;jsonB64&#39;</span> <span style="color:#f92672">=&gt;</span> $jsonB64, 
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;keyPEM&#39;</span> <span style="color:#f92672">=&gt;</span> $keyPem, <span style="color:#e6db74">&#39;cerPEM&#39;</span> <span style="color:#f92672">=&gt;</span> $cerPem, <span style="color:#e6db74">&#39;plantilla&#39;</span> <span style="color:#f92672">=&gt;</span> $plantilla
+</span></span><span style="display:flex;"><span>        ];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Asumiendo que la operación se llama &#39;timbrarJSON2&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        $response <span style="color:#f92672">=</span> $soapClient<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timbrarJSON2</span>($params);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>        $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>        $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> $e) { <span style="color:#75715e">/* ... manejo de error ... */</span> }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> $respuesta;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Ejemplo de uso
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// ... (inicialización de service, apiKey, etc.)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$jsonLayout <span style="color:#f92672">=</span> <span style="color:#a6e22e">getJsonLayout</span>(); <span style="color:#75715e">// Generación dinámica
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$plantilla <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$resultado <span style="color:#f92672">=</span> $service<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timbrarJson2</span>($apiKey, $jsonLayout, $keyPem, $cerPem, $plantilla);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ($resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;200&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#66d9ef">empty</span>($resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;¡Timbrado con JSON y PDF Exitoso!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Decodificar el JSON de respuesta
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    $data <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_decode</span>($resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span>, <span style="color:#66d9ef">true</span>);
+</span></span><span style="display:flex;"><span>    $xml <span style="color:#f92672">=</span> $data[<span style="color:#e6db74">&#39;xml&#39;</span>];
+</span></span><span style="display:flex;"><span>    $pdfB64 <span style="color:#f92672">=</span> $data[<span style="color:#e6db74">&#39;pdf&#39;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;--- XML Timbrado ---</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> $xml;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Guardar el PDF
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">file_put_contents</span>(<span style="color:#e6db74">&#34;comprobante.pdf&#34;</span>, <span style="color:#a6e22e">base64_decode</span>($pdfB64));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">PDF guardado como comprobante.pdf</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Error: </span><span style="color:#e6db74">{</span>$resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">{</span>$resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div></div>
+
+</div>
+<h4>Respuesta (Response)<span class="hx-absolute -hx-mt-20" id="respuesta-response"></span>
+    <a href="#respuesta-response" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>La estructura de la respuesta SOAP es similar a las anteriores, pero el contenido de la etiqueta <code>data</code> es un JSON que encapsula el XML y el PDF.</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;SOAP-ENV:Envelope</span> <span style="color:#960050;background-color:#1e0010">...</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;SOAP-ENV:Body&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;ns1:timbrarJSON2Response</span> <span style="color:#a6e22e">xmlns:ns1=</span><span style="color:#e6db74">&#34;urn:ws_api&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;return</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;tns:RespuestaTimbrado&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;code</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span>200<span style="color:#f92672">&lt;/code&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;message</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span>OK<span style="color:#f92672">&lt;/message&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;data</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#75715e">&lt;![CDATA[{
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  &#34;xml&#34;: &#34;PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48Y2ZkaT...&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  &#34;pdf&#34;: &#34;JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PC9UeXBlL0NhdGFsb2cvT3V0bGlu...&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">}]]&gt;</span><span style="color:#f92672">&lt;/data&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;/return&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/ns1:timbrarJSON2Response&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/SOAP-ENV:Body&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/SOAP-ENV:Envelope&gt;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<h5>Códigos de respuesta<span class="hx-absolute -hx-mt-20" id="códigos-de-respuesta"></span>
+    <a href="#c%c3%b3digos-de-respuesta" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>
+  Los códigos de respuesta para el timbrado de CFDI son importantes para entender el resultado de la solicitud. A continuación se detallan los códigos más comunes que puedes recibir al realizar una solicitud de timbrado a través de la API.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>200</td>
+      <td>Solicitud procesada con éxito</td>
+    </tr>
+    <tr>
+      <td>300</td>
+      <td>API KEY Inválida o inexistente</td>
+    </tr>
+    <tr>
+      <td>301</td>
+      <td>XML mal formado</td>
+    </tr>
+    <tr>
+      <td>302</td>
+      <td>El sello del emisor no es válido</td>
+    </tr>
+    <tr>
+      <td>303</td>
+      <td>El RFC del CSD del emisor no corresponde al RFC del Emisor</td>
+    </tr>
+    <tr>
+      <td>304</td>
+      <td>CSD del Emisor ha sido revobado</td>
+    </tr>
+    <tr>
+      <td>305</td>
+      <td>La fecha de emisión no está dentro de la vigencia del CSD del Emisor</td>
+    </tr>
+    <tr>
+      <td>306</td>
+      <td>La llave utilizada para sellar debe ser un CSD</td>
+    </tr>
+    <tr>
+      <td>307</td>
+      <td>El CFDI contiene un timbre previo</td>
+    </tr>
+    <tr>
+      <td>308</td>
+      <td>El CSD del emisor no ha sido firmado por uno de los Certificados de autoridad del SAT</td>
+    </tr>
+    <tr>
+      <td>401</td>
+      <td>El rango de la fecha de generación no debe de ser mayor a 72 horas para la emisión del timbre</td>
+    </tr>
+    <tr>
+      <td>402</td>
+      <td>RFC del emisor no se encuentra en el régimen de contribuyentes (Lista de validación de régimen) LCO</td>
+    </tr>
+  </tbody>
+</table>
+
+
+        </div>
+        <div class="hx-mt-16"></div>
+        <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
+        href="/facturotas.docs/api/timbrado/timbrarjson/"
+        title="Timbrar JSON"
+        class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
+      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Timbrar JSON</a></div>
+        
+      </main>
+    </article>
+  </div>
+
+      <footer class="hextra-footer hx-bg-gray-100 hx-pb-[env(safe-area-inset-bottom)] dark:hx-bg-neutral-900 print:hx-bg-transparent"><div
+      class="hextra-custom-footer hx-max-w-screen-xl hx-pl-[max(env(safe-area-inset-left),1.5rem)] hx-pr-[max(env(safe-area-inset-right),1.5rem)] hx-text-gray-600 dark:hx-text-gray-400"
+    ></div><div
+        class="hx-max-w-screen-xl hx-mx-auto hx-flex hx-justify-center hx-py-12 hx-pl-[max(env(safe-area-inset-left),1.5rem)] hx-pr-[max(env(safe-area-inset-right),1.5rem)] hx-text-gray-600 dark:hx-text-gray-400 md:hx-justify-start"
+      >
+        <div class="hx-flex hx-w-full hx-flex-col hx-items-center sm:hx-items-start"><div class="hx-font-semibold"><a class="hx-flex hx-text-sm hx-items-center hx-gap-1 hx-text-current" target="_blank" rel="noopener noreferrer" title="Hextra GitHub Homepage" href="https://github.com/imfing/hextra">
+    <span>Powered by Hextra<svg height=1em class="hx-inline-block ltr:hx-ml-1 rtl:hx-mr-1 hx-align-[-2.5px]" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="m 105.50024,22.224647 c -9.59169,-5.537563 -21.40871,-5.537563 -31.000093,0 L 39.054693,42.689119 C 29.463353,48.226675 23.55484,58.460531 23.55484,69.535642 v 40.928918 c 0,11.07542 5.908513,21.3092 15.499853,26.84652 l 35.445453,20.46446 c 9.591313,5.53732 21.408404,5.53732 31.000094,0 l 35.44507,-20.46446 c 9.59131,-5.53732 15.49985,-15.7711 15.49985,-26.84652 V 69.535642 c 0,-11.075111 -5.90854,-21.308967 -15.49985,-26.846523 z M 34.112797,85.737639 c -1.384445,2.397827 -1.384445,5.352099 0,7.749927 l 24.781554,42.922974 c 1.38437,2.39783 3.942853,3.87496 6.711592,3.87496 h 49.563107 c 2.76905,0 5.3273,-1.47713 6.71144,-3.87496 l 24.78194,-42.922974 c 1.38414,-2.397828 1.38414,-5.3521 0,-7.749927 L 121.88049,42.814746 c -1.38414,-2.397828 -3.94239,-3.874964 -6.71144,-3.874964 H 65.605944 c -2.768739,0 -5.327223,1.477059 -6.711592,3.874964 z" style="stroke-width:0.774993" /></svg></span>
+  </a></div></div>
+      </div></footer>
+    
+    <script defer src="/facturotas.docs/js/main.min.0942239592f0795dc7213dd1057fd229d7edc19c0ef1a285396eb292d9ca9842.js" integrity="sha256-CUIjlZLweV3HIT3RBX/SKdftwZwO8aKFOW6yktnKmEI="></script>
+<script defer src="/facturotas.docs/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
+    <script defer src="/facturotas.docs/en.search.min.6ca9e10c5a31b0b103c6e225eb92ff939ace170cbfa74039242c01be01a07189.js" integrity="sha256-bKnhDFoxsLEDxuIl65L/k5rOFwy/p0A5JCwBvgGgcYk="></script>
+  </body>
+</html>

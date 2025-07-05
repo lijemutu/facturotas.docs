@@ -2,22 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/facturotas.docs/guias/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/guias/</loc>
   </url><url>
-    <loc>http://localhost:1313/facturotas.docs/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/</loc>
   </url><url>
-    <loc>http://localhost:1313/facturotas.docs/api/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/</loc>
   </url><url>
-    <loc>http://localhost:1313/facturotas.docs/api/endpoints_timbrado/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/</loc>
   </url><url>
-    <loc>http://localhost:1313/facturotas.docs/api/schemas/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrado/</loc>
   </url><url>
-    <loc>http://localhost:1313/facturotas.docs/guias/authentication/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbradotfd/</loc>
   </url><url>
-    <loc>http://localhost:1313/facturotas.docs/guias/getting-started/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarjson/</loc>
   </url><url>
-    <loc>http://localhost:1313/facturotas.docs/categories/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarjson2/</loc>
   </url><url>
-    <loc>http://localhost:1313/facturotas.docs/tags/</loc>
+    <loc>https://lijemutu.github.io/facturotas.docs/guias/authentication/</loc>
+  </url><url>
+    <loc>https://lijemutu.github.io/facturotas.docs/guias/getting-started/</loc>
+  </url><url>
+    <loc>https://lijemutu.github.io/facturotas.docs/categories/</loc>
+  </url><url>
+    <loc>https://lijemutu.github.io/facturotas.docs/tags/</loc>
   </url>
 </urlset>

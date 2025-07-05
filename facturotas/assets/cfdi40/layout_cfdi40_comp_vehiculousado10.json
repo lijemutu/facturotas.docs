@@ -1,0 +1,129 @@
+{
+  "Comprobante": {
+    "Version": "4.0",
+    "Serie": "",
+    "Folio": "",
+    "Fecha": "",
+    "FormaPago": "",
+    "NoCertificado": "",
+    "CondicionesDePago": "",
+    "SubTotal": "",
+    "Descuento": "",
+    "Moneda": "",
+    "TipoCambio": "",
+    "Total": "",
+    "TipoDeComprobante": "",
+    "MetodoPago": "",
+    "LugarExpedicion": "",
+    "Confirmacion": "",
+    "CfdiRelacionados": {
+      "TipoRelacion": "",
+      "CfdiRelacionado": [
+        "UUID-1",
+        "UUID-2",
+        "UUID-N"
+      ]
+    },
+    "Emisor": {
+      "Rfc": "",
+      "Nombre": "",
+      "RegimenFiscal": ""
+    },
+    "Receptor": {
+      "Rfc": "",
+      "Nombre": "",
+      "ResidenciaFiscal": "",
+      "NumRegIdTrib": "",
+      "UsoCFDI": ""
+    },
+    "Conceptos": [
+      {
+        "ClaveProdServ": "",
+        "NoIdentificacion": "",
+        "Cantidad": "",
+        "ClaveUnidad": "",
+        "Unidad": "",
+        "Descripcion": "",
+        "ValorUnitario": "",
+        "Importe": "",
+        "Descuento": "",
+        "Impuestos": {
+          "Traslados": [
+            {
+              "Base": "",
+              "Impuesto": "",
+              "TipoFactor": "",
+              "TasaOCuota": "",
+              "Importe": ""
+            }
+          ],
+          "Retenciones": [
+            {
+              "Base": "",
+              "Impuesto": "",
+              "TipoFactor": "",
+              "TasaOCuota": "",
+              "Importe": ""
+            }
+          ]
+        },
+        "InformacionAduanera": [
+          "NumeroPedimento-1",
+          "NumeroPedimento-2",
+          "NumeroPedimento-N"
+        ]
+      }
+    ],
+    "Impuestos": {
+      "TotalImpuestosRetenidos": "",
+      "TotalImpuestosTrasladados": "",
+      "Retenciones": [
+        {
+          "Impuesto": "",
+          "Importe": ""
+        }
+      ],
+      "Traslados": [
+        {
+          "Impuesto": "",
+          "TipoFactor": "",
+          "TasaOCuota": "",
+          "Importe": ""
+        }
+      ]
+    },
+    "Complemento": [
+      {
+        "VehiculoUsado": {
+          "Version": "1.0",
+          "montoAdquisicion": "",
+          "montoEnajenacion": "",
+          "claveVehicular": "",
+          "marca": "",
+          "tipo": "",
+          "modelo": "",
+          "numeroMotor": "",
+          "numeroSerie": "",
+          "NIV": "",
+          "valor": "",
+          "InformacionAduanera": [
+            {
+              "numero": "",
+              "fecha": "",
+              "aduana": ""
+            },
+            {
+              "numero": "",
+              "fecha": "",
+              "aduana": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "CamposPDF": {
+    "tipoComprobante": "",
+    "Comentarios": ""
+  }
+}

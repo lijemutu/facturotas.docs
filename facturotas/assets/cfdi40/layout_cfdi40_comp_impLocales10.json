@@ -1,0 +1,129 @@
+{
+  "Comprobante": {
+    "Version": "4.0",
+    "Serie": "",
+    "Folio": "",
+    "Fecha": "",
+    "FormaPago": "",
+    "NoCertificado": "",
+    "CondicionesDePago": "",
+    "SubTotal": "",
+    "Descuento": "",
+    "Moneda": "",
+    "TipoCambio": "",
+    "Total": "",
+    "TipoDeComprobante": "",
+    "Exportacion": "",
+    "MetodoPago": "",
+    "LugarExpedicion": "",
+    "Confirmacion": "",
+    "InformacionGlobal": {
+      "Periodicidad": "",
+      "Meses": "",
+      "Año": ""
+    },
+    "CfdiRelacionados": {
+      "TipoRelacion": "",
+      "CfdiRelacionado": [
+        "UUID-1",
+        "UUID-2",
+        "UUID-N"
+      ]
+    },
+    "Emisor": {
+      "Rfc": "",
+      "Nombre": "",
+      "RegimenFiscal": "",
+      "FacAtrAdquirente": ""
+    },
+    "Receptor": {
+      "Rfc": "",
+      "Nombre": "",
+      "DomicilioFiscalReceptor": "",
+      "ResidenciaFiscal": "",
+      "NumRegIdTrib": "",
+      "RegimenFiscalReceptor": "",
+      "UsoCFDI": ""
+    },
+    "Conceptos": [
+      {
+        "ClaveProdServ": "",
+        "NoIdentificacion": "",
+        "Cantidad": "",
+        "ClaveUnidad": "",
+        "Unidad": "",
+        "Descripcion": "",
+        "ValorUnitario": "",
+        "Importe": "",
+        "Descuento": "",
+        "ObjetoImp": "",
+        "Impuestos": {
+          "Traslados": [
+            {
+              "Base": "",
+              "Impuesto": "",
+              "TipoFactor": "",
+              "TasaOCuota": "",
+              "Importe": ""
+            }
+          ],
+          "Retenciones": [
+            {
+              "Base": "",
+              "Impuesto": "",
+              "TipoFactor": "",
+              "TasaOCuota": "",
+              "Importe": ""
+            }
+          ]
+        }
+      }
+    ],
+    "Impuestos": {
+      "TotalImpuestosRetenidos": "",
+      "TotalImpuestosTrasladados": "",
+      "Retenciones": [
+        {
+          "Impuesto": "",
+          "Importe": ""
+        }
+      ],
+      "Traslados": [
+        {
+          "Base": "",
+          "Impuesto": "",
+          "TipoFactor": "",
+          "TasaOCuota": "",
+          "Importe": ""
+        }
+      ]
+    },
+    "Complemento": [
+      {
+        "ImpuestosLocales": {
+          "version": "1.0",
+          "TotaldeRetenciones": "",
+          "TotaldeTraslados": "",
+          "RetencionesLocales": [
+            {
+              "ImpLocRetenido": "",
+              "TasadeRetencion": "",
+              "Importe": ""
+            }
+          ],
+          "TrasladosLocales": [
+            {
+              "ImpLocTrasladado": "",
+              "TasadeTraslado": "",
+              "Importe": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "CamposPDF": {
+    "tipoComprobante": "",
+    "Comentarios": ""
+  }
+}

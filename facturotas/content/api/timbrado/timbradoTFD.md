@@ -1,27 +1,23 @@
-# Endpoints Timbrado
-
-Esta sección detalla la operación del servicio de timbrado, permitiendo procesar y obtener el XML timbrado de un Comprobante Fiscal Digital (CFDI).
-
-## timbrar
+# timbrarTFD
 
 ### Descripción de la Operación
 
-Esta operación permite timbrar un (Comprobante Fiscal Digital por Internet) CFDI en sus versiones 3.3 o 4.0 y retornar el XML timbrado completo del comprobante fiscal junto con su folio fiscal UUID y sello digital por el SAT.
+Esta operación permite timbrar un Comprobante Fiscal Digital por Internet (CFDI) en sus versiones 3.3 o 4.0 y, a diferencia de la operación `timbrar`, retorna únicamente el Timbre Fiscal Digital (TFD) como un XML independiente. Esto es útil cuando se necesita solo el TFD para procesos de validación o almacenamiento por separado.
 
 ### Parámetros de Entrada (Input)
 
 | Parámetro | Tipo de Dato | Descripción                                                            |
 | :-------- | :----------- | :--------------------------------------------------------------------- |
-| `apikey`  | `string`     | Credencial de acceso al servicio ([Solicita aquí](../../#Requisitos)). |
-| `xmlCFDI` | `string`     | Contenido del documento XML del CFDI v3.3 o v4.0.                      |
+| `apikey`  | `string`     | Credencial de acceso al servicio ([Solicita aquí](../../../#Requisitos)). |
+| `xmlCFDI` | `string`     | Contenido del documento XML del CFDI v3.3 o v4.0 a timbrar.            |
 
-### Parámetros de Salida (Output) - RespuestaTimbrado
+### Parámetros de Salida (Output) - RespuestaTimbradoTFD
 
-| Atributo  | Tipo de Dato | Descripción                             |
-| :-------- | :----------- | :-------------------------------------- |
-| `code`    | `string`     | Código de respuesta de la operación.    |
-| `message` | `string`     | Mensaje detallado de la respuesta.      |
-| `data`    | `string`     | XML del CFDI timbrado en caso de éxito. |
+| Atributo  | Tipo de Dato | Descripción                                     |
+| :-------- | :----------- | :---------------------------------------------- |
+| `code`    | `string`     | Código de respuesta de la operación.            |
+| `message` | `string`     | Mensaje detallado de la respuesta.              |
+| `data`    | `string`     | XML del Timbre Fiscal Digital (TFD) en caso de éxito. |
 
 ### Ejemplo de Código
 
@@ -45,13 +41,12 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
   ### Implementación
 
   ```csharp
-   /// Agregar los parámetros necesarios
    /// <summary>
    /// Genera un XML de ejemplo para un CFDI 4.0.
    /// En una aplicación real, este XML se construiría dinámicamente.
    /// </summary>
    /// <returns>Un string con el contenido del CFDI.</returns>
-   private static string TimbrarCfdi() => """ 
+   private static string GenerarCfdiParaTimbrar() => """ 
         <?xml version="1.0" encoding="UTF-8"?>
         <cfdi:Comprobante
             xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
@@ -117,27 +112,28 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
         """;
 
    /// <summary>
-   /// Invoca al servicio web para timbrar un CFDI de forma asíncrona.
+   /// Invoca al servicio web para obtener solo el TFD de un CFDI de forma asíncrona.
    /// </summary>
    /// <param name="apiKey">La credencial de acceso al servicio.</param>
    /// <param name="xmlCfdi">El contenido del CFDI a timbrar.</param>
-   /// <returns>Un objeto RespuestaTimbrado con el resultado de la operación.</returns>
-   public async Task<RespuestaTimbrado> TimbrarAsync(string apiKey, string xmlCfdi)
+   /// <returns>Un objeto RespuestaTimbradoTFD con el resultado de la operación.</returns>
+   public async Task<RespuestaTimbradoTFD> TimbrarTFDAsync(string apiKey, string xmlCfdi)
     {
         using var client = new ServicioTimbradoWSPortTypeClient("ServicioTimbradoWSPort");
         
         try
         {            
-            var response = await client.timbrarAsync(apiKey, xmlCfdi);
+            // La operación se llama 'timbrarTFD' en el servicio web
+            var response = await client.timbrarTFDAsync(apiKey, xmlCfdi);
                         
-            return new RespuestaTimbrado
+            return new RespuestaTimbradoTFD
             {
                 Code = response.code,
                 Message = response.message,
-                Data = response.data
+                Data = response.data // Contiene solo el XML del TFD
             };
         }
-        catch (FaultException<RespuestaTimbrado> ex)
+        catch (FaultException<RespuestaTimbradoTFD> ex)
         {
             _logger.LogError(ex, "Error SOAP: {Code} - {Message}", ex.Detail.code, ex.Detail.message);
             throw;
@@ -157,32 +153,32 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
    /// <summary>
    /// Define la estructura del objeto de respuesta para mayor claridad.
    /// </summary>
-   public class RespuestaTimbrado
+   public class RespuestaTimbradoTFD
    {
       public string? Code { get; set; }
       public string? Message { get; set; }
       public string? Data { get; set; }
    }
 
-   // Ejemplo de uso de TimbrarAsync
-   public async Task EjemploUsoTimbrarAsync()
+   // Ejemplo de uso de TimbrarTFDAsync
+   public async Task EjemploUsoTimbrarTFDAsync()
    {
        string apiKey = "TU_API_KEY_AQUI";
-       string xmlCfdi = TimbrarCfdi();
+       string xmlCfdi = GenerarCfdiParaTimbrar();
 
        try
        {
-           var resultado = await TimbrarAsync(apiKey, xmlCfdi);
+           var resultado = await TimbrarTFDAsync(apiKey, xmlCfdi);
            if (resultado.Code == "200")
            {
-               Console.WriteLine("¡Timbrado Exitoso!");
+               Console.WriteLine("¡Timbrado para TFD Exitoso!");
                Console.WriteLine("Mensaje: " + resultado.Message);
-               Console.WriteLine("--- XML Timbrado ---");
+               Console.WriteLine("--- XML del Timbre Fiscal Digital (TFD) ---");
                Console.WriteLine(resultado.Data);
            }
            else
            {
-               Console.WriteLine("Error durante el timbrado:");
+               Console.WriteLine("Error durante el timbrado TFD:");
                Console.WriteLine("Código: " + resultado.Code);
                Console.WriteLine("Mensaje: " + resultado.Message);
            }
@@ -216,14 +212,14 @@ wsimport -keep -p com.facturaloplus.cliente https://dev.facturaloplus.com/ws/ser
 ### Implementación
 
 ```java
-// --- Archivo: RespuestaTimbrado.java ---
+// --- Archivo: RespuestaTimbradoTFD.java ---
 package com.facturaloplus.cliente;
 
-// POJO (Plain Old Java Object) para encapsular la respuesta.
-public class RespuestaTimbrado {
+// POJO para encapsular la respuesta de la operación timbrarTFD.
+public class RespuestaTimbradoTFD {
     private String code;
     private String message;
-    private String data;
+    private String data; // Contendrá el XML del TFD
 
     // Getters y Setters
     public String getCode() { return code; }
@@ -251,15 +247,10 @@ import java.util.logging.Logger;
 public class TimbradoService {
 
     private static final Logger logger = Logger.getLogger(TimbradoService.class.getName());
-    // Se recomienda un ExecutorService para manejar los hilos de las tareas asíncronas.
     private final ExecutorService executor = Executors.newFixedThreadPool(5);
 
     public String generarXmlCfdiEjemplo() {
-        // Usar la fecha y hora actual en formato UTC, requerido por el SAT.
         String fechaActual = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
-
-        // Uso de Text Blocks (Java 15+) para el XML.
-        // Nota: Se agregó ObjetoImp="02" en el concepto, requerido en CFDI 4.0.
         return """
             <?xml version="1.0" encoding="UTF-8"?>
         <cfdi:Comprobante
@@ -326,27 +317,27 @@ public class TimbradoService {
             """.formatted(fechaActual);
     }
 
-    public CompletableFuture<RespuestaTimbrado> timbrarAsync(String apiKey, String xmlCfdi) {
+    public CompletableFuture<RespuestaTimbradoTFD> timbrarTFDAsync(String apiKey, String xmlCfdi) {
         return CompletableFuture.supplyAsync(() -> {
             try {
-                // Las clases ServicioTimbradoWS y ServicioTimbradoWSPortType son generadas por wsimport.
                 ServicioTimbradoWS service = new ServicioTimbradoWS();
                 ServicioTimbradoWSPortType port = service.getServicioTimbradoWSPort();
 
-                logger.info("Iniciando timbrado para CFDI.");
-                Respuesta response = port.timbrar(apiKey, xmlCfdi); // 'Respuesta' es la clase generada por wsimport.
+                logger.info("Iniciando timbrado para obtener TFD.");
+                // La clase 'Respuesta' es generada por wsimport
+                Respuesta response = port.timbrarTFD(apiKey, xmlCfdi); 
 
-                RespuestaTimbrado resultado = new RespuestaTimbrado();
+                RespuestaTimbradoTFD resultado = new RespuestaTimbradoTFD();
                 resultado.setCode(response.getCode());
                 resultado.setMessage(response.getMessage());
                 resultado.setData(response.getData());
                 return resultado;
 
             } catch (SOAPFaultException ex) {
-                logger.log(Level.SEVERE, "Error SOAP (SOAPFaultException): " + ex.getFault().getFaultString(), ex);
+                logger.log(Level.SEVERE, "Error SOAP: " + ex.getFault().getFaultString(), ex);
                 throw new RuntimeException("Error del servicio: " + ex.getFault().getFaultString(), ex);
             } catch (WebServiceException ex) {
-                logger.log(Level.SEVERE, "Error de comunicación con el servicio de timbrado.", ex);
+                logger.log(Level.SEVERE, "Error de comunicación con el servicio.", ex);
                 throw new RuntimeException("Error de comunicación.", ex);
             }
         }, executor);
@@ -365,38 +356,29 @@ import java.util.concurrent.CompletableFuture;
 public class Main {
     public static void main(String[] args) {
         TimbradoService timbradoService = new TimbradoService();
-
-        // El API Key debe obtenerse de una fuente segura, no estar en el código.
         String miApiKey = "TU_API_KEY_AQUI";
         String xmlParaTimbrar = timbradoService.generarXmlCfdiEjemplo();
 
-        System.out.println("--- Intentando timbrar el siguiente CFDI: ---");
-        System.out.println(xmlParaTimbrar);
-        System.out.println("------------------------------------------");
-
-        CompletableFuture<RespuestaTimbrado> future = timbradoService.timbrarAsync(miApiKey, xmlParaTimbrar);
+        CompletableFuture<RespuestaTimbradoTFD> future = timbradoService.timbrarTFDAsync(miApiKey, xmlParaTimbrar);
 
         future.whenComplete((resultado, ex) -> {
             if (ex != null) {
-                System.err.println("\nOcurrió una excepción no controlada: " + ex.getMessage());
+                System.err.println("\nOcurrió una excepción: " + ex.getMessage());
             } else {
                 if ("200".equals(resultado.getCode())) {
-                    System.out.println("\n¡Timbrado Exitoso!");
+                    System.out.println("\n¡Timbrado para TFD Exitoso!");
                     System.out.println("Mensaje: " + resultado.getMessage());
-                    System.out.println("\n--- XML Timbrado ---");
+                    System.out.println("\n--- XML del Timbre Fiscal Digital (TFD) ---");
                     System.out.println(resultado.getData());
                 } else {
-                    System.err.println("\nError durante el timbrado:");
+                    System.err.println("\nError durante el timbrado TFD:");
                     System.err.println("Código: " + resultado.getCode());
                     System.err.println("Mensaje: " + resultado.getMessage());
                 }
             }
-            // Es importante cerrar el ExecutorService cuando la aplicación termina.
             timbradoService.shutdown();
         });
         
-        // Mantiene el programa principal vivo mientras se completa la tarea asíncrona.
-        // En una aplicación real (ej. un servidor de aplicaciones), esto no sería necesario.
         future.join(); 
     }
 }
@@ -405,15 +387,12 @@ public class Main {
   {{< tab >}}
   
 ### Herramienta Zeep
-Para interactuar con servicios SOAP en Python, la librería zeep es una excelente opción. Proporciona una interfaz limpia y moderna.
-
-Instala la librería usando pip:
+Instala la librería `zeep` usando pip:
 ```****
 pip install zeep
 ```
 
 ### Implementación
-El siguiente código muestra una implementación robusta utilizando zeep y asyncio para realizar llamadas asíncronas al servicio web.
 ```python
 # --- Archivo: timbrado_service.py ---
 import asyncio
@@ -424,36 +403,24 @@ from zeep.asyncio import AsyncClient
 from zeep.exceptions import Fault, TransportError
 from dataclasses import dataclass
 
-# Configuración básica de logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 WSDL_URL_DESARROLLO = "https://dev.facturaloplus.com/ws/servicio.do?wsdl"
 
 @dataclass
-class RespuestaTimbrado:
-    """Clase de datos para encapsular la respuesta del servicio."""
+class RespuestaTimbradoTFD:
+    """Clase de datos para encapsular la respuesta del servicio timbrarTFD."""
     code: str = None
     message: str = None
-    data: str = None
+    data: str = None # Contendrá el XML del TFD
 
 class TimbradoService:
-    """Clase que encapsula la lógica para interactuar con el servicio de timbrado."""
-
     def __init__(self, wsdl_url: str):
         self.wsdl_url = wsdl_url
-        # El cliente asíncrono se crea al momento de usarlo
         self.async_client = AsyncClient(self.wsdl_url)
 
     def generar_xml_cfdi_ejemplo(self) -> str:
-        """
-        Genera un XML de ejemplo para un CFDI 4.0.
-        En una aplicación real, este XML se construiría dinámicamente.
-        """
-        # Usar la fecha y hora actual en formato UTC, requerido por el SAT.
         fecha_actual = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S')
-        
-        # Uso de f-strings para formatear el XML.
-        # Nota: Se agregó ObjetoImp="02" en el concepto, requerido en CFDI 4.0.
         return f"""
 <?xml version="1.0" encoding="UTF-8"?>
         <cfdi:Comprobante
@@ -519,55 +486,45 @@ class TimbradoService:
         </cfdi:Comprobante>
 """
 
-    async def timbrar_async(self, api_key: str, xml_cfdi: str) -> RespuestaTimbrado:
-        """Invoca al servicio web para timbrar un CFDI de forma asíncrona."""
+    async def timbrar_tfd_async(self, api_key: str, xml_cfdi: str) -> RespuestaTimbradoTFD:
+        """Invoca al servicio web para obtener solo el TFD de un CFDI."""
         try:
-            logging.info("Iniciando timbrado para CFDI.")
-            # El nombre del servicio 'ServicioTimbradoWSPort' y la operación 'timbrar'
-            # son definidos por el WSDL.
-            response = await self.async_client.service.timbrar(apikey=api_key, xmlCFDI=xml_cfdi)
+            logging.info("Iniciando timbrado para obtener TFD.")
+            response = await self.async_client.service.timbrarTFD(apikey=api_key, xmlCFDI=xml_cfdi)
             
-            # Zeep convierte la respuesta en un objeto similar a un diccionario.
-            return RespuestaTimbrado(
+            return RespuestaTimbradoTFD(
                 code=response.code,
                 message=response.message,
                 data=response.data
             )
         except Fault as ex:
-            logging.error(f"Error SOAP (Fault): Code={ex.code}, Message={ex.message}")
+            logging.error(f"Error SOAP (Fault): {ex.message}")
             raise ConnectionError(f"Error del servicio: {ex.message}") from ex
         except TransportError as ex:
-            logging.error(f"Error de comunicación con el servicio de timbrado: {ex}")
+            logging.error(f"Error de comunicación: {ex}")
             raise
 
 # --- Archivo: main.py (Ejemplo de uso) ---
 async def main():
-    """Función principal para ejecutar el ejemplo."""
     service = TimbradoService(WSDL_URL_DESARROLLO)
-    
-    # El API Key debe obtenerse de una fuente segura, no estar en el código.
     mi_api_key = "TU_API_KEY_AQUI"
     xml_para_timbrar = service.generar_xml_cfdi_ejemplo()
 
-    print("--- Intentando timbrar el siguiente CFDI: ---")
-    print(xml_para_timbrar)
-    print("------------------------------------------")
-
     try:
-        resultado = await service.timbrar_async(mi_api_key, xml_para_timbrar)
+        resultado = await service.timbrar_tfd_async(mi_api_key, xml_para_timbrar)
         
         if resultado.code == "200":
-            print("\033[92m\n¡Timbrado Exitoso!\033[0m") # Color verde
+            print("\033[92m\n¡Timbrado para TFD Exitoso!\033[0m")
             print(f"Mensaje: {resultado.message}")
-            print("\n--- XML Timbrado ---")
+            print("\n--- XML del Timbre Fiscal Digital (TFD) ---")
             print(resultado.data)
         else:
-            print("\033[91m\nError durante el timbrado:\033[0m") # Color rojo
+            print(f"\033[91m\nError durante el timbrado TFD:\033[0m")
             print(f"Código: {resultado.code}")
             print(f"Mensaje: {resultado.message}")
 
     except Exception as ex:
-        print(f"\033[91m\nOcurrió una excepción no controlada: {ex}\033[0m")
+        print(f"\033[91m\nOcurrió una excepción: {ex}\033[0m")
 
 if __name__ == "__main__":
     asyncio.run(main())
@@ -577,31 +534,22 @@ if __name__ == "__main__":
   {{< tab >}}
   
 ### Herramienta SoapClient
-PHP tiene soporte nativo para SOAP a través de la extensión SOAP. Asegúrate de que la extensión php-soap esté habilitada en tu archivo php.ini.
+Asegúrate de que la extensión `php-soap` esté habilitada en tu `php.ini`.
 
 ### Implementación 
-El siguiente código muestra una implementación orientada a objetos para consumir el servicio de timbrado.
-
 ```php
 <?php
-// --- Archivo: Timbrado.php ---
+// --- Archivo: TimbradoTFD.php ---
 
-// Habilitar la visualización de errores para depuración
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-/**
- * Clase DTO (Data Transfer Object) para encapsular la respuesta del servicio.
- */
-class RespuestaTimbrado {
+class RespuestaTimbradoTFD {
     public ?string $code = null;
     public ?string $message = null;
-    public ?string $data = null;
+    public ?string $data = null; // Contendrá el XML del TFD
 }
 
-/**
- * Clase que encapsula la lógica para interactuar con el servicio de timbrado.
- */
 class TimbradoService {
     private string $wsdlUrl;
 
@@ -609,14 +557,8 @@ class TimbradoService {
         $this->wsdlUrl = $wsdlUrl;
     }
 
-    /**
-     * Genera un XML de ejemplo para un CFDI 4.0.
-     */
     public function generarXmlCfdiEjemplo(): string {
-        // Usar la fecha y hora actual en formato UTC, requerido por el SAT.
         $fechaActual = gmdate('Y-m-d\TH:i:s');
-
-        // Nota: Se agregó ObjetoImp="02" en el concepto, requerido en CFDI 4.0.
         return <<<XML
 <?xml version="1.0" encoding="UTF-8"?>
         <cfdi:Comprobante
@@ -683,46 +625,34 @@ class TimbradoService {
 XML;
     }
 
-    /**
-     * Invoca al servicio web para timbrar un CFDI.
-     */
-    public function timbrar(string $apiKey, string $xmlCfdi): RespuestaTimbrado {
-        $respuesta = new RespuestaTimbrado();
+    public function timbrarTFD(string $apiKey, string $xmlCfdi): RespuestaTimbradoTFD {
+        $respuesta = new RespuestaTimbradoTFD();
         
         try {
-            // Opciones para el cliente SOAP. 'trace' es útil para depurar.
             $options = [
                 'trace' => 1,
-                'exceptions' => true, // Lanza SoapFault en caso de error
+                'exceptions' => true,
                 'cache_wsdl' => WSDL_CACHE_NONE
             ];
 
-            // Crear el cliente SOAP
             $soapClient = new SoapClient($this->wsdlUrl, $options);
             
-            // Los parámetros deben estar en un array asociativo
             $params = [
                 'apikey'  => $apiKey,
                 'xmlCFDI' => $xmlCfdi
             ];
             
-            // Llamar a la operación 'timbrar' del servicio
-            $response = $soapClient->timbrar($params);
+            // Llamar a la operación 'timbrarTFD'
+            $response = $soapClient->timbrarTFD($params);
             
             $respuesta->code = $response->return->code ?? null;
             $respuesta->message = $response->return->message ?? null;
             $respuesta->data = $response->return->data ?? null;
 
         } catch (SoapFault $e) {
-            // Capturar errores específicos de SOAP
-            error_log("Error SOAP (SoapFault): " . $e->getMessage());
+            error_log("Error SOAP: " . $e->getMessage());
             $respuesta->code = "FAULT";
             $respuesta->message = "Error en la comunicación SOAP: " . $e->getMessage();
-        } catch (Exception $e) {
-            // Capturar otros errores
-            error_log("Error general: " . $e->getMessage());
-            $respuesta->code = "EXCEPTION";
-            $respuesta->message = "Ocurrió una excepción: " . $e->getMessage();
         }
         
         return $respuesta;
@@ -730,33 +660,25 @@ XML;
 }
 
 // --- Archivo: index.php (Ejemplo de uso) ---
-
-// Incluir la clase del servicio
-// require_once 'Timbrado.php';
+// require_once 'TimbradoTFD.php';
 
 $wsdlDesarrollo = "https://dev.facturaloplus.com/ws/servicio.do?wsdl";
 $timbradoService = new TimbradoService($wsdlDesarrollo);
 
-// El API Key debe obtenerse de una fuente segura, como una variable de entorno.
 $miApiKey = getenv('TIMBRADO_API_KEY') ?: "TU_API_KEY_AQUI";
 $xmlParaTimbrar = $timbradoService->generarXmlCfdiEjemplo();
 
-// Imprimir en formato de texto plano para una mejor visualización en consola o web
 header('Content-Type: text/plain; charset=utf-8');
 
-echo "--- Intentando timbrar el siguiente CFDI: ---\n";
-echo $xmlParaTimbrar;
-echo "\n------------------------------------------\n\n";
-
-$resultado = $timbradoService->timbrar($miApiKey, $xmlParaTimbrar);
+$resultado = $timbradoService->timbrarTFD($miApiKey, $xmlParaTimbrar);
 
 if ($resultado->code === '200') {
-    echo "¡Timbrado Exitoso!\n";
+    echo "¡Timbrado para TFD Exitoso!\n";
     echo "Mensaje: {$resultado->message}\n";
-    echo "\n--- XML Timbrado ---\n";
+    echo "\n--- XML del Timbre Fiscal Digital (TFD) ---\n";
     echo $resultado->data;
 } else {
-    echo "Error durante el timbrado:\n";
+    echo "Error durante el timbrado TFD:\n";
     echo "Código: {$resultado->code}\n";
     echo "Mensaje: {$resultado->message}\n";
 }
@@ -769,3 +691,28 @@ if ($resultado->code === '200') {
 
 #### Respuesta (Response)
 
+El campo `data` contendrá únicamente el XML del Timbre Fiscal Digital (TFD).
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-
+instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+xmlns:tns="urn:ws_api">
+   <SOAP-ENV:Body>
+      <ns1:timbrarTFDResponse xmlns:ns1="urn:ws_api">
+         <return xsi:type="tns:RespuestaTimbrado">
+            <code xsi:type="xsd:string">CÓDIGO</code>
+            <message xsi:type="xsd:string">MENSAJE</message>
+            <data xsi:type="xsd:string">
+              <![CDATA[CFDI TIMBRADO]]>
+            </data>
+         </return>
+      </ns1:timbrarTFDResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
+
+##### Códigos de respuesta
+{{< codigos-timbrado >}}
