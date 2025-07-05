@@ -11,7 +11,7 @@ Esta operación facilita la creación de un CFDI (versiones 3.3 o 4.0) a partir 
 | Parámetro | Tipo de Dato | Descripción                                                                                                |
 | :-------- | :----------- | :--------------------------------------------------------------------------------------------------------- |
 | `apikey`  | `string`     | Credencial de acceso al servicio ([Solicita aquí](../../../#Requisitos)).                                      |
-| `jsonB64` | `string`     | Cadena en formato Base64 que contiene el layout JSON con la información del CFDI a generar (ver estructura abajo). |
+| `jsonB64` | `string`     | Cadena en formato Base64 que contiene el layout JSON con la información del CFDI a generar (ver estructura abajo). [Conversor Base 64](../../../herramientas/convertidorBase64) |
 | `keyPEM`  | `string`     | Contenido del archivo de la llave privada (`.key`) en formato PEM.                                         |
 | `cerPEM`  | `string`     | Contenido del archivo del certificado de llave pública (`.cer`) en formato PEM.                              |
 
@@ -27,7 +27,7 @@ La respuesta de esta operación es idéntica a la de la operación `timbrar`.
 
 ### Estructura del JSON de Entrada
 
-El JSON enviado en el parámetro `jsonB64` debe seguir la siguiente estructura. Los valores vacíos deben enviarse como `""`.
+El JSON enviado en el parámetro `jsonB64` debe seguir la siguiente estructura. Los valores vacíos deben enviarse como `""`. [Conversor Base 64](../../../herramientas/convertidorBase64)
 
 ```json
 {

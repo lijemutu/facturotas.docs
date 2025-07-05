@@ -1,0 +1,104 @@
+<style>
+.converter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.converter-column {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+.converter-column label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.converter-column textarea {
+  width: 100%;
+  height: 300px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+.converter-controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.converter-controls button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.converter-controls button:hover {
+    background-color: #0056b3;
+}
+</style>
+
+<div class="converter-container">
+  <div class="converter-column">
+    <label for="main-b64-input">Texto de Entrada</label>
+    <textarea id="main-b64-input" placeholder="Escribe o pega aquí el texto a codificar..."></textarea>
+  </div>
+  <div class="converter-column">
+    <label for="main-b64-output">Salida en Base64</label>
+    <textarea id="main-b64-output" readonly placeholder="Resultado en Base64..."></textarea>
+  </div>
+</div>
+<div class="converter-controls">
+  <button id="main-b64-copy-btn">Copiar al Portapapeles</button>
+  <button id="main-b64-clear-btn">Limpiar</button>
+</div>
+
+<script>
+  (function() {
+    const input = document.getElementById('main-b64-input');
+    const output = document.getElementById('main-b64-output');
+    const copyBtn = document.getElementById('main-b64-copy-btn');
+    const clearBtn = document.getElementById('main-b64-clear-btn');
+
+    if (!input || !output || !copyBtn || !clearBtn) {
+      return;
+    }
+
+    const encodeText = () => {
+      try {
+        output.value = btoa(input.value);
+      } catch (e) {
+        output.value = 'Error: Caracteres no válidos para btoa.';
+      }
+    };
+
+    input.addEventListener('input', encodeText);
+
+    copyBtn.addEventListener('click', () => {
+      if (output.value) {
+        navigator.clipboard.writeText(output.value).then(() => {
+          const originalText = copyBtn.textContent;
+          copyBtn.textContent = '¡Copiado!';
+          setTimeout(() => {
+            copyBtn.textContent = originalText;
+          }, 2000);
+        });
+      }
+    });
+
+    clearBtn.addEventListener('click', () => {
+        input.value = '';
+        output.value = '';
+    });
+  })();
+</script>
