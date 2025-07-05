@@ -1,0 +1,16 @@
+COMPROBANTE|Version|Serie|Folio|Fecha|FormaPago|NoCertificado|CondicionesDePago|SubTotal|Descuento|Moneda|TipoCambio|Total|TipoDeComprobante|MetodoPago|LugarExpedicion|Confirmacion|
+CFDIRELACIONADOS|numeroCfdiRelacionados|TipoRelacion|
+CFDIRELACIONADO|UUID-1|UUID-2|...|UUID-N|
+EMISOR|Rfc|Nombre|RegimenFiscal|
+RECEPTOR|Rfc|Nombre|ResidenciaFiscal|NumRegIdTrib|UsoCFDI|
+CONCEPTOS|numeroConceptos|
+	CONCEPTO|ClaveProdServ|NoIdentificacion|Cantidad|ClaveUnidad|Unidad|Descripcion|ValorUnitario|Importe|Descuento|NumeroPedimento|CuentaPredial|
+		IMPUESTOSCONCEPTO|numeroTraslados|numeroRetenciones|
+		TRASLADOCONCEPTO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+		RETENCIONCONCEPTO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+IMPUESTOS|numeroTraslados|numeroRetenciones|TotalImpuestosRetenidos|TotalImpuestosTrasladados|
+	RETENCION|Impuesto|Importe|
+	TRASLADO|Impuesto|TipoFactor|TasaOCuota|Importe|
+CORREO|N|correo1|correo2|...|correoN|
+CAMPOS_EXTRA|numeroCamposExtra|
+	CAMPO_EXTRA|llave|valor|descripcion|

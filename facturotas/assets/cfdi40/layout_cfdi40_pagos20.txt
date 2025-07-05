@@ -1,0 +1,34 @@
+COMPROBANTE|4.0|Serie|Folio|Fecha|FormaPago|NoCertificado|CondicionesDePago|SubTotal|Descuento|Moneda|TipoCambio|Total|TipoDeComprobante|Exportacion|MetodoPago|LugarExpedicion|Confirmacion|
+INFORMACIONGLOBAL|Periodicidad|Meses|Año|
+CFDIRELACIONADOS|numeroCfdiRelacionados|TipoRelacion|
+CFDIRELACIONADO|UUID-1|UUID-2|...|UUID-N|
+EMISOR|Rfc|Nombre|RegimenFiscal|FacAtrAdquirente|
+RECEPTOR|Rfc|Nombre|DomicilioFiscalReceptor|ResidenciaFiscal|NumRegIdTrib|RegimenFiscalReceptor|UsoCFDI|
+CONCEPTOS|numeroConceptos|
+	CONCEPTO|ClaveProdServ|NoIdentificacion|Cantidad|ClaveUnidad|Unidad|Descripcion|ValorUnitario|Importe|Descuento|ObjetoImp|
+		IMPUESTOSCONCEPTO|numeroTraslados|numeroRetenciones|
+			TRASLADOCONCEPTO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+			RETENCIONCONCEPTO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+		ACUENTATERCEROS|RfcACuentaTerceros|NombreACuentaTerceros|RegimenFiscalACuentaTerceros|DomicilioFiscalACuentaTerceros|
+		INFORMACIONADUANERA|numeroNumerosPedimento|
+			NUMEROSPEDIMENTO|pedimento-1|pedimento-2|...|pedimento-N|
+		CUENTAPREDIAL|numeroNumeros|
+			NUMEROS|numero-1|numero-2|...|numero-N|
+IMPUESTOS|numeroTraslados|numeroRetenciones|TotalImpuestosTrasladados|TotalImpuestosRetenidos|
+	TRASLADO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+	RETENCION|Impuesto|Importe|
+COMPLEMENTO|Pagos|2.0|
+COMPLEMENTO|Pagos|TOTALES|<TotalRetencionesIVA>|<TotalRetencionesISR>|<TotalRetencionesIEPS>|<TotalTrasladosBaseIVA16>|<TotalTrasladosImpuestoIVA16>|<TotalTrasladosBaseIVA8>|<TotalTrasladosImpuestoIVA8>|<TotalTrasladosBaseIVA0>|<TotalTrasladosImpuestoIVA0>|<TotalTrasladosBaseIVAExento>|<MontoTotalPagos>|
+COMPLEMENTO|Pagos|PAGOS|<numero_pagos>|
+	COMPLEMENTO|Pagos|PAGO|<FechaPago>|<FormaDePagoP>|<MonedaP>|<TipoCambioP>|<Monto>|<NumOperacion>|<RfcEmisorCtaOrd>|<NomBancoOrdExt>|<CtaOrdenante>|<RfcEmisorCtaBen>|<CtaBeneficiario>|<TipoCadPago>|<CertPago>|<CadPago>|<SelloPago>|
+		COMPLEMENTO|Pagos|DOCUMENTORELACIONADOS|<numero_documentorelacionados>|
+			COMPLEMENTO|Pagos|DOCUMENTORELACIONADO|<IdDocumento>|<Serie>|<Folio>|<MonedaDR>|<EquivalenciaDR>|<NumParcialidad>|<ImpSaldoAnt>|<ImpPagado>|<ImpSaldoInsoluto>|<ObjetoImpDR>|
+			COMPLEMENTO|Pagos|IMPUESTOSDR|<numero_retencionesdr>|<numero_trasladosdr>|
+				COMPLEMENTO|Pagos|RETENCIONDR|<BaseDR>|<ImpuestoDR>|<TipoFactorDR>|<TasaOCuotaDR>|<ImporteDR>|
+				COMPLEMENTO|Pagos|TRASLADODR|<BaseDR>|<ImpuestoDR>|<TipoFactorDR>|<TasaOCuotaDR>|<ImporteDR>|
+		COMPLEMENTO|Pagos|IMPUESTOSP|<numero_retencionesp>|<numero_trasladosp>|
+			COMPLEMENTO|Pagos|RETENCIONP|<ImpuestoP>|<ImporteP>|
+			COMPLEMENTO|Pagos|TRASLADOP|<BaseP>|<ImpuestoP>|<TipoFactorP>|<TasaOCuotaP>|<ImporteP>|
+CORREO|correo1|correo2|...|correoN|
+CAMPOS_EXTRA|numeroCamposExtra|
+	CAMPO_EXTRA|llave|valor|descripcion|

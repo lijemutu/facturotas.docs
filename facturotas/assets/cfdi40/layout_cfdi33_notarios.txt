@@ -1,0 +1,41 @@
+COMPROBANTE|Version|Serie|Folio|Fecha|FormaPago|NoCertificado|CondicionesDePago|SubTotal|Descuento|Moneda|TipoCambio|Total|TipoDeComprobante|MetodoPago|LugarExpedicion|Confirmacion|
+CFDIRELACIONADOS|numeroCfdiRelacionados|TipoRelacion|
+CFDIRELACIONADO|UUID-1|UUID-2|...|UUID-N|
+EMISOR|Rfc|Nombre|RegimenFiscal|
+RECEPTOR|Rfc|Nombre|ResidenciaFiscal|NumRegIdTrib|UsoCFDI|
+CONCEPTOS|numeroConceptos|
+	CONCEPTO|ClaveProdServ|NoIdentificacion|Cantidad|ClaveUnidad|Unidad|Descripcion|ValorUnitario|Importe|Descuento|NumeroPedimento|CuentaPredial|
+		IMPUESTOSCONCPETO|numeroTraslados|numeroRetenciones|
+		TRASLADOCONCPETO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+		RETENCIONCONCPETO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+IMPUESTOS|numeroTraslados|numeroRetenciones|TotalImpuestosTrasladados|TotalImpuestosRetenidos|
+	TRASLADO|Impuesto|TipoFactor|TasaOCuota|Importe|
+	RETENCION|Impuesto|Importe|
+NOTARIOS
+	Version*
+	DESCINMUEBLES
+		Numero_DescInmuebles
+		CALLE*|NUM_EXTERIOR|NUM_INTERIOR|COLONIA|LOCALIDAD|REFERENCIA|MUNICIPIO*|ESTADO*|PAIS*|CODIGO_POSTAL*|
+	DATOSOPERACION
+		NumInstrumentoNotarial*|FechaInstNotarial*|Subtotal*|IVA*|
+	DATOSNOTARIO
+		CURP*|NUM_NOTARIA*|ENTIDAD_FEDERATIVA*|ADSCRIPCION|
+	DatosEnajenante
+		CoproSocConyugalE*
+	DatosUnEnajenante
+		NUMERO_UN_ENAJENANTE*
+		NOMBRE*|APELLIDO_PATERNO*|APELLIDO_MATERNO|RFC*|CURP*|
+	DatosEnajenantesCopSC
+		NUMERO_ENAJENANTES_COP_SC*
+		NOMBRE*|APELLIDO_PATERNO*|APELLIDO_MATERNO|RFC*|CURP*|PORCENTAJE*|
+	DatosAdquiriente
+		CoproSocConyugalE*
+	DatosUnAdquiriente
+		NUMERO_UN_Adquiriente
+		NOMBRE*|APELLIDO_PATERNO*|APELLIDO_MATERNO|RFC*|CURP*|
+	DatosAdquirientesCopSC
+		NUMERO_ADQUIRIENTES_COP_SC*
+		NOMBRE*|APELLIDO_PATERNO*|APELLIDO_MATERNO|RFC*|CURP*|PORCENTAJE*|
+CORREO|correo1|correo2|...|correoN|
+CAMPOS_EXTRA|numeroCamposExtra|
+	CAMPO_EXTRA|llave|valor|descripcion|

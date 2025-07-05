@@ -1,0 +1,37 @@
+COMPROBANTE|Version|Serie|Folio|Fecha|FormaPago|NoCertificado|CondicionesDePago|SubTotal|Descuento|Moneda|TipoCambio|Total|TipoDeComprobante|MetodoPago|LugarExpedicion|Confirmacion|
+CFDIRELACIONADOS|numeroCfdiRelacionados|TipoRelacion|
+CFDIRELACIONADO|UUID-1|UUID-2|...|UUID-N|
+EMISOR|Rfc|Nombre|RegimenFiscal|
+RECEPTOR|Rfc|Nombre|ResidenciaFiscal|NumRegIdTrib|UsoCFDI|
+CONCEPTOS|numeroConceptos|
+	CONCEPTO|ClaveProdServ|NoIdentificacion|Cantidad|ClaveUnidad|Unidad|Descripcion|ValorUnitario|Importe|Descuento|NumeroPedimento|CuentaPredial|
+		IMPUESTOSCONCPETO|numeroTraslados|numeroRetenciones|
+		TRASLADOCONCPETO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+		RETENCIONCONCPETO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+IMPUESTOS|numeroTraslados|numeroRetenciones|TotalImpuestosTrasladados|TotalImpuestosRetenidos|
+	TRASLADO|Impuesto|TipoFactor|TasaOCuota|Importe|
+	RETENCION|Impuesto|Importe|
+NOMINA|1.2|TipoNomina*|FechaPago*|FechaInicialPago*|FechaFinalPago*|NumDiasPagado*|TotalPercepciones|TotalDeducciones|TotalOtrosPagos|
+	EMISOR|Curp|RegistroPatronal|RfcPatronOrigen|
+		ENTIDADSNCF|OrigenRecurso*|MontoRecursoPropio|
+	RECEPTOR|Curp*|NumSeguridadSocial|FechaInicioRelLaboralt|Antigüedad|TipoContrato*|Sindicalizado|TipoJornada|TipoRegimen*|NumEmpleado*|Departamento|Puesto|RiesgoPuesto|PeriodicidadPago*|Banco|CuentaBancaria|SalarioBaseCotApor|SalarioDiarioIntegrado|ClaveEntFed*|
+	SUBCONTRATACION|RfcLabora*|PorcentajeTiempo*|
+	PERCEPCIONES|Numero_Percepciones*|
+		TOTALES_PERCEPCIONES|TotalSueldos|TotalSeparacionIndemnizacion|TotalJubilacionPensionRetiro|TotalGravado*|TotalExento*|
+		PERCEPCION|TipoPercepcion*|Clave*|Concepto*|ImporteGravado*|ImporteExento*|ExisteAccionesOTitulos*|ExisteHorasExtra*|
+	ACCIONESOTITULOS (opcional)|ValorMercado*|PrecioAlOtorgarse*|
+	HORASEXTRA (opcional)|Dias*|TipoHoras*|HorasExtra*|ImportePagado*|
+	JUBILACIONPENSIONRETIRO (opcional)|TotalUnaExhibicion|TotalParcialidad|MontoDiario|IngresoAcumulable|IngresoNoAcumulable|
+	SEPARACIONINDEMNIZACION (opcional)|TotalPagado|NumAñosServicio|UltimoSueldoMensOrd|IngresoAcumulable|IngresoNoAcumulable|
+	DEDUCCIONES|Numero_Deducciones*|
+		TOTALES_DEDUCCIONES|TotalOtrasDeducciones001*|TotalOtrasDeducciones002*|
+		DEDUCCION|Tipo_De_Deduccion*|Clave*|Concepto_Deduccion*|Importe*|
+	INCAPACIDADES|Numero_Incapacidades*|
+		INCAPACIDAD|Dias_De_Incapacidad*|Tipo_Incapacidad*|ImporteMonetario*|
+	OTROPAGOS|Numero_OtroPago*|
+		OTROPAGO|TipoOtroPago*|Clave*|Concepto*|Importe*|SubsidioAlEmpleo*|CompensacionSaldosAFavor*|
+	SUBSIDIOALEMPLEO (opcional)|SubsidioCausado*|
+	COMPENSACIONSALDOSAFAVOR (opcional)|SaldoAFavor*|Año*|RemanenteSalFav*|
+CORREO|N|correo1|correo2|...|correoN|
+CAMPOS EXTRA|TotalCamposExtra|
+	CAMPOEXTRA|nombre_campo1|valor1|valor2|valor3|

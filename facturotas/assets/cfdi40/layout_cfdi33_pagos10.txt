@@ -1,0 +1,25 @@
+COMPROBANTE|Version|Serie|Folio|Fecha|FormaPago|NoCertificado|CondicionesDePago|SubTotal|Descuento|Moneda|TipoCambio|Total|TipoDeComprobante|MetodoPago|LugarExpedicion|Confirmacion|
+CFDIRELACIONADOS|numeroCfdiRelacionados|TipoRelacion|
+CFDIRELACIONADO|UUID-1|UUID-2|...|UUID-N|
+EMISOR|Rfc|Nombre|RegimenFiscal|
+RECEPTOR|Rfc|Nombre|ResidenciaFiscal|NumRegIdTrib|UsoCFDI|
+CONCEPTOS|numeroConceptos|
+	CONCEPTO|ClaveProdServ|NoIdentificacion|Cantidad|ClaveUnidad|Unidad|Descripcion|ValorUnitario|Importe|Descuento|NumeroPedimento|CuentaPredial|
+		IMPUESTOSCONCPETO|numeroTraslados|numeroRetenciones|
+		TRASLADOCONCPETO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+		RETENCIONCONCPETO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+IMPUESTOS|numeroTraslados|numeroRetenciones|TotalImpuestosTrasladados|TotalImpuestosRetenidos|
+	TRASLADO|Impuesto|TipoFactor|TasaOCuota|Importe|
+	RETENCION|Impuesto|Importe|
+CORREO|N|correo1|correo2|...|correoN|
+CAMPOS_EXTRA|numeroCamposExtra|
+	CAMPO_EXTRA|llave|valor|descripcion|
+COMPLEMENTO|Pagos|PAGO|<FechaPago>|<FormaDePagoP>|<MonedaP>|<TipoCambioP>|<Monto>|<NumOperacion>|<RfcEmisorCtaOrd>|<NomBancoOrdExt>|<CtaOrdenante>|<RfcEmisorCtaBen>|<CtaBeneficiario>|<TipoCadPago>|<CertPago>|<CadPago>|<SelloPago>
+COMPLEMENTO|Pagos|DOCUMENTORELACIONADOS
+COMPLEMENTO|Pagos|DOCUMENTORELACIONADO|<IdDocumento>|<Serie>|<Folio>|<MonedaDR>|<TipoCambioDR>|<MetodoDePagoDR>|<NumParcialidad>|<ImpSaldoAnt>|<ImpPagado>|<ImpSaldoInsoluto>
+COMPLEMENTO|Pagos|IMPUESTOS
+COMPLEMENTO|Pagos|IMPUESTO|<TotalImpuestosRetenidos>|<TotalImpuestosTrasladados>
+COMPLEMENTO|Pagos|RETENCIONES
+COMPLEMENTO|Pagos|RETENCION|<Impuesto>|<Importe>
+COMPLEMENTO|Pagos|TRASLADOS
+COMPLEMENTO|Pagos|TRASLADO|<Impuesto>|<TipoFactor>|<TasaOCuota>|<Importe>
