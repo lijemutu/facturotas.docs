@@ -1,0 +1,134 @@
+<p>
+  Los códigos de respuesta para el timbrado de CFDI son importantes para entender el resultado de la solicitud. A continuación se detallan los códigos más comunes que puedes recibir al realizar una solicitud de timbrado a través de la API.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Descripción</th>
+      <th>Detalle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>200</td>
+      <td>UUID Cancelado exitosamente</td>
+      <td>Se considera una solicitud de cancelación exitosa , sin embargo esto no asegura su cancelación</td>
+    </tr>
+    <tr>
+      <td>202</td>
+      <td>UUID Previamente cancelado</td>
+      <td>Se considera previamente cancelado. Estatus cancelado ante el SAT</td>
+    </tr>
+    <tr>
+      <td>203</td>
+      <td>UUID No corresponde el RFC del emisor y de quien solicita la cancelación</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>205</td>
+      <td>No existe</td>
+      <td>El SAT da una prórroga de 72 hrs para que el comprobante aparezca con estatus Vigente posterior al envío por parte del proovedor de Certificación de CFDI. Puede que algunos comprobantes no aparezcan al momento, es necesario esperar por lo menos 72 hrs</td>
+    </tr>
+    <tr>
+      <td>CA 1000</td>
+      <td>CA 1000 - El xml proporcionado está mal formado o es inválido</td>
+      <td>El comprobante no corresponde a la estructura de un XML o tiene mal la estructura</td>
+    </tr>
+    <tr>
+      <td>CA 2000</td>
+      <td>CA 2000 - No fue posible cancelar el CFDI, en estos momentos existe una intermitencia en el servicio de cancelación del SAT, por favor inente más tarde, el error que regresa el SAT es:</td>
+      <td>Adicional al mensaje se agregara el mensaje generado por el servicio SAT</td>
+    </tr>
+    <tr>
+      <td>CA 2100</td>
+      <td>CA 2100 - No fue posible cancelar el CFDI, por favor intentelo más tarde, si el problema persiste contacte a soporte técnico.</td>
+      <td>Hubo una intermitencia con el servicio del SAT y/o servicio, por favor intentelo más tarde.</td>
+    </tr>
+    <tr>
+      <td>CA 3000</td>
+      <td>CA 2300 - No fue posible cancelar el CFDI, por favor intentelo más tarde, si el problema persiste contacte a soporte técnico</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA203</td>
+      <td>CA203 - El UUID tiene un fallo correspondiente al emisor</td>
+      <td>Acuse con error en Folio 203</td>
+    </tr>
+    <tr>
+      <td>CA204</td>
+      <td>CA204 - El SAT no ve que el UUID sea aplicable para cancelación</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CA205</td>
+      <td>CA205 - El UUID no existe</td>
+      <td>Acuse con error en folio 205</td>
+    </tr>
+    <tr>
+      <td>CA300</td>
+      <td>CA300 - La autenticación es incorrecta</td>
+      <td>El comprobante está mal formado, verifique los esquemas del comprobante</td>
+    </tr>
+    <tr>
+      <td>CA301</td>
+      <td>CA301 - El XML está mal formado o es incorrecto</td>
+      <td>El comprobante está mal formado, verifique los esquemas del comprobante</td>
+    </tr>
+    <tr>
+      <td>CA302</td>
+      <td>CA302 - Sello mal formado o inválido</td>
+      <td>El sello no es válido o fue alterado</td>
+    </tr>
+    <tr>
+      <td>CA303</td>
+      <td>CA303 - Sello no corresponde a emisor o caduco</td>
+      <td>El sello no fue generado con el certificado del emisor del comprobante</td>
+    </tr>
+    <tr>
+      <td>CA304</td>
+      <td>CA304 - Certificado revocado o caduco</td>
+      <td>El certificado con el que se emitió el comprobante fue revocado o se encuentra caduco</td>
+    </tr>
+    <tr>
+      <td>CA305</td>
+      <td>CA305 - La fecha de emisión no está dentro de la vigencia del CSD del Emisor</td>
+      <td>La fecha de emisión del comprobante no se encuentra dentro de la vigencia del certificado con cual fue sellado</td>
+    </tr>
+    <tr>
+      <td>CA306</td>
+      <td>CA306 - El certificado no es de tipo CSD</td>
+      <td>Los comprobantes únicamente se pueden emitir y timbrar usando CSD</td>
+    </tr>
+    <tr>
+      <td>CA307</td>
+      <td>CA307 - El CFDI contiene un timbre previo</td>
+      <td>El comprobante ya cuenta con un complemento TFD</td>
+    </tr>
+    <tr>
+      <td>CA308</td>
+      <td>CA308 - Certificado no expedido por el SAT</td>
+      <td>El certificado que se utiliza para timbrar no fue generado por el SAT</td>
+    </tr>
+    <tr>
+      <td>CA309</td>
+      <td>CA309 - No existe cancelación que corresponda con el ID proporcionado</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CASD</td>
+      <td>CASD - Acuse sin descripción específica</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CACFDI33</td>
+      <td>CACFDI33 - Problemas con los campos</td>
+      <td>El error puede ser generado por varias opciones: Se está usando un Certificado FIEL en lugar de CSD, No se están enviando todos los campos necesarios.</td>
+    </tr>
+    <tr>
+      <td>300</td>
+      <td>API KEY Inválida o inexistente</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
