@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en"><head><script src="/facturotas.docs/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=facturotas.docs/livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/facturotas.docs/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/facturotas.docs/favicon.svg" type="image/svg+xml" />
 <link rel="icon" href="/facturotas.docs/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
@@ -10,84 +10,28 @@
 <link rel="icon" href="/facturotas.docs/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/facturotas.docs/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/facturotas.docs/site.webmanifest" rel="manifest" />
-<title>Facturotas</title>
-  <meta name="description" content="timbrarRetencionTFDDescripción de la Operación Esta operación permite timbrar un Comprobante Fiscal de Retenciones e Información de Pagos y, a diferencia de la operación timbrarRetencion, retorna únicamente el Timbre Fiscal Digital (TFD) como un XML independiente. Esto es útil cuando se necesita solo el TFD para procesos de validación o almacenamiento por separado.
-Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey string Credencial de acceso al servicio (Solicita aquí). xml string Contenido del documento XML de la constancia de retenciones a timbrar. Parámetros de Salida (Output) - RespuestaTimbradoTFD Atributo Tipo de Dato Descripción code string Código de respuesta de la operación. message string Mensaje detallado de la respuesta. data string XML del Timbre Fiscal Digital (TFD) en caso de éxito. Ejemplo de Código A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta." /><link rel="canonical" href="https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarretenciontfd/" itemprop="url" />
+<title>consultarEstadoSAT – Facturotas</title>
+  <meta name="description" content="Consulta el estado de un CFDI en el SAT." /><link rel="canonical" href="http://localhost:1313/facturotas.docs/api/cancelar/consultarestadosat/" itemprop="url" />
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="timbrarRetencionTFDDescripción de la Operación
-    Esta operación permite timbrar un Comprobante Fiscal de Retenciones e Información de Pagos y, a diferencia de la operación timbrarRetencion, retorna únicamente el Timbre Fiscal Digital (TFD) como un XML independiente. Esto es útil cuando se necesita solo el TFD para procesos de validación o almacenamiento por separado.
-Parámetros de Entrada (Input)
-    
-  
-      
-          Parámetro
-          Tipo de Dato
-          Descripción
-      
-  
-  
-      
-          apikey
-          string
-          Credencial de acceso al servicio (Solicita aquí).
-      
-      
-          xml
-          string
-          Contenido del documento XML de la constancia de retenciones a timbrar.
-      
-  
-
-Parámetros de Salida (Output) - RespuestaTimbradoTFD
-    
-  
-      
-          Atributo
-          Tipo de Dato
-          Descripción
-      
-  
-  
-      
-          code
-          string
-          Código de respuesta de la operación.
-      
-      
-          message
-          string
-          Mensaje detallado de la respuesta.
-      
-      
-          data
-          string
-          XML del Timbre Fiscal Digital (TFD) en caso de éxito.
-      
-  
-
-Ejemplo de Código
-    A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta." />
+<meta property="og:title" content="consultarEstadoSAT" />
+<meta property="og:description" content="Consulta el estado de un CFDI en el SAT." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarretenciontfd/" /><meta property="article:section" content="api" />
+<meta property="og:url" content="http://localhost:1313/facturotas.docs/api/cancelar/consultarestadosat/" /><meta property="article:section" content="api" />
 
 
 
-  <meta itemprop="name" content="Facturotas">
-  <meta itemprop="description" content="timbrarRetencionTFDDescripción de la Operación Esta operación permite timbrar un Comprobante Fiscal de Retenciones e Información de Pagos y, a diferencia de la operación timbrarRetencion, retorna únicamente el Timbre Fiscal Digital (TFD) como un XML independiente. Esto es útil cuando se necesita solo el TFD para procesos de validación o almacenamiento por separado.
-Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey string Credencial de acceso al servicio (Solicita aquí). xml string Contenido del documento XML de la constancia de retenciones a timbrar. Parámetros de Salida (Output) - RespuestaTimbradoTFD Atributo Tipo de Dato Descripción code string Código de respuesta de la operación. message string Mensaje detallado de la respuesta. data string XML del Timbre Fiscal Digital (TFD) en caso de éxito. Ejemplo de Código A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta.">
-  <meta itemprop="wordCount" content="1073">
+  <meta itemprop="name" content="consultarEstadoSAT">
+  <meta itemprop="description" content="Consulta el estado de un CFDI en el SAT.">
+  <meta itemprop="wordCount" content="894">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Facturotas">
-  <meta name="twitter:description" content="timbrarRetencionTFDDescripción de la Operación Esta operación permite timbrar un Comprobante Fiscal de Retenciones e Información de Pagos y, a diferencia de la operación timbrarRetencion, retorna únicamente el Timbre Fiscal Digital (TFD) como un XML independiente. Esto es útil cuando se necesita solo el TFD para procesos de validación o almacenamiento por separado.
-Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey string Credencial de acceso al servicio (Solicita aquí). xml string Contenido del documento XML de la constancia de retenciones a timbrar. Parámetros de Salida (Output) - RespuestaTimbradoTFD Atributo Tipo de Dato Descripción code string Código de respuesta de la operación. message string Mensaje detallado de la respuesta. data string XML del Timbre Fiscal Digital (TFD) en caso de éxito. Ejemplo de Código A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta.">
+  <meta name="twitter:title" content="consultarEstadoSAT">
+  <meta name="twitter:description" content="Consulta el estado de un CFDI en el SAT.">
 
-    <link rel="preload" href="/facturotas.docs/css/compiled/main.min.e0bb0f28123bf084d555fc9253c6d2aa1443b2dfcde6044741a207eabdc3ddb8.css" as="style" integrity="sha256-4LsPKBI78ITVVfySU8bSqhRDst/N5gRHQaIH6r3D3bg=" />
-    <link href="/facturotas.docs/css/compiled/main.min.e0bb0f28123bf084d555fc9253c6d2aa1443b2dfcde6044741a207eabdc3ddb8.css" rel="stylesheet" integrity="sha256-4LsPKBI78ITVVfySU8bSqhRDst/N5gRHQaIH6r3D3bg=" />
+    <link href="/facturotas.docs/css/compiled/main.css" rel="stylesheet" />
 
 
 
-  <link href="/facturotas.docs/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" rel="stylesheet" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU=" />
+  <link href="/facturotas.docs/css/custom.css" rel="stylesheet" />
 
 
   <script>
@@ -176,7 +120,7 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
   >API
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
     </a><div class="ltr:hx-pr-0 hx-overflow-hidden">
-        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/cancelar/"
@@ -217,6 +161,23 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
   >cancelarSP
     </a>
               
+            </li><li class="hx-flex hx-flex-col open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+    href="/facturotas.docs/api/cancelar/consultarestadosat/"
+    
+  >consultarEstadoSAT
+    </a>
+  
+    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
+              <a
+                href="#"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              ></a>
+            </li>
+          </ul>
+  
+              
             </li></ul>
       </div>
             </li><li class="hx-flex hx-flex-col "><a
@@ -225,20 +186,9 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
     href="/facturotas.docs/api/consulta/"
     
   >Consulta
-        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
-    </a>
-              <div class="ltr:hx-pr-0 hx-overflow-hidden">
-        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/consulta/consultarestadosat/"
-    
-  >Consultar Estado Sat
     </a>
               
-            </li></ul>
-      </div>
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/"
@@ -295,22 +245,13 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
   >Timbrar Retencion
     </a>
               
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarretenciontfd/"
     
   >Timbrar Retencion Tfd
     </a>
-  
-    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
-              <a
-                href="#"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              ></a>
-            </li>
-          </ul>
-  
               
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
@@ -377,7 +318,7 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
   >API
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
     </a><div class="ltr:hx-pr-0 hx-overflow-hidden">
-        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/cancelar/"
@@ -418,6 +359,14 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
   >cancelarSP
     </a>
               
+            </li><li class="hx-flex hx-flex-col open"><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+    href="/facturotas.docs/api/cancelar/consultarestadosat/"
+    
+  >consultarEstadoSAT
+    </a>
+              
             </li></ul>
       </div>
             </li><li class="hx-flex hx-flex-col "><a
@@ -426,20 +375,9 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
     href="/facturotas.docs/api/consulta/"
     
   >Consulta
-        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
-    </a>
-              <div class="ltr:hx-pr-0 hx-overflow-hidden">
-        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/consulta/consultarestadosat/"
-    
-  >Consultar Estado Sat
     </a>
               
-            </li></ul>
-      </div>
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/"
@@ -496,9 +434,9 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
   >Timbrar Retencion
     </a>
               
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarretenciontfd/"
     
   >Timbrar Retencion Tfd
@@ -577,7 +515,7 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#par%c3%a1metros-de-salida-output---respuestatimbradotfd">Parámetros de Salida (Output) - RespuestaTimbradoTFD
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#par%c3%a1metros-de-salida-output---consultarestadosatresponse">Parámetros de Salida (Output) - consultarEstadoSATResponse
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
@@ -616,14 +554,16 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
           <a href="/facturotas.docs/api/">API</a>
         </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
-          <a href="/facturotas.docs/api/timbrado/">Timbrado</a>
-        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Timbrar Retencion Tfd</div>
+          <a href="/facturotas.docs/api/cancelar/">Cancelar</a>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">consultarEstadoSAT</div>
   </div>
 
         <div class="content">
-          
-          <h1>timbrarRetencionTFD</h1><h3>Descripción de la Operación<span class="hx-absolute -hx-mt-20" id="descripción-de-la-operación"></span>
-    <a href="#descripci%c3%b3n-de-la-operaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Esta operación permite timbrar un Comprobante Fiscal de Retenciones e Información de Pagos y, a diferencia de la operación <code>timbrarRetencion</code>, retorna únicamente el Timbre Fiscal Digital (TFD) como un XML independiente. Esto es útil cuando se necesita solo el TFD para procesos de validación o almacenamiento por separado.</p>
+          <h1>consultarEstadoSAT</h1>
+          <h1>consultarEstadoSAT</h1><p>Esta sección detalla la operación para consultar el estado actual de un CFDI (Comprobante Fiscal Digital por Internet) directamente en los registros del SAT.</p>
+<h3>Descripción de la Operación<span class="hx-absolute -hx-mt-20" id="descripción-de-la-operación"></span>
+    <a href="#descripci%c3%b3n-de-la-operaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Esta operación permite verificar si un CFDI está vigente o cancelado. Proporciona información clave sobre el estado del comprobante, incluyendo si es cancelable y el estatus del proceso de cancelación, en caso de que se haya iniciado.</p>
+<p>Para realizar la consulta, es necesario proporcionar los datos exactos del comprobante: el folio fiscal (UUID), los RFC del emisor y receptor, y el monto total.</p>
 <h3>Parámetros de Entrada (Input)<span class="hx-absolute -hx-mt-20" id="parámetros-de-entrada-input"></span>
     <a href="#par%c3%a1metros-de-entrada-input" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
   <thead>
@@ -640,14 +580,29 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
           <td style="text-align: left">Credencial de acceso al servicio (<a href="../../../#Requisitos" >Solicita aquí</a>).</td>
       </tr>
       <tr>
-          <td style="text-align: left"><code>xml</code></td>
+          <td style="text-align: left"><code>uuid</code></td>
           <td style="text-align: left"><code>string</code></td>
-          <td style="text-align: left">Contenido del documento XML de la constancia de retenciones a timbrar.</td>
+          <td style="text-align: left">Folio Fiscal (UUID) del CFDI que se desea consultar.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>rfcEmisor</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">RFC del contribuyente emisor del CFDI.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>rfcReceptor</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">RFC del contribuyente receptor del CFDI.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>total</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">Monto total exacto del CFDI, como cadena de texto.</td>
       </tr>
   </tbody>
 </table>
-<h3>Parámetros de Salida (Output) - RespuestaTimbradoTFD<span class="hx-absolute -hx-mt-20" id="parámetros-de-salida-output---respuestatimbradotfd"></span>
-    <a href="#par%c3%a1metros-de-salida-output---respuestatimbradotfd" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+<h3>Parámetros de Salida (Output) - consultarEstadoSATResponse<span class="hx-absolute -hx-mt-20" id="parámetros-de-salida-output---consultarestadosatresponse"></span>
+    <a href="#par%c3%a1metros-de-salida-output---consultarestadosatresponse" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
   <thead>
       <tr>
           <th style="text-align: left">Atributo</th>
@@ -657,25 +612,29 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><code>code</code></td>
+          <td style="text-align: left"><code>CodigoEstatus</code></td>
           <td style="text-align: left"><code>string</code></td>
-          <td style="text-align: left">Código de respuesta de la operación.</td>
+          <td style="text-align: left">Indica el estado de la consulta. Un valor común es <code>S - Comprobante obtenido satisfactoriamente</code>.</td>
       </tr>
       <tr>
-          <td style="text-align: left"><code>message</code></td>
+          <td style="text-align: left"><code>EsCancelable</code></td>
           <td style="text-align: left"><code>string</code></td>
-          <td style="text-align: left">Mensaje detallado de la respuesta.</td>
+          <td style="text-align: left">Indica si el CFDI se puede cancelar. Valores: <code>Cancelable con aceptación</code>, <code>Cancelable sin aceptación</code>, <code>No cancelable</code>.</td>
       </tr>
       <tr>
-          <td style="text-align: left"><code>data</code></td>
+          <td style="text-align: left"><code>Estado</code></td>
           <td style="text-align: left"><code>string</code></td>
-          <td style="text-align: left">XML del Timbre Fiscal Digital (TFD) en caso de éxito.</td>
+          <td style="text-align: left">Describe el estado actual del CFDI. Valores: <code>Vigente</code>, <code>Cancelado</code>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>EstatusCancelacion</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">Detalla el proceso de cancelación. Valores: <code>(null)</code>, <code>En proceso</code>, <code>Plazo vencido</code>, <code>Solicitud rechazada</code>, <code>Cancelado sin aceptación</code>, <code>Cancelado con aceptación</code>.</td>
       </tr>
   </tbody>
 </table>
 <h3>Ejemplo de Código<span class="hx-absolute -hx-mt-20" id="ejemplo-de-código"></span>
-    <a href="#ejemplo-de-c%c3%b3digo" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta.</p>
-<h4>Solicitud (Request)<span class="hx-absolute -hx-mt-20" id="solicitud-request"></span>
+    <a href="#ejemplo-de-c%c3%b3digo" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4>Solicitud (Request)<span class="hx-absolute -hx-mt-20" id="solicitud-request"></span>
     <a href="#solicitud-request" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><div class="hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain">
   <div class="hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800"><button
         class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
@@ -700,77 +659,61 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-0"
-  role="tabpanel" tabindex="0"  data-state="selected" ><h3>Herramienta svcutil<span class="hx-absolute -hx-mt-20" id="herramienta-svcutil"></span>
-    <a href="#herramienta-svcutil" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Ejecuta el comando para generar el cliente SOAP:</p>
+  role="tabpanel" tabindex="0"  data-state="selected" ><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se utiliza la herramienta <code>svcutil</code> de .NET para generar el cliente a partir del WSDL.</p>
+<ul>
+<li><strong>Desarrollo:</strong> <code>dotnet svcutil https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></li>
+<li><strong>Producción:</strong> <code>dotnet svcutil https://app.facturaloplus.com/ws/servicio.do?wsdl</code></li>
+</ul>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
-<div><pre><code>svcutil.exe https://dev.facturaloplus.com/ws/servicio.do?wsdl /out:ServicioTimbradoClient.cs /config:app.config</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span> <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> GetXmlRetencion() =&gt; <span style="color:#e6db74">&#34;&#34;&#34; 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span>      &lt;?xml version=<span style="color:#e6db74">&#34;1.0&#34;</span> encoding=<span style="color:#e6db74">&#34;UTF-8&#34;</span>?&gt;
-</span></span><span style="display:flex;"><span>      &lt;retenciones:Retenciones 
-</span></span><span style="display:flex;"><span>          xmlns:retenciones=<span style="color:#e6db74">&#34;http://www.sat.gob.mx/esquemas/retencionpago/2&#34;</span> 
-</span></span><span style="display:flex;"><span>          xmlns:xsi=<span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> 
-</span></span><span style="display:flex;"><span>          xsi:schemaLocation=<span style="color:#e6db74">&#34;http://www.sat.gob.mx/esquemas/retencionpago/2 http://www.sat.gob.mx/esquemas/retencionpago/2/retencionpagov2.xsd&#34;</span> 
-</span></span><span style="display:flex;"><span>          Version=<span style="color:#e6db74">&#34;2.0&#34;</span> FolioInt=<span style="color:#e6db74">&#34;124&#34;</span> FechaExp=<span style="color:#e6db74">&#34;2025-07-05T11:00:00&#34;</span> LugarExpRetenc=<span style="color:#e6db74">&#34;64000&#34;</span> CveRetenc=<span style="color:#e6db74">&#34;14&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>          &lt;retenciones:Emisor RfcE=<span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span> NomDenRazSocE=<span style="color:#e6db74">&#34;Empresa Emisora SA de CV&#34;</span> RegimenFiscalE=<span style="color:#e6db74">&#34;601&#34;</span>/&gt;
-</span></span><span style="display:flex;"><span>          &lt;retenciones:Receptor NacionalidadR=<span style="color:#e6db74">&#34;Nacional&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>              &lt;retenciones:Nacional RfcR=<span style="color:#e6db74">&#34;XAXX010101000&#34;</span> NomDenRazSocR=<span style="color:#e6db74">&#34;Receptor Nacional SA de CV&#34;</span> DomicilioFiscalR=<span style="color:#e6db74">&#34;67890&#34;</span>/&gt;
-</span></span><span style="display:flex;"><span>          &lt;/retenciones:Receptor&gt;
-</span></span><span style="display:flex;"><span>          &lt;retenciones:Periodo MesIni=<span style="color:#e6db74">&#34;07&#34;</span> MesFin=<span style="color:#e6db74">&#34;07&#34;</span> Ejerc=<span style="color:#e6db74">&#34;2025&#34;</span>/&gt;
-</span></span><span style="display:flex;"><span>          &lt;retenciones:Totales montoTotOperacion=<span style="color:#e6db74">&#34;25000&#34;</span> montoTotGrav=<span style="color:#e6db74">&#34;25000&#34;</span> montoTotExent=<span style="color:#e6db74">&#34;0&#34;</span> montoTotRet=<span style="color:#e6db74">&#34;2500&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>              &lt;retenciones:ImpRetenidos BaseRet=<span style="color:#e6db74">&#34;25000&#34;</span> Impuesto=<span style="color:#e6db74">&#34;01&#34;</span> montoRet=<span style="color:#e6db74">&#34;2500&#34;</span> TipoPagoRet=<span style="color:#e6db74">&#34;Pago definitivo&#34;</span>/&gt;
-</span></span><span style="display:flex;"><span>          &lt;/retenciones:Totales&gt;
-</span></span><span style="display:flex;"><span>      &lt;/retenciones:Retenciones&gt;
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;&#34;&#34;;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span>
-</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;RespuestaTimbradoTFD&gt; TimbrarRetencionTFDAsync(<span style="color:#66d9ef">string</span> apiKey, <span style="color:#66d9ef">string</span> xml)
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Threading.Tasks;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConsultarEstadoSATRequest</span>
+</span></span><span style="display:flex;"><span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Apikey { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Uuid { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> RfcEmisor { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> RfcReceptor { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Total { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;consultarEstadoSATResponse&gt; ConsultarEstadoAsync(ConsultarEstadoSATRequest request)
 </span></span><span style="display:flex;"><span>  {
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">using</span> var client = <span style="color:#66d9ef">new</span> ServicioTimbradoWSPortTypeClient(<span style="color:#e6db74">&#34;ServicioTimbradoWSPort&#34;</span>);
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span>
 </span></span><span style="display:flex;"><span>      {
-</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">var</span> response = <span style="color:#66d9ef">await</span> client.timbrarRetencionTFDAsync(apiKey, xml);
-</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> RespuestaTimbradoTFD
-</span></span><span style="display:flex;"><span>          {
-</span></span><span style="display:flex;"><span>              Code = response.code,
-</span></span><span style="display:flex;"><span>              Message = response.message,
-</span></span><span style="display:flex;"><span>              Data = response.data
-</span></span><span style="display:flex;"><span>          };
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">var</span> response = <span style="color:#66d9ef">await</span> client.consultarEstadoSATAsync(request.Apikey, request.Uuid, request.RfcEmisor, request.RfcReceptor, request.Total);
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> response;
 </span></span><span style="display:flex;"><span>      }
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">catch</span> (Exception ex)
 </span></span><span style="display:flex;"><span>      {
-</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">$&#34;Error al timbrar TFD de retención: {ex.Message}&#34;</span>);
+</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">$&#34;Error al consultar estado en SAT: {ex.Message}&#34;</span>);
 </span></span><span style="display:flex;"><span>         <span style="color:#66d9ef">throw</span>;
 </span></span><span style="display:flex;"><span>      }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span> <span style="color:#75715e">// Ejemplo de uso</span>
-</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task EjemploUsoTimbrarRetencionTFDAsync()
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task EjemploUsoConsultarEstadoAsync()
 </span></span><span style="display:flex;"><span> {
-</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">string</span> apiKey = <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>;
-</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">string</span> xml = GetXmlRetencion();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">var</span> resultado = <span style="color:#66d9ef">await</span> TimbrarRetencionTFDAsync(apiKey, xml);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">if</span> (resultado?.Code == <span style="color:#e6db74">&#34;200&#34;</span>)
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">var</span> request = <span style="color:#66d9ef">new</span> ConsultarEstadoSATRequest
 </span></span><span style="display:flex;"><span>     {
-</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">&#34;¡Timbrado de TFD para Retención Exitoso!&#34;</span>);
-</span></span><span style="display:flex;"><span>         Console.WriteLine(resultado.Data);
-</span></span><span style="display:flex;"><span>     }
-</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>         Apikey = <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>,
+</span></span><span style="display:flex;"><span>         Uuid = <span style="color:#e6db74">&#34;5FD4E09E-52F4-4A0E-8E4D-39E6B8E47168&#34;</span>,
+</span></span><span style="display:flex;"><span>         RfcEmisor = <span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span>,
+</span></span><span style="display:flex;"><span>         RfcReceptor = <span style="color:#e6db74">&#34;XAXX010101000&#34;</span>,
+</span></span><span style="display:flex;"><span>         Total = <span style="color:#e6db74">&#34;116.00&#34;</span>
+</span></span><span style="display:flex;"><span>     };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">var</span> resultado = <span style="color:#66d9ef">await</span> ConsultarEstadoAsync(request);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">if</span> (resultado != <span style="color:#66d9ef">null</span>)
 </span></span><span style="display:flex;"><span>     {
-</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">$&#34;Error: {resultado?.Code} - {resultado?.Message}&#34;</span>);
+</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">&#34;¡Consulta Exitosa!&#34;</span>);
+</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">$&#34;Estado: {resultado.Estado}&#34;</span>);
+</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">$&#34;Es Cancelable: {resultado.EsCancelable}&#34;</span>);
+</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">$&#34;Estatus Cancelación: {resultado.EstatusCancelacion}&#34;</span>);
 </span></span><span style="display:flex;"><span>     }
 </span></span><span style="display:flex;"><span> }</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
@@ -786,86 +729,53 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-1"
-  role="tabpanel"><h3>Herramienta wsimport<span class="hx-absolute -hx-mt-20" id="herramienta-wsimport"></span>
-    <a href="#herramienta-wsimport" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Ejecuta el comando para generar las clases cliente:</p>
+  role="tabpanel"><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se utiliza la herramienta <code>wsimport</code> del JDK para generar las clases de cliente.</p>
+<ul>
+<li><strong>Desarrollo:</strong> <code>wsimport -keep -verbose https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></li>
+<li><strong>Producción:</strong> <code>wsimport -keep -verbose https://app.facturaloplus.com/ws/servicio.do?wsdl</code></li>
+</ul>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><pre><code>wsimport -keep -p com.facturaloplus.cliente https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.CompletableFuture;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimbrarRetencionTFDService</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConsultarEstadoSATService</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ... (Definición de ExecutorService, Logger, etc.)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">generarXmlRetencion</span>() {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;retenciones:Retenciones 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:retenciones=&#34;http://www.sat.gob.mx/esquemas/retencionpago/2&#34; 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xsi:schemaLocation=&#34;http://www.sat.gob.mx/esquemas/retencionpago/2 http://www.sat.gob.mx/esquemas/retencionpago/2/retencionpagov2.xsd&#34; 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          Version=&#34;2.0&#34; FolioInt=&#34;124&#34; FechaExp=&#34;2025-07-05T11:00:00&#34; LugarExpRetenc=&#34;64000&#34; CveRetenc=&#34;14&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;retenciones:Emisor RfcE=&#34;ABC010101XYZ&#34; NomDenRazSocE=&#34;Empresa Emisora SA de CV&#34; RegimenFiscalE=&#34;601&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;retenciones:Receptor NacionalidadR=&#34;Nacional&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;retenciones:Nacional RfcR=&#34;XAXX010101000&#34; NomDenRazSocR=&#34;Receptor Nacional SA de CV&#34; DomicilioFiscalR=&#34;67890&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/retenciones:Receptor&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;retenciones:Periodo MesIni=&#34;07&#34; MesFin=&#34;07&#34; Ejerc=&#34;2025&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;retenciones:Totales montoTotOperacion=&#34;25000&#34; montoTotGrav=&#34;25000&#34; montoTotExent=&#34;0&#34; montoTotRet=&#34;2500&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;retenciones:ImpRetenidos BaseRet=&#34;25000&#34; Impuesto=&#34;01&#34; montoRet=&#34;2500&#34; TipoPagoRet=&#34;Pago definitivo&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/retenciones:Totales&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/retenciones:Retenciones&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;&#34;&#34;</span>;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> CompletableFuture<span style="color:#f92672">&lt;</span>RespuestaTimbradoTFD<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">timbrarRetencionTFDAsync</span>(String apiKey, String xml) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> CompletableFuture<span style="color:#f92672">&lt;</span>ConsultarEstadoSATResponse<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">consultarEstadoSATAsync</span>(String apiKey, String uuid, String rfcEmisor, String rfcReceptor, String total) {
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> CompletableFuture.<span style="color:#a6e22e">supplyAsync</span>(() <span style="color:#f92672">-&gt;</span> {
 </span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>              ServicioTimbradoWS service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServicioTimbradoWS();
 </span></span><span style="display:flex;"><span>              ServicioTimbradoWSPortType port <span style="color:#f92672">=</span> service.<span style="color:#a6e22e">getServicioTimbradoWSPort</span>();
-</span></span><span style="display:flex;"><span>              
-</span></span><span style="display:flex;"><span>              Respuesta response <span style="color:#f92672">=</span> port.<span style="color:#a6e22e">timbrarRetencionTFD</span>(apiKey, xml);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>              RespuestaTimbradoTFD resultado <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RespuestaTimbradoTFD();
-</span></span><span style="display:flex;"><span>              resultado.<span style="color:#a6e22e">setCode</span>(response.<span style="color:#a6e22e">getCode</span>());
-</span></span><span style="display:flex;"><span>              resultado.<span style="color:#a6e22e">setMessage</span>(response.<span style="color:#a6e22e">getMessage</span>());
-</span></span><span style="display:flex;"><span>              resultado.<span style="color:#a6e22e">setData</span>(response.<span style="color:#a6e22e">getData</span>());
-</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">return</span> resultado;
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">return</span> port.<span style="color:#a6e22e">consultarEstadoSAT</span>(apiKey, uuid, rfcEmisor, rfcReceptor, total);
 </span></span><span style="display:flex;"><span>          } <span style="color:#66d9ef">catch</span> (Exception ex) {
-</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(<span style="color:#e6db74">&#34;Error al timbrar TFD de retención&#34;</span>, ex);
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(<span style="color:#e6db74">&#34;Error al consultar estado en SAT&#34;</span>, ex);
 </span></span><span style="display:flex;"><span>          }
 </span></span><span style="display:flex;"><span>      }, executor);
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Ejemplo de uso</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
-</span></span><span style="display:flex;"><span>      TimbrarRetencionTFDService service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TimbrarRetencionTFDService();
+</span></span><span style="display:flex;"><span>      ConsultarEstadoSATService service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConsultarEstadoSATService();
 </span></span><span style="display:flex;"><span>      String apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>;
-</span></span><span style="display:flex;"><span>      String xml <span style="color:#f92672">=</span> service.<span style="color:#a6e22e">generarXmlRetencion</span>();
+</span></span><span style="display:flex;"><span>      String uuid <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;5FD4E09E-52F4-4A0E-8E4D-39E6B8E47168&#34;</span>;
+</span></span><span style="display:flex;"><span>      String rfcEmisor <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span>;
+</span></span><span style="display:flex;"><span>      String rfcReceptor <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;XAXX010101000&#34;</span>;
+</span></span><span style="display:flex;"><span>      String total <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;116.00&#34;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      service.<span style="color:#a6e22e">timbrarRetencionTFDAsync</span>(apiKey, xml).<span style="color:#a6e22e">whenComplete</span>((resultado, ex) <span style="color:#f92672">-&gt;</span> {
-</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> (ex <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
-</span></span><span style="display:flex;"><span>              System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">+</span> ex.<span style="color:#a6e22e">getMessage</span>());
-</span></span><span style="display:flex;"><span>          } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#34;200&#34;</span>.<span style="color:#a6e22e">equals</span>(resultado.<span style="color:#a6e22e">getCode</span>())) {
-</span></span><span style="display:flex;"><span>              System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;¡Timbrado de TFD para Retención Exitoso!&#34;</span>);
-</span></span><span style="display:flex;"><span>              System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(resultado.<span style="color:#a6e22e">getData</span>());
-</span></span><span style="display:flex;"><span>          } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>              System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getCode</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; - &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getMessage</span>());
-</span></span><span style="display:flex;"><span>          }
-</span></span><span style="display:flex;"><span>          service.<span style="color:#a6e22e">shutdown</span>();
-</span></span><span style="display:flex;"><span>      }).<span style="color:#a6e22e">join</span>();
+</span></span><span style="display:flex;"><span>      service.<span style="color:#a6e22e">consultarEstadoSATAsync</span>(apiKey, uuid, rfcEmisor, rfcReceptor, total)
+</span></span><span style="display:flex;"><span>          .<span style="color:#a6e22e">whenComplete</span>((resultado, ex) <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">if</span> (ex <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">+</span> ex.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>              } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;¡Consulta Exitosa!&#34;</span>);
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Estado: &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getEstado</span>());
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Es Cancelable: &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getEsCancelable</span>());
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Estatus Cancelación: &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getEstatusCancelacion</span>());
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>              service.<span style="color:#a6e22e">shutdown</span>();
+</span></span><span style="display:flex;"><span>          }).<span style="color:#a6e22e">join</span>();
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
@@ -881,73 +791,42 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-2"
-  role="tabpanel"><h3>Herramienta Zeep<span class="hx-absolute -hx-mt-20" id="herramienta-zeep"></span>
-    <a href="#herramienta-zeep" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Instala la librería usando pip:</p>
+  role="tabpanel"><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se utiliza la librería <code>zeep</code>. Para instalarla, ejecuta: <code>pip install zeep</code></p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><pre><code>pip install zeep</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> zeep.asyncio <span style="color:#f92672">import</span> AsyncClient
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generar_xml_retencion</span>() <span style="color:#f92672">-&gt;</span> str:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">      &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;retenciones:Retenciones 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:retenciones=&#34;http://www.sat.gob.mx/esquemas/retencionpago/2&#34; 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xsi:schemaLocation=&#34;http://www.sat.gob.mx/esquemas/retencionpago/2 http://www.sat.gob.mx/esquemas/retencionpago/2/retencionpagov2.xsd&#34; 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          Version=&#34;2.0&#34; FolioInt=&#34;124&#34; FechaExp=&#34;2025-07-05T11:00:00&#34; LugarExpRetenc=&#34;64000&#34; CveRetenc=&#34;14&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;retenciones:Emisor RfcE=&#34;ABC010101XYZ&#34; NomDenRazSocE=&#34;Empresa Emisora SA de CV&#34; RegimenFiscalE=&#34;601&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;retenciones:Receptor NacionalidadR=&#34;Nacional&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;retenciones:Nacional RfcR=&#34;XAXX010101000&#34; NomDenRazSocR=&#34;Receptor Nacional SA de CV&#34; DomicilioFiscalR=&#34;67890&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/retenciones:Receptor&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;retenciones:Periodo MesIni=&#34;07&#34; MesFin=&#34;07&#34; Ejerc=&#34;2025&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;retenciones:Totales montoTotOperacion=&#34;25000&#34; montoTotGrav=&#34;25000&#34; montoTotExent=&#34;0&#34; montoTotRet=&#34;2500&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;retenciones:ImpRetenidos BaseRet=&#34;25000&#34; Impuesto=&#34;01&#34; montoRet=&#34;2500&#34; TipoPagoRet=&#34;Pago definitivo&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/retenciones:Totales&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/retenciones:Retenciones&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimbradoService</span>:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConsultarEstadoSATService</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, wsdl_url: str):
 </span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>wsdl_url <span style="color:#f92672">=</span> wsdl_url
 </span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>async_client <span style="color:#f92672">=</span> AsyncClient(self<span style="color:#f92672">.</span>wsdl_url)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">timbrar_retencion_tfd_async</span>(self, api_key: str, xml: str) <span style="color:#f92672">-&gt;</span> RespuestaTimbradoTFD:
-</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> self<span style="color:#f92672">.</span>async_client<span style="color:#f92672">.</span>service<span style="color:#f92672">.</span>timbrarRetencionTFD(
-</span></span><span style="display:flex;"><span>            apikey<span style="color:#f92672">=</span>api_key,
-</span></span><span style="display:flex;"><span>            xml<span style="color:#f92672">=</span>xml
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> RespuestaTimbradoTFD(
-</span></span><span style="display:flex;"><span>            code<span style="color:#f92672">=</span>response<span style="color:#f92672">.</span>code,
-</span></span><span style="display:flex;"><span>            message<span style="color:#f92672">=</span>response<span style="color:#f92672">.</span>message,
-</span></span><span style="display:flex;"><span>            data<span style="color:#f92672">=</span>response<span style="color:#f92672">.</span>data
-</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">consultar_estado_async</span>(self, <span style="color:#f92672">**</span>kwargs) <span style="color:#f92672">-&gt;</span> dict:
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> self<span style="color:#f92672">.</span>async_client<span style="color:#f92672">.</span>service<span style="color:#f92672">.</span>consultarEstadoSAT(<span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> response
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-</span></span><span style="display:flex;"><span>    service <span style="color:#f92672">=</span> TimbradoService(<span style="color:#e6db74">&#34;https://dev.facturaloplus.com/ws/servicio.do?wsdl&#34;</span>)
-</span></span><span style="display:flex;"><span>    api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>
-</span></span><span style="display:flex;"><span>    xml <span style="color:#f92672">=</span> generar_xml_retencion()
+</span></span><span style="display:flex;"><span>    service <span style="color:#f92672">=</span> ConsultarEstadoSATService(<span style="color:#e6db74">&#34;https://dev.facturaloplus.com/ws/servicio.do?wsdl&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    params <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;apikey&#34;</span>: <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;uuid&#34;</span>: <span style="color:#e6db74">&#34;5FD4E09E-52F4-4A0E-8E4D-39E6B8E47168&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;rfcEmisor&#34;</span>: <span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;rfcReceptor&#34;</span>: <span style="color:#e6db74">&#34;XAXX010101000&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;total&#34;</span>: <span style="color:#e6db74">&#34;116.00&#34;</span>
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    resultado <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> service<span style="color:#f92672">.</span>timbrar_retencion_tfd_async(api_key, xml);
+</span></span><span style="display:flex;"><span>    resultado <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> service<span style="color:#f92672">.</span>consultar_estado_async(<span style="color:#f92672">**</span>params);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> resultado<span style="color:#f92672">.</span>code <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;200&#34;</span>:
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;¡Timbrado de TFD para Retención Exitoso!&#34;</span>)
-</span></span><span style="display:flex;"><span>        print(resultado<span style="color:#f92672">.</span>data)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> resultado:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;¡Consulta Exitosa!&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Estado: </span><span style="color:#e6db74">{</span>resultado[<span style="color:#e6db74">&#39;Estado&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Es Cancelable: </span><span style="color:#e6db74">{</span>resultado[<span style="color:#e6db74">&#39;EsCancelable&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Estatus Cancelación: </span><span style="color:#e6db74">{</span>resultado[<span style="color:#e6db74">&#39;EstatusCancelacion&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error: </span><span style="color:#e6db74">{</span>resultado<span style="color:#f92672">.</span>code<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">{</span>resultado<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;Error al realizar la consulta.&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
 </span></span><span style="display:flex;"><span>    asyncio<span style="color:#f92672">.</span>run(main())</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
@@ -964,75 +843,51 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-3"
-  role="tabpanel"><h3>Herramienta SoapClient<span class="hx-absolute -hx-mt-20" id="herramienta-soapclient"></span>
-    <a href="#herramienta-soapclient" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Asegúrate de que la extensión <code>php-soap</code> esté habilitada en tu <code>php.ini</code>.</p>
-<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+  role="tabpanel"><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se requiere la extensión <code>php-soap</code>. Generalmente viene incluida con PHP, pero si no, se puede instalar con <code>apt-get install php-soap</code> (Debian/Ubuntu) o <code>yum install php-soap</code> (CentOS/RHEL). Asegúrate de que esté habilitada en tu <code>php.ini</code>.</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">generarXmlRetencion</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&lt;&lt;&lt;&#39;</span><span style="color:#e6db74">XML</span><span style="color:#e6db74">&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;retenciones:Retenciones 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:retenciones=&#34;http://www.sat.gob.mx/esquemas/retencionpago/2&#34; 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xsi:schemaLocation=&#34;http://www.sat.gob.mx/esquemas/retencionpago/2 http://www.sat.gob.mx/esquemas/retencionpago/2/retencionpagov2.xsd&#34; 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          Version=&#34;2.0&#34; FolioInt=&#34;124&#34; FechaExp=&#34;2025-07-05T11:00:00&#34; LugarExpRetenc=&#34;64000&#34; CveRetenc=&#34;14&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;retenciones:Emisor RfcE=&#34;ABC010101XYZ&#34; NomDenRazSocE=&#34;Empresa Emisora SA de CV&#34; RegimenFiscalE=&#34;601&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;retenciones:Receptor NacionalidadR=&#34;Nacional&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;retenciones:Nacional RfcR=&#34;XAXX010101000&#34; NomDenRazSocR=&#34;Receptor Nacional SA de CV&#34; DomicilioFiscalR=&#34;67890&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/retenciones:Receptor&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;retenciones:Periodo MesIni=&#34;07&#34; MesFin=&#34;07&#34; Ejerc=&#34;2025&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;retenciones:Totales montoTotOperacion=&#34;25000&#34; montoTotGrav=&#34;25000&#34; montoTotExent=&#34;0&#34; montoTotRet=&#34;2500&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;retenciones:ImpRetenidos BaseRet=&#34;25000&#34; Impuesto=&#34;01&#34; montoRet=&#34;2500&#34; TipoPagoRet=&#34;Pago definitivo&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/retenciones:Totales&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/retenciones:Retenciones&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">XML</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimbradoService</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConsultarEstadoSATService</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">string</span> $wsdlUrl;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">__construct</span>(<span style="color:#a6e22e">string</span> $wsdlUrl) {
 </span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">wsdlUrl</span> <span style="color:#f92672">=</span> $wsdlUrl;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">timbrarRetencionTFD</span>(<span style="color:#a6e22e">string</span> $apiKey, <span style="color:#a6e22e">string</span> $xml)<span style="color:#f92672">:</span> <span style="color:#a6e22e">RespuestaTimbradoTFD</span> {
-</span></span><span style="display:flex;"><span>        $respuesta <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">RespuestaTimbradoTFD</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">consultarEstado</span>(<span style="color:#66d9ef">array</span> $params)<span style="color:#f92672">:</span> <span style="color:#f92672">?</span><span style="color:#a6e22e">object</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>            $soapClient <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SoapClient</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">wsdlUrl</span>, [<span style="color:#e6db74">&#39;trace&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;exceptions&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>]);
-</span></span><span style="display:flex;"><span>            $params <span style="color:#f92672">=</span> [
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;apikey&#39;</span>  <span style="color:#f92672">=&gt;</span> $apiKey,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;xml&#39;</span> <span style="color:#f92672">=&gt;</span> $xml
-</span></span><span style="display:flex;"><span>            ];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            $response <span style="color:#f92672">=</span> $soapClient<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timbrarRetencionTFD</span>($params);
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>            $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>            $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            $response <span style="color:#f92672">=</span> $soapClient<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">consultarEstadoSAT</span>($params);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
 </span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> $e) {
-</span></span><span style="display:flex;"><span>            $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;CLIENT_ERROR&#34;</span>;
-</span></span><span style="display:flex;"><span>            $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessage</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">.</span> $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessage</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
 </span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $respuesta;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Ejemplo de uso
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TimbradoService</span>(<span style="color:#e6db74">&#34;https://dev.facturaloplus.com/ws/servicio.do?wsdl&#34;</span>);
-</span></span><span style="display:flex;"><span>$apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>;
-</span></span><span style="display:flex;"><span>$xml <span style="color:#f92672">=</span> <span style="color:#a6e22e">generarXmlRetencion</span>();
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ConsultarEstadoSATService</span>(<span style="color:#e6db74">&#34;https://dev.facturaloplus.com/ws/servicio.do?wsdl&#34;</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$resultado <span style="color:#f92672">=</span> $service<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timbrarRetencionTFD</span>($apiKey, $xml);
+</span></span><span style="display:flex;"><span>$params <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;apikey&#39;</span>      <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;uuid&#39;</span>        <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;5FD4E09E-52F4-4A0E-8E4D-39E6B8E47168&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;rfcEmisor&#39;</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;rfcReceptor&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;XAXX010101000&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;total&#39;</span>       <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;116.00&#34;</span>
+</span></span><span style="display:flex;"><span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$resultado <span style="color:#f92672">=</span> $service<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">consultarEstado</span>($params);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#39;Content-Type: text/plain&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ($resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;200&#39;</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;¡Timbrado de TFD para Retención Exitoso!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> $resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ($resultado) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;¡Consulta Exitosa!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Estado: </span><span style="color:#e6db74">{</span>$resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">Estado</span><span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Es Cancelable: </span><span style="color:#e6db74">{</span>$resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">EsCancelable</span><span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Estatus Cancelación: </span><span style="color:#e6db74">{</span>$resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">EstatusCancelacion</span><span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Error: </span><span style="color:#e6db74">{</span>$resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">{</span>$resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Error al realizar la consulta.</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
@@ -1048,19 +903,20 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
 
 </div>
 <h4>Respuesta (Response)<span class="hx-absolute -hx-mt-20" id="respuesta-response"></span>
-    <a href="#respuesta-response" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>El campo <code>data</code> contendrá únicamente el XML del Timbre Fiscal Digital (TFD).</p>
+    <a href="#respuesta-response" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>La respuesta SOAP contiene el estado del CFDI consultado.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;SOAP-ENV:Envelope</span> <span style="color:#960050;background-color:#1e0010">...</span><span style="color:#f92672">&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;SOAP-ENV:Body&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;ns1:timbrarRetencionTFDResponse</span> <span style="color:#a6e22e">xmlns:ns1=</span><span style="color:#e6db74">&#34;urn:ws_api&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;return</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;tns:RespuestaTimbradoTFD&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;code</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span>CÓDIGO<span style="color:#f92672">&lt;/code&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;message</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span>MENSAJE<span style="color:#f92672">&lt;/message&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;data</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#75715e">&lt;![CDATA[&lt;tfd:TimbreFiscalDigital ... /&gt;]]&gt;</span><span style="color:#f92672">&lt;/data&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;ns1:consultarEstadoSATResponse</span> <span style="color:#a6e22e">xmlns:ns1=</span><span style="color:#e6db74">&#34;urn:ws_api&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;return</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;tns:consultarEstadoSATResponse&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;CodigoEstatus</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span>S - Comprobante obtenido satisfactoriamente.<span style="color:#f92672">&lt;/CodigoEstatus&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;EsCancelable</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span>Cancelable sin aceptación<span style="color:#f92672">&lt;/EsCancelable&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;Estado</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span>Vigente<span style="color:#f92672">&lt;/Estado&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;EstatusCancelacion</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;&lt;/EstatusCancelacion&gt;</span>
 </span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;/return&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/ns1:timbrarRetencionTFDResponse&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/ns1:consultarEstadoSATResponse&gt;</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/SOAP-ENV:Body&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/SOAP-ENV:Envelope&gt;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
@@ -1073,92 +929,15 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
 </div>
 </div>
 <h5>Códigos de respuesta<span class="hx-absolute -hx-mt-20" id="códigos-de-respuesta"></span>
-    <a href="#c%c3%b3digos-de-respuesta" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>
-  Los códigos de respuesta para el timbrado de CFDI son importantes para entender el resultado de la solicitud. A continuación se detallan los códigos más comunes que puedes recibir al realizar una solicitud de timbrado a través de la API.
-</p>
-<table>
-  <thead>
-    <tr>
-      <th>Código</th>
-      <th>Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>Solicitud procesada con éxito</td>
-    </tr>
-    <tr>
-      <td>300</td>
-      <td>API KEY Inválida o inexistente</td>
-    </tr>
-    <tr>
-      <td>301</td>
-      <td>XML mal formado</td>
-    </tr>
-    <tr>
-      <td>302</td>
-      <td>El sello del emisor no es válido</td>
-    </tr>
-    <tr>
-      <td>303</td>
-      <td>El RFC del CSD del emisor no corresponde al RFC del Emisor</td>
-    </tr>
-    <tr>
-      <td>304</td>
-      <td>CSD del Emisor ha sido revobado</td>
-    </tr>
-    <tr>
-      <td>305</td>
-      <td>La fecha de emisión no está dentro de la vigencia del CSD del Emisor</td>
-    </tr>
-    <tr>
-      <td>306</td>
-      <td>La llave utilizada para sellar debe ser un CSD</td>
-    </tr>
-    <tr>
-      <td>307</td>
-      <td>El CFDI contiene un timbre previo</td>
-    </tr>
-    <tr>
-      <td>308</td>
-      <td>El CSD del emisor no ha sido firmado por uno de los Certificados de autoridad del SAT</td>
-    </tr>
-    <tr>
-      <td>401</td>
-      <td>El rango de la fecha de generación no debe de ser mayor a 72 horas para la emisión del timbre</td>
-    </tr>
-    <tr>
-      <td>402</td>
-      <td>RFC del emisor no se encuentra en el régimen de contribuyentes (Lista de validación de régimen) LCO</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><pre><code></code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
+    <a href="#c%c3%b3digos-de-respuesta" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>Los códigos de respuesta de la operación en sí (éxito o error en la llamada) se pueden consultar en la sección general de códigos. El estado específico del CFDI se encuentra dentro de los campos <code>Estado</code>, <code>EsCancelable</code> y <code>EstatusCancelacion</code> de la respuesta.</p>
 
         </div>
         <div class="hx-mt-16"></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
-        href="/facturotas.docs/api/timbrado/timbrarretencion/"
-        title="Timbrar Retencion"
+        href="/facturotas.docs/api/cancelar/cancelarsp/"
+        title="cancelarSP"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
-      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Timbrar Retencion</a><a
-        href="/facturotas.docs/api/timbrado/timbrarsp/"
-        title="Timbrar Sp"
-        class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-ml-auto ltr:hx-pl-4 ltr:hx-text-right rtl:hx-mr-auto rtl:hx-pr-4 rtl:hx-text-left"
-      >Timbrar Sp<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>cancelarSP</a></div>
         
       </main>
     </article>
@@ -1174,8 +953,8 @@ Parámetros de Entrada (Input) Parámetro Tipo de Dato Descripción apikey strin
   </a></div></div>
       </div></footer>
     
-    <script defer src="/facturotas.docs/js/main.min.0942239592f0795dc7213dd1057fd229d7edc19c0ef1a285396eb292d9ca9842.js" integrity="sha256-CUIjlZLweV3HIT3RBX/SKdftwZwO8aKFOW6yktnKmEI="></script>
+    <script defer src="/facturotas.docs/js/main.js" integrity=""></script>
 <script defer src="/facturotas.docs/lib/flexsearch/flexsearch.bundle.min.0425860527cc9968f9f049421c7a56b39327d475e2e3a8f550416be3a9134327.js" integrity="sha256-BCWGBSfMmWj58ElCHHpWs5Mn1HXi46j1UEFr46kTQyc="></script>
-    <script defer src="/facturotas.docs/en.search.min.6ca9e10c5a31b0b103c6e225eb92ff939ace170cbfa74039242c01be01a07189.js" integrity="sha256-bKnhDFoxsLEDxuIl65L/k5rOFwy/p0A5JCwBvgGgcYk="></script>
+    <script defer src="/facturotas.docs/en.search.js" integrity=""></script>
   </body>
 </html>

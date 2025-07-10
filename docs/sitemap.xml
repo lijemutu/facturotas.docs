@@ -19,6 +19,12 @@
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/cancelar/cancelar2/</loc>
   </url><url>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/cancelar/cancelarpfx2/</loc>
+  </url><url>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/consulta/</loc>
+  </url><url>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/consulta/consultarestadosat/</loc>
+  </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrado/</loc>
@@ -40,6 +46,10 @@
     <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrartxt/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrartxt2/</loc>
+  </url><url>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/cancelar/cancelarretencioncsd/</loc>
+  </url><url>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/cancelar/cancelarsp/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/categories/</loc>
   </url><url>
