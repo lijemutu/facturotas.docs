@@ -10,31 +10,27 @@
 <link rel="icon" href="/facturotas.docs/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/facturotas.docs/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/facturotas.docs/site.webmanifest" rel="manifest" />
-<title>Timbrar Sector Primario – Facturotas</title>
-  <meta name="description" content="Esta sección detalla la operación del servicio de timbrado especializado para el Sector Primario.
-Descripción de la Operación Esta operación permite timbrar un Comprobante Fiscal Digital por Internet (CFDI) que incluye el Complemento para el Sector Primario. Está diseñada para contribuyentes que realizan actividades agrícolas, silvícolas, ganaderas o pesqueras.
-El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, devolviendo el XML completo con el Timbre Fiscal Digital (TFD) incorporado." /><link rel="canonical" href="https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarsp/" itemprop="url" />
+<title>Facturotas</title>
+  <meta name="description" content="consultarCfdisRelacionadosEsta sección detalla la operación para consultar la lista de CFDI relacionados a un comprobante específico a partir de su Folio Fiscal (UUID).
+Descripción de la Operación Esta operación permite obtener una lista de los folios fiscales (UUID) de los comprobantes que están relacionados con un CFDI en particular. Para realizar la consulta, es necesario proporcionar las credenciales de la API, los archivos de certificado (.cer y .key) en formato PEM, el RFC del emisor y el UUID del comprobante del cual se desea obtener los CFDI relacionados." /><link rel="canonical" href="https://lijemutu.github.io/facturotas.docs/api/consulta/consultarcfdisrelacionados/" itemprop="url" />
 
-<meta property="og:title" content="Timbrar Sector Primario" />
-<meta property="og:description" content="Esta sección detalla la operación del servicio de timbrado especializado para el Sector Primario.
+<meta property="og:title" content="" />
+<meta property="og:description" content="consultarCfdisRelacionadosEsta sección detalla la operación para consultar la lista de CFDI relacionados a un comprobante específico a partir de su Folio Fiscal (UUID).
 Descripción de la Operación
-    Esta operación permite timbrar un Comprobante Fiscal Digital por Internet (CFDI) que incluye el Complemento para el Sector Primario. Está diseñada para contribuyentes que realizan actividades agrícolas, silvícolas, ganaderas o pesqueras.
-El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, devolviendo el XML completo con el Timbre Fiscal Digital (TFD) incorporado." />
+    Esta operación permite obtener una lista de los folios fiscales (UUID) de los comprobantes que están relacionados con un CFDI en particular. Para realizar la consulta, es necesario proporcionar las credenciales de la API, los archivos de certificado (.cer y .key) en formato PEM, el RFC del emisor y el UUID del comprobante del cual se desea obtener los CFDI relacionados." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarsp/" /><meta property="article:section" content="api" />
+<meta property="og:url" content="https://lijemutu.github.io/facturotas.docs/api/consulta/consultarcfdisrelacionados/" /><meta property="article:section" content="api" />
 
 
 
-  <meta itemprop="name" content="Timbrar Sector Primario">
-  <meta itemprop="description" content="Esta sección detalla la operación del servicio de timbrado especializado para el Sector Primario.
-Descripción de la Operación Esta operación permite timbrar un Comprobante Fiscal Digital por Internet (CFDI) que incluye el Complemento para el Sector Primario. Está diseñada para contribuyentes que realizan actividades agrícolas, silvícolas, ganaderas o pesqueras.
-El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, devolviendo el XML completo con el Timbre Fiscal Digital (TFD) incorporado.">
-  <meta itemprop="wordCount" content="1249">
+  <meta itemprop="name" content="Facturotas">
+  <meta itemprop="description" content="consultarCfdisRelacionadosEsta sección detalla la operación para consultar la lista de CFDI relacionados a un comprobante específico a partir de su Folio Fiscal (UUID).
+Descripción de la Operación Esta operación permite obtener una lista de los folios fiscales (UUID) de los comprobantes que están relacionados con un CFDI en particular. Para realizar la consulta, es necesario proporcionar las credenciales de la API, los archivos de certificado (.cer y .key) en formato PEM, el RFC del emisor y el UUID del comprobante del cual se desea obtener los CFDI relacionados.">
+  <meta itemprop="wordCount" content="918">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Timbrar Sector Primario">
-  <meta name="twitter:description" content="Esta sección detalla la operación del servicio de timbrado especializado para el Sector Primario.
-Descripción de la Operación Esta operación permite timbrar un Comprobante Fiscal Digital por Internet (CFDI) que incluye el Complemento para el Sector Primario. Está diseñada para contribuyentes que realizan actividades agrícolas, silvícolas, ganaderas o pesqueras.
-El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, devolviendo el XML completo con el Timbre Fiscal Digital (TFD) incorporado.">
+  <meta name="twitter:title" content="Facturotas">
+  <meta name="twitter:description" content="consultarCfdisRelacionadosEsta sección detalla la operación para consultar la lista de CFDI relacionados a un comprobante específico a partir de su Folio Fiscal (UUID).
+Descripción de la Operación Esta operación permite obtener una lista de los folios fiscales (UUID) de los comprobantes que están relacionados con un CFDI en particular. Para realizar la consulta, es necesario proporcionar las credenciales de la API, los archivos de certificado (.cer y .key) en formato PEM, el RFC del emisor y el UUID del comprobante del cual se desea obtener los CFDI relacionados.">
 
     <link rel="preload" href="/facturotas.docs/css/compiled/main.min.e0bb0f28123bf084d555fc9253c6d2aa1443b2dfcde6044741a207eabdc3ddb8.css" as="style" integrity="sha256-4LsPKBI78ITVVfySU8bSqhRDst/N5gRHQaIH6r3D3bg=" />
     <link href="/facturotas.docs/css/compiled/main.min.e0bb0f28123bf084d555fc9253c6d2aa1443b2dfcde6044741a207eabdc3ddb8.css" rel="stylesheet" integrity="sha256-4LsPKBI78ITVVfySU8bSqhRDst/N5gRHQaIH6r3D3bg=" />
@@ -173,7 +169,7 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
               
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col "><a
+            </li><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/consulta/"
@@ -198,13 +194,22 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
   >Consultar Cfdi
     </a>
               
-            </li><li class="hx-flex hx-flex-col "><a
+            </li><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/facturotas.docs/api/consulta/consultarcfdisrelacionados/"
     
   >Consultar Cfdis Relacionados
     </a>
+  
+    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
+              <a
+                href="#"
+                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
+              ></a>
+            </li>
+          </ul>
+  
               
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
@@ -224,7 +229,7 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
               
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/"
@@ -289,22 +294,13 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
   >Timbrar Retenciones Timbre Fiscal Digital
     </a>
               
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarsp/"
     
   >Timbrar Sector Primario
     </a>
-  
-    <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
-              <a
-                href="#"
-                class="hx-flex hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [word-break:break-word] hx-cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] contrast-more:hx-border hx-gap-2 before:hx-opacity-25 before:hx-content-['#'] hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:hx-text-gray-900 contrast-more:dark:hx-text-gray-50 contrast-more:hx-border-transparent contrast-more:hover:hx-border-gray-900 contrast-more:dark:hover:hx-border-gray-50"
-              ></a>
-            </li>
-          </ul>
-  
               
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
@@ -406,7 +402,7 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
               
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col "><a
+            </li><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/consulta/"
@@ -431,9 +427,9 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
   >Consultar Cfdi
     </a>
               
-            </li><li class="hx-flex hx-flex-col "><a
+            </li><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/facturotas.docs/api/consulta/consultarcfdisrelacionados/"
     
   >Consultar Cfdis Relacionados
@@ -457,7 +453,7 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
               
             </li></ul>
       </div>
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/"
@@ -522,9 +518,9 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
   >Timbrar Retenciones Timbre Fiscal Digital
     </a>
               
-            </li><li class="hx-flex hx-flex-col open"><a
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarsp/"
     
   >Timbrar Sector Primario
@@ -595,7 +591,7 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
-        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#par%c3%a1metros-de-salida-output---respuestatimbrado">Parámetros de Salida (Output) - RespuestaTimbrado
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#par%c3%a1metros-de-salida-output---respuestarelacionados">Parámetros de Salida (Output) - RespuestaRelacionados
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
@@ -634,16 +630,16 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
           <a href="/facturotas.docs/api/">API</a>
         </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
-          <a href="/facturotas.docs/api/timbrado/">Timbrado</a>
-        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Timbrar Sector Primario</div>
+          <a href="/facturotas.docs/api/consulta/">Consulta</a>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Consultar Cfdis Relacionados</div>
   </div>
 
         <div class="content">
-          <h1>Timbrar Sector Primario</h1>
-          <p>Esta sección detalla la operación del servicio de timbrado especializado para el Sector Primario.</p>
+          
+          <h1>consultarCfdisRelacionados</h1><p>Esta sección detalla la operación para consultar la lista de CFDI relacionados a un comprobante específico a partir de su Folio Fiscal (UUID).</p>
 <h3>Descripción de la Operación<span class="hx-absolute -hx-mt-20" id="descripción-de-la-operación"></span>
-    <a href="#descripci%c3%b3n-de-la-operaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Esta operación permite timbrar un Comprobante Fiscal Digital por Internet (CFDI) que incluye el <strong>Complemento para el Sector Primario</strong>. Está diseñada para contribuyentes que realizan actividades agrícolas, silvícolas, ganaderas o pesqueras.</p>
-<p>El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, devolviendo el XML completo con el Timbre Fiscal Digital (TFD) incorporado.</p>
+    <a href="#descripci%c3%b3n-de-la-operaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Esta operación permite obtener una lista de los folios fiscales (UUID) de los comprobantes que están relacionados con un CFDI en particular. Para realizar la consulta, es necesario proporcionar las credenciales de la API, los archivos de certificado (.cer y .key) en formato PEM, el RFC del emisor y el UUID del comprobante del cual se desea obtener los CFDI relacionados.</p>
+<p>La respuesta incluye un código de estado, un mensaje descriptivo y, en caso de éxito, una estructura JSON con la lista de los documentos relacionados.</p>
 <h3>Parámetros de Entrada (Input)<span class="hx-absolute -hx-mt-20" id="parámetros-de-entrada-input"></span>
     <a href="#par%c3%a1metros-de-entrada-input" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
   <thead>
@@ -660,15 +656,29 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
           <td style="text-align: left">Credencial de acceso al servicio (<a href="../../../#Requisitos" >Solicita aquí</a>).</td>
       </tr>
       <tr>
-          <td style="text-align: left"><code>xmlCFDI</code></td>
+          <td style="text-align: left"><code>keyPEM</code></td>
           <td style="text-align: left"><code>string</code></td>
-          <td style="text-align: left">Contenido del documento XML del CFDI v4.0 que <strong>debe incluir el Complemento para el Sector Primario</strong>.</td>
+          <td style="text-align: left">Contenido del archivo de llave privada (.key) en formato PEM.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>cerPEM</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">Contenido del archivo de certificado (.cer) en formato PEM.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>uuid</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">Folio Fiscal (UUID) del CFDI del cual se consultarán los relacionados.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>rfcEmisor</code></td>
+          <td style="text-align: left"><code>string</code></td>
+          <td style="text-align: left">RFC del contribuyente emisor del CFDI.</td>
       </tr>
   </tbody>
 </table>
-<h3>Parámetros de Salida (Output) - RespuestaTimbrado<span class="hx-absolute -hx-mt-20" id="parámetros-de-salida-output---respuestatimbrado"></span>
-    <a href="#par%c3%a1metros-de-salida-output---respuestatimbrado" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>La respuesta de esta operación es idéntica a la de la operación <code>timbrar</code>.</p>
-<table>
+<h3>Parámetros de Salida (Output) - RespuestaRelacionados<span class="hx-absolute -hx-mt-20" id="parámetros-de-salida-output---respuestarelacionados"></span>
+    <a href="#par%c3%a1metros-de-salida-output---respuestarelacionados" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
   <thead>
       <tr>
           <th style="text-align: left">Atributo</th>
@@ -680,23 +690,22 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
       <tr>
           <td style="text-align: left"><code>code</code></td>
           <td style="text-align: left"><code>string</code></td>
-          <td style="text-align: left">Código de respuesta de la operación.</td>
+          <td style="text-align: left">Código de respuesta que indica el resultado de la operación.</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>message</code></td>
           <td style="text-align: left"><code>string</code></td>
-          <td style="text-align: left">Mensaje detallado de la respuesta.</td>
+          <td style="text-align: left">Mensaje descriptivo sobre el resultado de la operación.</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>data</code></td>
           <td style="text-align: left"><code>string</code></td>
-          <td style="text-align: left">XML del CFDI timbrado en caso de éxito.</td>
+          <td style="text-align: left">Estructura en formato JSON que contiene la lista de los CFDI relacionados.</td>
       </tr>
   </tbody>
 </table>
 <h3>Ejemplo de Código<span class="hx-absolute -hx-mt-20" id="ejemplo-de-código"></span>
-    <a href="#ejemplo-de-c%c3%b3digo" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta.</p>
-<h4>Solicitud (Request)<span class="hx-absolute -hx-mt-20" id="solicitud-request"></span>
+    <a href="#ejemplo-de-c%c3%b3digo" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4>Solicitud (Request)<span class="hx-absolute -hx-mt-20" id="solicitud-request"></span>
     <a href="#solicitud-request" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><div class="hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain">
   <div class="hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800"><button
         class="hextra-tabs-toggle data-[state=selected]:hx-border-primary-500 data-[state=selected]:hx-text-primary-600 data-[state=selected]:dark:hx-border-primary-500 data-[state=selected]:dark:hx-text-primary-600 hx-mr-2 hx-rounded-t hx-p-2 hx-font-medium hx-leading-5 hx-transition-colors -hx-mb-0.5 hx-select-none hx-border-b-2 hx-border-transparent hx-text-gray-600 hover:hx-border-gray-200 hover:hx-text-black dark:hx-text-gray-200 dark:hover:hx-border-neutral-800 dark:hover:hx-text-white"
@@ -721,84 +730,64 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-0"
-  role="tabpanel" tabindex="0"  data-state="selected" ><h3>Herramienta svcutil<span class="hx-absolute -hx-mt-20" id="herramienta-svcutil"></span>
-    <a href="#herramienta-svcutil" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Descarga e instala la herramienta <a href="https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-svcutil-guide?tabs=dotnetsvcutil2x" target="_blank" rel="noopener">svcutil</a></p>
-<p>Ejecuta el comando siguiente (<strong>DESARROLLO</strong>)</p>
+  role="tabpanel" tabindex="0"  data-state="selected" ><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se utiliza la herramienta <code>svcutil</code> de .NET para generar el cliente a partir del WSDL.</p>
+<ul>
+<li><strong>Desarrollo:</strong> <code>dotnet svcutil https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></li>
+<li><strong>Producción:</strong> <code>dotnet svcutil https://app.facturaloplus.com/ws/servicio.do?wsdl</code></li>
+</ul>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
-<div><pre><code>svcutil.exe https://dev.facturaloplus.com/ws/servicio.do?wsdl /out:ServicioTimbradoClient.cs /config:app.config</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<p>Esto genera dos archivos: ServicioTimbradoClient.cs y la configuración en app.config</p>
-<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span> <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> GetXmlCfdiSectorPrimario() =&gt; <span style="color:#e6db74">&#34;&#34;&#34; 
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span>      &lt;?xml version=<span style="color:#e6db74">&#34;1.0&#34;</span> encoding=<span style="color:#e6db74">&#34;UTF-8&#34;</span>?&gt;
-</span></span><span style="display:flex;"><span>      &lt;cfdi:Comprobante
-</span></span><span style="display:flex;"><span>          xmlns:cfdi=<span style="color:#e6db74">&#34;http://www.sat.gob.mx/cfd/4&#34;</span>
-</span></span><span style="display:flex;"><span>          xmlns:xsi=<span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-</span></span><span style="display:flex;"><span>          xmlns:sp=<span style="color:#e6db74">&#34;http://www.sat.gob.mx/sectorprimario&#34;</span>
-</span></span><span style="display:flex;"><span>          xsi:schemaLocation=<span style="color:#e6db74">&#34;http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd http://www.sat.gob.mx/sectorprimario http://www.sat.gob.mx/sitio_internet/cfd/sectorprimario/sectorprimario.xsd&#34;</span>
-</span></span><span style="display:flex;"><span>          Version=<span style="color:#e6db74">&#34;4.0&#34;</span> Serie=<span style="color:#e6db74">&#34;SP&#34;</span> Folio=<span style="color:#e6db74">&#34;100&#34;</span> Fecha=<span style="color:#e6db74">&#34;2025-07-05T12:00:00&#34;</span>
-</span></span><span style="display:flex;"><span>          SubTotal=<span style="color:#e6db74">&#34;5000.00&#34;</span> Moneda=<span style="color:#e6db74">&#34;MXN&#34;</span> Total=<span style="color:#e6db74">&#34;5000.00&#34;</span> TipoDeComprobante=<span style="color:#e6db74">&#34;I&#34;</span>
-</span></span><span style="display:flex;"><span>          Exportacion=<span style="color:#e6db74">&#34;01&#34;</span> MetodoPago=<span style="color:#e6db74">&#34;PUE&#34;</span> FormaPago=<span style="color:#e6db74">&#34;01&#34;</span>
-</span></span><span style="display:flex;"><span>          NoCertificado=<span style="color:#e6db74">&#34;30001000000300023708&#34;</span> Certificado=<span style="color:#e6db74">&#34;MIIC...&#34;</span> Sello=<span style="color:#e6db74">&#34;...&#34;</span>
-</span></span><span style="display:flex;"><span>          LugarExpedicion=<span style="color:#e6db74">&#34;60123&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>          &lt;cfdi:Emisor Rfc=<span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span> Nombre=<span style="color:#e6db74">&#34;Productor Agrícola Ejemplo&#34;</span> RegimenFiscal=<span style="color:#e6db74">&#34;621&#34;</span>/&gt;
-</span></span><span style="display:flex;"><span>          &lt;cfdi:Receptor Rfc=<span style="color:#e6db74">&#34;XAXX010101000&#34;</span> Nombre=<span style="color:#e6db74">&#34;Comprador General&#34;</span> DomicilioFiscalReceptor=<span style="color:#e6db74">&#34;64000&#34;</span> RegimenFiscalReceptor=<span style="color:#e6db74">&#34;616&#34;</span> UsoCFDI=<span style="color:#e6db74">&#34;G01&#34;</span>/&gt;
-</span></span><span style="display:flex;"><span>          &lt;cfdi:Conceptos&gt;
-</span></span><span style="display:flex;"><span>              &lt;cfdi:Concepto ObjetoImp=<span style="color:#e6db74">&#34;01&#34;</span> ClaveProdServ=<span style="color:#e6db74">&#34;01010101&#34;</span> ClaveUnidad=<span style="color:#e6db74">&#34;KGM&#34;</span> Cantidad=<span style="color:#e6db74">&#34;100&#34;</span> Descripcion=<span style="color:#e6db74">&#34;Maíz Blanco&#34;</span> ValorUnitario=<span style="color:#e6db74">&#34;50.00&#34;</span> Importe=<span style="color:#e6db74">&#34;5000.00&#34;</span>/&gt;
-</span></span><span style="display:flex;"><span>          &lt;/cfdi:Conceptos&gt;
-</span></span><span style="display:flex;"><span>          &lt;cfdi:Complemento&gt;
-</span></span><span style="display:flex;"><span>              &lt;sp:SectorPrimario Version=<span style="color:#e6db74">&#34;1.0&#34;</span> TipoOperacion=<span style="color:#e6db74">&#34;Venta&#34;</span>/&gt;
-</span></span><span style="display:flex;"><span>          &lt;/cfdi:Complemento&gt;
-</span></span><span style="display:flex;"><span>      &lt;/cfdi:Comprobante&gt;
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;&#34;&#34;;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span>
-</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;RespuestaTimbrado&gt; TimbrarSPAsync(<span style="color:#66d9ef">string</span> apiKey, <span style="color:#66d9ef">string</span> xmlCfdi)
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Threading.Tasks;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConsultarRelacionadosRequest</span>
+</span></span><span style="display:flex;"><span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Apikey { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> KeyPEM { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> CerPEM { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Uuid { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> RfcEmisor { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;RespuestaRelacionados&gt; ConsultarRelacionadosAsync(ConsultarRelacionadosRequest request)
 </span></span><span style="display:flex;"><span>  {
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">using</span> var client = <span style="color:#66d9ef">new</span> ServicioTimbradoWSPortTypeClient(<span style="color:#e6db74">&#34;ServicioTimbradoWSPort&#34;</span>);
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span>
 </span></span><span style="display:flex;"><span>      {
-</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">var</span> response = <span style="color:#66d9ef">await</span> client.timbrarSPAsync(apiKey, xmlCfdi);
-</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> RespuestaTimbrado
-</span></span><span style="display:flex;"><span>          {
-</span></span><span style="display:flex;"><span>              Code = response.code,
-</span></span><span style="display:flex;"><span>              Message = response.message,
-</span></span><span style="display:flex;"><span>              Data = response.data
-</span></span><span style="display:flex;"><span>          };
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">var</span> response = <span style="color:#66d9ef">await</span> client.consultarCfdisRelacionadosAsync(request.Apikey, request.KeyPEM, request.CerPEM, request.Uuid, request.RfcEmisor);
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> response;
 </span></span><span style="display:flex;"><span>      }
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">catch</span> (Exception ex)
 </span></span><span style="display:flex;"><span>      {
-</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">$&#34;Error al timbrar Sector Primario: {ex.Message}&#34;</span>);
+</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">$&#34;Error al consultar CFDI relacionados: {ex.Message}&#34;</span>);
 </span></span><span style="display:flex;"><span>         <span style="color:#66d9ef">throw</span>;
 </span></span><span style="display:flex;"><span>      }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span> <span style="color:#75715e">// Ejemplo de uso</span>
-</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task EjemploUsoTimbrarSPAsync()
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task EjemploUsoConsultarRelacionadosAsync()
 </span></span><span style="display:flex;"><span> {
-</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">string</span> apiKey = <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>;
-</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">string</span> xmlCfdi = GetXmlCfdiSectorPrimario();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">var</span> resultado = <span style="color:#66d9ef">await</span> TimbrarSPAsync(apiKey, xmlCfdi);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">if</span> (resultado?.Code == <span style="color:#e6db74">&#34;200&#34;</span>)
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">var</span> request = <span style="color:#66d9ef">new</span> ConsultarRelacionadosRequest
 </span></span><span style="display:flex;"><span>     {
-</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">&#34;¡Timbrado Sector Primario Exitoso!&#34;</span>);
-</span></span><span style="display:flex;"><span>         Console.WriteLine(resultado.Data);
+</span></span><span style="display:flex;"><span>         Apikey = <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>,
+</span></span><span style="display:flex;"><span>         KeyPEM = <span style="color:#e6db74">&#34;CONTENIDO_KEY_PEM&#34;</span>,
+</span></span><span style="display:flex;"><span>         CerPEM = <span style="color:#e6db74">&#34;CONTENIDO_CER_PEM&#34;</span>,
+</span></span><span style="display:flex;"><span>         Uuid = <span style="color:#e6db74">&#34;5FD4E09E-52F4-4A0E-8E4D-39E6B8E47168&#34;</span>,
+</span></span><span style="display:flex;"><span>         RfcEmisor = <span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span>
+</span></span><span style="display:flex;"><span>     };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">var</span> resultado = <span style="color:#66d9ef">await</span> ConsultarRelacionadosAsync(request);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">if</span> (resultado != <span style="color:#66d9ef">null</span> &amp;&amp; resultado.code == <span style="color:#e6db74">&#34;200&#34;</span>)
+</span></span><span style="display:flex;"><span>     {
+</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">&#34;¡Consulta Exitosa!&#34;</span>);
+</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">$&#34;Mensaje: {resultado.message}&#34;</span>);
+</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">$&#34;Datos: {resultado.data}&#34;</span>);
 </span></span><span style="display:flex;"><span>     }
 </span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">else</span>
 </span></span><span style="display:flex;"><span>     {
-</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">$&#34;Error: {resultado?.Code} - {resultado?.Message}&#34;</span>);
+</span></span><span style="display:flex;"><span>         Console.WriteLine(<span style="color:#e6db74">$&#34;Error: {resultado?.message}&#34;</span>);
 </span></span><span style="display:flex;"><span>     }
 </span></span><span style="display:flex;"><span> }</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
@@ -809,100 +798,59 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-</div>
-</div>
+</div></div>
 
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-1"
-  role="tabpanel"><h3>Herramienta wsimport<span class="hx-absolute -hx-mt-20" id="herramienta-wsimport"></span>
-    <a href="#herramienta-wsimport" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Java incluye la herramienta wsimport en el JDK para generar las clases cliente a partir de un WSDL.</p>
-<p>Ejecuta el siguiente comando en tu terminal para el ambiente de DESARROLLO:</p>
+  role="tabpanel"><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se utiliza la herramienta <code>wsimport</code> del JDK para generar las clases de cliente.</p>
+<ul>
+<li><strong>Desarrollo:</strong> <code>wsimport -keep -verbose https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></li>
+<li><strong>Producción:</strong> <code>wsimport -keep -verbose https://app.facturaloplus.com/ws/servicio.do?wsdl</code></li>
+</ul>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><pre><code>wsimport -keep -p com.facturaloplus.cliente https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<p>-keep: Conserva los archivos fuente .java generados.</p>
-<p>-p: Especifica el paquete (package) donde se guardarán las clases.</p>
-<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.concurrent.CompletableFuture;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimbradoSPService</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConsultarRelacionadosService</span> {
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ... (Definición de ExecutorService, Logger, etc.)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">generarXmlCfdiSectorPrimario</span>() {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;cfdi:Comprobante
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:cfdi=&#34;http://www.sat.gob.mx/cfd/4&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:sp=&#34;http://www.sat.gob.mx/sectorprimario&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xsi:schemaLocation=&#34;http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd http://www.sat.gob.mx/sectorprimario http://www.sat.gob.mx/sitio_internet/cfd/sectorprimario/sectorprimario.xsd&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          Version=&#34;4.0&#34; Serie=&#34;SP&#34; Folio=&#34;100&#34; Fecha=&#34;2025-07-05T12:00:00&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          SubTotal=&#34;5000.00&#34; Moneda=&#34;MXN&#34; Total=&#34;5000.00&#34; TipoDeComprobante=&#34;I&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          Exportacion=&#34;01&#34; MetodoPago=&#34;PUE&#34; FormaPago=&#34;01&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          NoCertificado=&#34;30001000000300023708&#34; Certificado=&#34;MIIC...&#34; Sello=&#34;...&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          LugarExpedicion=&#34;60123&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Emisor Rfc=&#34;ABC010101XYZ&#34; Nombre=&#34;Productor Agrícola Ejemplo&#34; RegimenFiscal=&#34;621&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Receptor Rfc=&#34;XAXX010101000&#34; Nombre=&#34;Comprador General&#34; DomicilioFiscalReceptor=&#34;64000&#34; RegimenFiscalReceptor=&#34;616&#34; UsoCFDI=&#34;G01&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Conceptos&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;cfdi:Concepto ObjetoImp=&#34;01&#34; ClaveProdServ=&#34;01010101&#34; ClaveUnidad=&#34;KGM&#34; Cantidad=&#34;100&#34; Descripcion=&#34;Maíz Blanco&#34; ValorUnitario=&#34;50.00&#34; Importe=&#34;5000.00&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/cfdi:Conceptos&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Complemento&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;sp:SectorPrimario Version=&#34;1.0&#34; TipoOperacion=&#34;Venta&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/cfdi:Complemento&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/cfdi:Comprobante&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;&#34;&#34;</span>;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> CompletableFuture<span style="color:#f92672">&lt;</span>RespuestaTimbrado<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">timbrarSPAsync</span>(String apiKey, String xmlCfdi) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> CompletableFuture<span style="color:#f92672">&lt;</span>RespuestaRelacionados<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">consultarRelacionadosAsync</span>(String apiKey, String keyPEM, String cerPEM, String uuid, String rfcEmisor) {
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> CompletableFuture.<span style="color:#a6e22e">supplyAsync</span>(() <span style="color:#f92672">-&gt;</span> {
 </span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>              ServicioTimbradoWS service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServicioTimbradoWS();
 </span></span><span style="display:flex;"><span>              ServicioTimbradoWSPortType port <span style="color:#f92672">=</span> service.<span style="color:#a6e22e">getServicioTimbradoWSPort</span>();
-</span></span><span style="display:flex;"><span>              
-</span></span><span style="display:flex;"><span>              Respuesta response <span style="color:#f92672">=</span> port.<span style="color:#a6e22e">timbrarSP</span>(apiKey, xmlCfdi);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>              RespuestaTimbrado resultado <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RespuestaTimbrado();
-</span></span><span style="display:flex;"><span>              resultado.<span style="color:#a6e22e">setCode</span>(response.<span style="color:#a6e22e">getCode</span>());
-</span></span><span style="display:flex;"><span>              resultado.<span style="color:#a6e22e">setMessage</span>(response.<span style="color:#a6e22e">getMessage</span>());
-</span></span><span style="display:flex;"><span>              resultado.<span style="color:#a6e22e">setData</span>(response.<span style="color:#a6e22e">getData</span>());
-</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">return</span> resultado;
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">return</span> port.<span style="color:#a6e22e">consultarCfdisRelacionados</span>(apiKey, keyPEM, cerPEM, uuid, rfcEmisor);
 </span></span><span style="display:flex;"><span>          } <span style="color:#66d9ef">catch</span> (Exception ex) {
-</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(<span style="color:#e6db74">&#34;Error al timbrar Sector Primario&#34;</span>, ex);
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(<span style="color:#e6db74">&#34;Error al consultar CFDI relacionados&#34;</span>, ex);
 </span></span><span style="display:flex;"><span>          }
 </span></span><span style="display:flex;"><span>      }, executor);
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Ejemplo de uso</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
-</span></span><span style="display:flex;"><span>      TimbradoSPService service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TimbradoSPService();
+</span></span><span style="display:flex;"><span>      ConsultarRelacionadosService service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConsultarRelacionadosService();
 </span></span><span style="display:flex;"><span>      String apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>;
-</span></span><span style="display:flex;"><span>      String xmlCfdi <span style="color:#f92672">=</span> service.<span style="color:#a6e22e">generarXmlCfdiSectorPrimario</span>();
+</span></span><span style="display:flex;"><span>      String keyPEM <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;CONTENIDO_KEY_PEM&#34;</span>;
+</span></span><span style="display:flex;"><span>      String cerPEM <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;CONTENIDO_CER_PEM&#34;</span>;
+</span></span><span style="display:flex;"><span>      String uuid <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;5FD4E09E-52F4-4A0E-8E4D-39E6B8E47168&#34;</span>;
+</span></span><span style="display:flex;"><span>      String rfcEmisor <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      service.<span style="color:#a6e22e">timbrarSPAsync</span>(apiKey, xmlCfdi).<span style="color:#a6e22e">whenComplete</span>((resultado, ex) <span style="color:#f92672">-&gt;</span> {
-</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">if</span> (ex <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
-</span></span><span style="display:flex;"><span>              System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">+</span> ex.<span style="color:#a6e22e">getMessage</span>());
-</span></span><span style="display:flex;"><span>          } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#34;200&#34;</span>.<span style="color:#a6e22e">equals</span>(resultado.<span style="color:#a6e22e">getCode</span>())) {
-</span></span><span style="display:flex;"><span>              System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;¡Timbrado Sector Primario Exitoso!&#34;</span>);
-</span></span><span style="display:flex;"><span>              System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(resultado.<span style="color:#a6e22e">getData</span>());
-</span></span><span style="display:flex;"><span>          } <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>              System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getCode</span>() <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; - &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getMessage</span>());
-</span></span><span style="display:flex;"><span>          }
-</span></span><span style="display:flex;"><span>          service.<span style="color:#a6e22e">shutdown</span>();
-</span></span><span style="display:flex;"><span>      }).<span style="color:#a6e22e">join</span>();
+</span></span><span style="display:flex;"><span>      service.<span style="color:#a6e22e">consultarRelacionadosAsync</span>(apiKey, keyPEM, cerPEM, uuid, rfcEmisor)
+</span></span><span style="display:flex;"><span>          .<span style="color:#a6e22e">whenComplete</span>((resultado, ex) <span style="color:#f92672">-&gt;</span> {
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">if</span> (ex <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">+</span> ex.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>              } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#34;200&#34;</span>.<span style="color:#a6e22e">equals</span>(resultado.<span style="color:#a6e22e">getCode</span>())) {
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;¡Consulta Exitosa!&#34;</span>);
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Mensaje: &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Datos: &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getData</span>());
+</span></span><span style="display:flex;"><span>              } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                  System.<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Error en la respuesta: &#34;</span> <span style="color:#f92672">+</span> resultado.<span style="color:#a6e22e">getMessage</span>());
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>              service.<span style="color:#a6e22e">shutdown</span>();
+</span></span><span style="display:flex;"><span>          }).<span style="color:#a6e22e">join</span>();
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
@@ -913,88 +861,49 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-</div>
-</div>
+</div></div>
 
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-2"
-  role="tabpanel"><h3>Herramienta Zeep<span class="hx-absolute -hx-mt-20" id="herramienta-zeep"></span>
-    <a href="#herramienta-zeep" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Para interactuar con servicios SOAP en Python, la librería zeep es una excelente opción. Proporciona una interfaz limpia y moderna.</p>
-<p>Instala la librería usando pip:</p>
-<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><pre><code>pip install zeep</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
-<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>El siguiente código muestra una implementación robusta utilizando zeep y asyncio para realizar llamadas asíncronas al servicio web.</p>
+  role="tabpanel"><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se utiliza la librería <code>zeep</code>. Para instalarla, ejecuta: <code>pip install zeep</code></p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
 </span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> zeep.asyncio <span style="color:#f92672">import</span> AsyncClient
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generar_xml_cfdi_sector_primario</span>() <span style="color:#f92672">-&gt;</span> str:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span><span style="color:#e6db74">      &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;cfdi:Comprobante
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:cfdi=&#34;http://www.sat.gob.mx/cfd/4&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:sp=&#34;http://www.sat.gob.mx/sectorprimario&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xsi:schemaLocation=&#34;http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd http://www.sat.gob.mx/sectorprimario http://www.sat.gob.mx/sitio_internet/cfd/sectorprimario/sectorprimario.xsd&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          Version=&#34;4.0&#34; Serie=&#34;SP&#34; Folio=&#34;100&#34; Fecha=&#34;2025-07-05T12:00:00&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          SubTotal=&#34;5000.00&#34; Moneda=&#34;MXN&#34; Total=&#34;5000.00&#34; TipoDeComprobante=&#34;I&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          Exportacion=&#34;01&#34; MetodoPago=&#34;PUE&#34; FormaPago=&#34;01&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          NoCertificado=&#34;30001000000300023708&#34; Certificado=&#34;MIIC...&#34; Sello=&#34;...&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          LugarExpedicion=&#34;60123&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Emisor Rfc=&#34;ABC010101XYZ&#34; Nombre=&#34;Productor Agrícola Ejemplo&#34; RegimenFiscal=&#34;621&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Receptor Rfc=&#34;XAXX010101000&#34; Nombre=&#34;Comprador General&#34; DomicilioFiscalReceptor=&#34;64000&#34; RegimenFiscal=&#34;616&#34; UsoCFDI=&#34;G01&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Conceptos&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;cfdi:Concepto ObjetoImp=&#34;01&#34; ClaveProdServ=&#34;01010101&#34; ClaveUnidad=&#34;KGM&#34; Cantidad=&#34;100&#34; Descripcion=&#34;Maíz Blanco&#34; ValorUnitario=&#34;50.00&#34; Importe=&#34;5000.00&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/cfdi:Conceptos&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Complemento&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;sp:SectorPrimario Version=&#34;1.0&#34; TipoOperacion=&#34;Venta&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/cfdi:Complemento&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimbradoService</span>:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConsultarRelacionadosService</span>:
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, wsdl_url: str):
 </span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>wsdl_url <span style="color:#f92672">=</span> wsdl_url
 </span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>async_client <span style="color:#f92672">=</span> AsyncClient(self<span style="color:#f92672">.</span>wsdl_url)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">timbrar_sp_async</span>(self, api_key: str, xml_cfdi: str) <span style="color:#f92672">-&gt;</span> RespuestaTimbrado:
-</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> self<span style="color:#f92672">.</span>async_client<span style="color:#f92672">.</span>service<span style="color:#f92672">.</span>timbrarSP(
-</span></span><span style="display:flex;"><span>            apikey<span style="color:#f92672">=</span>api_key,
-</span></span><span style="display:flex;"><span>            xmlCFDI<span style="color:#f92672">=</span>xml_cfdi
-</span></span><span style="display:flex;"><span>        )
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> RespuestaTimbrado(
-</span></span><span style="display:flex;"><span>            code<span style="color:#f92672">=</span>response<span style="color:#f92672">.</span>code,
-</span></span><span style="display:flex;"><span>            message<span style="color:#f92672">=</span>response<span style="color:#f92672">.</span>message,
-</span></span><span style="display:flex;"><span>            data<span style="color:#f92672">=</span>response<span style="color:#f92672">.</span>data
-</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">consultar_relacionados_async</span>(self, <span style="color:#f92672">**</span>kwargs) <span style="color:#f92672">-&gt;</span> dict:
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> self<span style="color:#f92672">.</span>async_client<span style="color:#f92672">.</span>service<span style="color:#f92672">.</span>consultarCfdisRelacionados(<span style="color:#f92672">**</span>kwargs)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> response
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-</span></span><span style="display:flex;"><span>    service <span style="color:#f92672">=</span> TimbradoService(<span style="color:#e6db74">&#34;https://dev.facturaloplus.com/ws/servicio.do?wsdl&#34;</span>)
-</span></span><span style="display:flex;"><span>    api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>;
-</span></span><span style="display:flex;"><span>    xml_cfdi <span style="color:#f92672">=</span> generar_xml_cfdi_sector_primario();
+</span></span><span style="display:flex;"><span>    service <span style="color:#f92672">=</span> ConsultarRelacionadosService(<span style="color:#e6db74">&#34;https://dev.facturaloplus.com/ws/servicio.do?wsdl&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    params <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;apikey&#34;</span>: <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;keyPEM&#34;</span>: <span style="color:#e6db74">&#34;CONTENIDO_KEY_PEM&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;cerPEM&#34;</span>: <span style="color:#e6db74">&#34;CONTENIDO_CER_PEM&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;uuid&#34;</span>: <span style="color:#e6db74">&#34;5FD4E09E-52F4-4A0E-8E4D-39E6B8E47168&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;rfcEmisor&#34;</span>: <span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span>
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    resultado <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> service<span style="color:#f92672">.</span>timbrar_sp_async(api_key, xml_cfdi);
+</span></span><span style="display:flex;"><span>    resultado <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> service<span style="color:#f92672">.</span>consultar_relacionados_async(<span style="color:#f92672">**</span>params)
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> resultado<span style="color:#f92672">.</span>code <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;200&#34;</span>:
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;¡Timbrado Sector Primario Exitoso!&#34;</span>);
-</span></span><span style="display:flex;"><span>        print(resultado<span style="color:#f92672">.</span>data);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> resultado <span style="color:#f92672">and</span> resultado[<span style="color:#e6db74">&#39;code&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;200&#39;</span>:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;¡Consulta Exitosa!&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Mensaje: </span><span style="color:#e6db74">{</span>resultado[<span style="color:#e6db74">&#39;message&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Datos: </span><span style="color:#e6db74">{</span>resultado[<span style="color:#e6db74">&#39;data&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error: </span><span style="color:#e6db74">{</span>resultado<span style="color:#f92672">.</span>code<span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">{</span>resultado<span style="color:#f92672">.</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error al realizar la consulta: </span><span style="color:#e6db74">{</span>resultado[<span style="color:#e6db74">&#39;message&#39;</span>] <span style="color:#66d9ef">if</span> resultado <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;Sin respuesta&#39;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
-</span></span><span style="display:flex;"><span>    asyncio<span style="color:#f92672">.</span>run(main());</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+</span></span><span style="display:flex;"><span>    asyncio<span style="color:#f92672">.</span>run(main())</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
     title="Copy code"
@@ -1003,87 +912,60 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-</div>
-</div>
+</div></div>
 
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-3"
-  role="tabpanel"><h3>Herramienta SoapClient<span class="hx-absolute -hx-mt-20" id="herramienta-soapclient"></span>
-    <a href="#herramienta-soapclient" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>PHP tiene soporte nativo para SOAP a través de la extensión SOAP. Asegúrate de que la extensión php-soap esté habilitada en tu archivo php.ini.</p>
-<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>El siguiente código muestra una implementación orientada a objetos para consumir el servicio de timbrado.</p>
+  role="tabpanel"><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se requiere la extensión <code>php-soap</code>. Generalmente viene incluida con PHP, pero si no, se puede instalar con <code>apt-get install php-soap</code> (Debian/Ubuntu) o <code>yum install php-soap</code> (CentOS/RHEL). Asegúrate de que esté habilitada en tu <code>php.ini</code>.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">generarXmlCfdiSectorPrimario</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&lt;&lt;&lt;&#39;</span><span style="color:#e6db74">XML</span><span style="color:#e6db74">&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;cfdi:Comprobante
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:cfdi=&#34;http://www.sat.gob.mx/cfd/4&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xmlns:sp=&#34;http://www.sat.gob.mx/sectorprimario&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          xsi:schemaLocation=&#34;http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd http://www.sat.gob.mx/sectorprimario http://www.sat.gob.mx/sitio_internet/cfd/sectorprimario/sectorprimario.xsd&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          Version=&#34;4.0&#34; Serie=&#34;SP&#34; Folio=&#34;100&#34; Fecha=&#34;2025-07-05T12:00:00&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          SubTotal=&#34;5000.00&#34; Moneda=&#34;MXN&#34; Total=&#34;5000.00&#34; TipoDeComprobante=&#34;I&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          Exportacion=&#34;01&#34; MetodoPago=&#34;PUE&#34; FormaPago=&#34;01&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          NoCertificado=&#34;30001000000300023708&#34; Certificado=&#34;MIIC...&#34; Sello=&#34;...&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          LugarExpedicion=&#34;60123&#34;&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Emisor Rfc=&#34;ABC010101XYZ&#34; Nombre=&#34;Productor Agrícola Ejemplo&#34; RegimenFiscal=&#34;621&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Receptor Rfc=&#34;XAXX010101000&#34; Nombre=&#34;Comprador General&#34; DomicilioFiscalReceptor=&#34;64000&#34; RegimenFiscalReceptor=&#34;616&#34; UsoCFDI=&#34;G01&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Conceptos&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;cfdi:Concepto ObjetoImp=&#34;01&#34; ClaveProdServ=&#34;01010101&#34; ClaveUnidad=&#34;KGM&#34; Cantidad=&#34;100&#34; Descripcion=&#34;Maíz Blanco&#34; ValorUnitario=&#34;50.00&#34; Importe=&#34;5000.00&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/cfdi:Conceptos&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;cfdi:Complemento&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;sp:SectorPrimario Version=&#34;1.0&#34; TipoOperacion=&#34;Venta&#34;/&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/cfdi:Complemento&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/cfdi:Comprobante&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span><span style="color:#e6db74">XML</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TimbradoService</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConsultarRelacionadosService</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">string</span> $wsdlUrl;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">__construct</span>(<span style="color:#a6e22e">string</span> $wsdlUrl) {
 </span></span><span style="display:flex;"><span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">wsdlUrl</span> <span style="color:#f92672">=</span> $wsdlUrl;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">timbrarSP</span>(<span style="color:#a6e22e">string</span> $apiKey, <span style="color:#a6e22e">string</span> $xmlCfdi)<span style="color:#f92672">:</span> <span style="color:#a6e22e">RespuestaTimbrado</span> {
-</span></span><span style="display:flex;"><span>        $respuesta <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">RespuestaTimbrado</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">consultarRelacionados</span>(<span style="color:#66d9ef">array</span> $params)<span style="color:#f92672">:</span> <span style="color:#f92672">?</span><span style="color:#a6e22e">object</span> {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span> {
 </span></span><span style="display:flex;"><span>            $soapClient <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SoapClient</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">wsdlUrl</span>, [<span style="color:#e6db74">&#39;trace&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;exceptions&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>]);
-</span></span><span style="display:flex;"><span>            $params <span style="color:#f92672">=</span> [
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;apikey&#39;</span>  <span style="color:#f92672">=&gt;</span> $apiKey,
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;xmlCFDI&#39;</span> <span style="color:#f92672">=&gt;</span> $xmlCfdi
-</span></span><span style="display:flex;"><span>            ];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            $response <span style="color:#f92672">=</span> $soapClient<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timbrarSP</span>($params);
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>            $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>            $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            $response <span style="color:#f92672">=</span> $soapClient<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">consultarCfdisRelacionados</span>($params);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">return</span> <span style="color:#f92672">??</span> <span style="color:#66d9ef">null</span>;
 </span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">Exception</span> $e) {
-</span></span><span style="display:flex;"><span>            $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;CLIENT_ERROR&#34;</span>;
-</span></span><span style="display:flex;"><span>            $respuesta<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">=</span> $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessage</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Error: &#34;</span> <span style="color:#f92672">.</span> $e<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMessage</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
 </span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $respuesta;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Ejemplo de uso
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TimbradoService</span>(<span style="color:#e6db74">&#34;https://dev.facturaloplus.com/ws/servicio.do?wsdl&#34;</span>);
-</span></span><span style="display:flex;"><span>$apiKey <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>;
-</span></span><span style="display:flex;"><span>$xmlCfdi <span style="color:#f92672">=</span> <span style="color:#a6e22e">generarXmlCfdiSectorPrimario</span>();
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>$service <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ConsultarRelacionadosService</span>(<span style="color:#e6db74">&#34;https://dev.facturaloplus.com/ws/servicio.do?wsdl&#34;</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>$resultado <span style="color:#f92672">=</span> $service<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">timbrarSP</span>($apiKey, $xmlCfdi);
+</span></span><span style="display:flex;"><span>$params <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;apikey&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;TU_API_KEY_AQUI&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;keyPEM&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;CONTENIDO_KEY_PEM&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;cerPEM&#39;</span>    <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;CONTENIDO_CER_PEM&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;uuid&#39;</span>      <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;5FD4E09E-52F4-4A0E-8E4D-39E6B8E47168&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;rfcEmisor&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;ABC010101XYZ&#34;</span>
+</span></span><span style="display:flex;"><span>];
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#39;Content-Type: text/plain&#39;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ($resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;200&#39;</span>) {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;¡Timbrado Sector Primario Exitoso!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> $resultado<span style="color:#f92672">.</span><span style="color:#a6e22e">data</span>;
+</span></span><span style="display:flex;"><span>$resultado <span style="color:#f92672">=</span> $service<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">consultarRelacionados</span>($params);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">header</span>(<span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ($resultado <span style="color:#f92672">&amp;&amp;</span> $resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">code</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;200&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">json_encode</span>([
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;status&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;success&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;message&#39;</span> <span style="color:#f92672">=&gt;</span> $resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;data&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">json_decode</span>($resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">data</span>)
+</span></span><span style="display:flex;"><span>    ], <span style="color:#a6e22e">JSON_PRETTY_PRINT</span>);
 </span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Error: </span><span style="color:#e6db74">{</span>$resultado<span style="color:#f92672">.</span><span style="color:#a6e22e">code</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> - </span><span style="color:#e6db74">{</span>$resultado<span style="color:#f92672">.</span><span style="color:#a6e22e">message</span><span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">json_encode</span>([
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;status&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;error&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;message&#39;</span> <span style="color:#f92672">=&gt;</span> $resultado<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">message</span> <span style="color:#f92672">??</span> <span style="color:#e6db74">&#39;Error al realizar la consulta.&#39;</span>
+</span></span><span style="display:flex;"><span>    ], <span style="color:#a6e22e">JSON_PRETTY_PRINT</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
 </span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
@@ -1095,25 +977,28 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-</div>
-</div>
+</div></div>
 
 </div>
 <h4>Respuesta (Response)<span class="hx-absolute -hx-mt-20" id="respuesta-response"></span>
-    <a href="#respuesta-response" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>La estructura de la respuesta SOAP es la misma que la de la operación <code>timbrar</code>.</p>
+    <a href="#respuesta-response" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>La respuesta SOAP contiene el resultado de la consulta de CFDI relacionados.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;SOAP-ENV:Envelope</span> <span style="color:#960050;background-color:#1e0010">...</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;SOAP-ENV:Body&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;ns1:timbrarSPResponse</span> <span style="color:#a6e22e">xmlns:ns1=</span><span style="color:#e6db74">&#34;urn:ws_api&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;return</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;tns:RespuestaTimbrado&#34;</span><span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;code</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span>CÓDIGO<span style="color:#f92672">&lt;/code&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;message</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span>MENSAJE<span style="color:#f92672">&lt;/message&gt;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;data</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#75715e">&lt;![CDATA[CFDI TIMBRADO]]&gt;</span><span style="color:#f92672">&lt;/data&gt;</span>
-</span></span><span style="display:flex;"><span>         <span style="color:#f92672">&lt;/return&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/ns1:timbrarSPResponse&gt;</span>
-</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&lt;/SOAP-ENV:Body&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;SOAP-ENV:Envelope</span> <span style="color:#a6e22e">SOAP-ENV:encodingStyle=</span><span style="color:#e6db74">&#34;http://schemas.xmlsoap.org/soap/encoding/&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xmlns:SOAP-ENV=</span><span style="color:#e6db74">&#34;http://schemas.xmlsoap.org/soap/envelope/&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xmlns:xsd=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema&#34;</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xmlns:SOAP-ENC=</span><span style="color:#e6db74">&#34;http://schemas.xmlsoap.org/soap/encoding/&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">xmlns:tns=</span><span style="color:#e6db74">&#34;urn:ws_api&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;SOAP-ENV:Body&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;ns1:consultarCfdisRelacionadosResponse</span> <span style="color:#a6e22e">xmlns:ns1=</span><span style="color:#e6db74">&#34;urn:ws_api&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;return</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;tns:RespuestaRelacionados&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;code</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span>200<span style="color:#f92672">&lt;/code&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;message</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span>OK<span style="color:#f92672">&lt;/code&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;data</span> <span style="color:#a6e22e">xsi:type=</span><span style="color:#e6db74">&#34;xsd:string&#34;</span><span style="color:#f92672">&gt;</span>JSON DE CFDIs RELACIONADOS<span style="color:#f92672">&lt;/data&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/return&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/ns1:consultarCfdisRelacionadosResponse&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/SOAP-ENV:Body&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/SOAP-ENV:Envelope&gt;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
   <button
     class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
@@ -1125,92 +1010,19 @@ El servicio procesa un CFDI (versión 4.0), lo valida, y lo timbra ante el SAT, 
 </div>
 </div>
 <h5>Códigos de respuesta<span class="hx-absolute -hx-mt-20" id="códigos-de-respuesta"></span>
-    <a href="#c%c3%b3digos-de-respuesta" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>
-  Los códigos de respuesta para el timbrado de CFDI son importantes para entender el resultado de la solicitud. A continuación se detallan los códigos más comunes que puedes recibir al realizar una solicitud de timbrado a través de la API.
-</p>
-<table>
-  <thead>
-    <tr>
-      <th>Código</th>
-      <th>Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>Solicitud procesada con éxito</td>
-    </tr>
-    <tr>
-      <td>300</td>
-      <td>API KEY Inválida o inexistente</td>
-    </tr>
-    <tr>
-      <td>301</td>
-      <td>XML mal formado</td>
-    </tr>
-    <tr>
-      <td>302</td>
-      <td>El sello del emisor no es válido</td>
-    </tr>
-    <tr>
-      <td>303</td>
-      <td>El RFC del CSD del emisor no corresponde al RFC del Emisor</td>
-    </tr>
-    <tr>
-      <td>304</td>
-      <td>CSD del Emisor ha sido revobado</td>
-    </tr>
-    <tr>
-      <td>305</td>
-      <td>La fecha de emisión no está dentro de la vigencia del CSD del Emisor</td>
-    </tr>
-    <tr>
-      <td>306</td>
-      <td>La llave utilizada para sellar debe ser un CSD</td>
-    </tr>
-    <tr>
-      <td>307</td>
-      <td>El CFDI contiene un timbre previo</td>
-    </tr>
-    <tr>
-      <td>308</td>
-      <td>El CSD del emisor no ha sido firmado por uno de los Certificados de autoridad del SAT</td>
-    </tr>
-    <tr>
-      <td>401</td>
-      <td>El rango de la fecha de generación no debe de ser mayor a 72 horas para la emisión del timbre</td>
-    </tr>
-    <tr>
-      <td>402</td>
-      <td>RFC del emisor no se encuentra en el régimen de contribuyentes (Lista de validación de régimen) LCO</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
-
-<div><pre><code></code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
-  <button
-    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
-    title="Copy code"
-  >
-    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
-    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
-  </button>
-</div>
-</div>
+    <a href="#c%c3%b3digos-de-respuesta" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>Los códigos de respuesta de la operación (éxito o error en la llamada) se pueden consultar en la sección general de códigos. El detalle específico de los CFDI relacionados se encuentra en el campo <code>data</code> de la respuesta.</p>
 
         </div>
         <div class="hx-mt-16"></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
-        href="/facturotas.docs/api/timbrado/timbrarretenciontfd/"
-        title="Timbrar Retenciones Timbre Fiscal Digital"
+        href="/facturotas.docs/api/consulta/consultarcfdi/"
+        title="Consultar Cfdi"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
-      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Timbrar Retenciones Timbre Fiscal Digital</a><a
-        href="/facturotas.docs/api/timbrado/timbrartxt/"
-        title="Timbrar TXT"
+      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Consultar Cfdi</a><a
+        href="/facturotas.docs/api/consulta/consultarcreditosdisponibles/"
+        title="Consultar Creditos Disponibles"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-ml-auto ltr:hx-pl-4 ltr:hx-text-right rtl:hx-mr-auto rtl:hx-pr-4 rtl:hx-text-left"
-      >Timbrar TXT<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+      >Consultar Creditos Disponibles<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
         
       </main>
     </article>

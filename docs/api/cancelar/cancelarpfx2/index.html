@@ -10,12 +10,12 @@
 <link rel="icon" href="/facturotas.docs/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/facturotas.docs/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/facturotas.docs/site.webmanifest" rel="manifest" />
-<title>Facturotas</title>
-  <meta name="description" content="cancelarPFX2Esta sección detalla la operación para solicitar la cancelación de un CFDI utilizando un archivo PFX que contiene el Certificado de Sello Digital (CSD) del emisor.
+<title>Cancelar Archivo PFX – Facturotas</title>
+  <meta name="description" content="Esta sección detalla la operación para solicitar la cancelación de un CFDI utilizando un archivo PFX que contiene el Certificado de Sello Digital (CSD) del emisor.
 Descripción de la Operación Esta operación permite realizar la solicitud de cancelación de un CFDI (versión 3.3 o 4.0) directamente ante el SAT. A diferencia de otros métodos, esta operación simplifica el envío de credenciales al requerir un único archivo .pfx que contiene tanto el certificado como la llave privada, protegido por una contraseña." /><link rel="canonical" href="https://lijemutu.github.io/facturotas.docs/api/cancelar/cancelarpfx2/" itemprop="url" />
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="cancelarPFX2Esta sección detalla la operación para solicitar la cancelación de un CFDI utilizando un archivo PFX que contiene el Certificado de Sello Digital (CSD) del emisor.
+<meta property="og:title" content="Cancelar Archivo PFX" />
+<meta property="og:description" content="Esta sección detalla la operación para solicitar la cancelación de un CFDI utilizando un archivo PFX que contiene el Certificado de Sello Digital (CSD) del emisor.
 Descripción de la Operación
     Esta operación permite realizar la solicitud de cancelación de un CFDI (versión 3.3 o 4.0) directamente ante el SAT. A diferencia de otros métodos, esta operación simplifica el envío de credenciales al requerir un único archivo .pfx que contiene tanto el certificado como la llave privada, protegido por una contraseña." />
 <meta property="og:type" content="article" />
@@ -23,13 +23,13 @@ Descripción de la Operación
 
 
 
-  <meta itemprop="name" content="Facturotas">
-  <meta itemprop="description" content="cancelarPFX2Esta sección detalla la operación para solicitar la cancelación de un CFDI utilizando un archivo PFX que contiene el Certificado de Sello Digital (CSD) del emisor.
+  <meta itemprop="name" content="Cancelar Archivo PFX">
+  <meta itemprop="description" content="Esta sección detalla la operación para solicitar la cancelación de un CFDI utilizando un archivo PFX que contiene el Certificado de Sello Digital (CSD) del emisor.
 Descripción de la Operación Esta operación permite realizar la solicitud de cancelación de un CFDI (versión 3.3 o 4.0) directamente ante el SAT. A diferencia de otros métodos, esta operación simplifica el envío de credenciales al requerir un único archivo .pfx que contiene tanto el certificado como la llave privada, protegido por una contraseña.">
-  <meta itemprop="wordCount" content="1647">
+  <meta itemprop="wordCount" content="1714">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Facturotas">
-  <meta name="twitter:description" content="cancelarPFX2Esta sección detalla la operación para solicitar la cancelación de un CFDI utilizando un archivo PFX que contiene el Certificado de Sello Digital (CSD) del emisor.
+  <meta name="twitter:title" content="Cancelar Archivo PFX">
+  <meta name="twitter:description" content="Esta sección detalla la operación para solicitar la cancelación de un CFDI utilizando un archivo PFX que contiene el Certificado de Sello Digital (CSD) del emisor.
 Descripción de la Operación Esta operación permite realizar la solicitud de cancelación de un CFDI (versión 3.3 o 4.0) directamente ante el SAT. A diferencia de otros métodos, esta operación simplifica el envío de credenciales al requerir un único archivo .pfx que contiene tanto el certificado como la llave privada, protegido por una contraseña.">
 
     <link rel="preload" href="/facturotas.docs/css/compiled/main.min.e0bb0f28123bf084d555fc9253c6d2aa1443b2dfcde6044741a207eabdc3ddb8.css" as="style" integrity="sha256-4LsPKBI78ITVVfySU8bSqhRDst/N5gRHQaIH6r3D3bg=" />
@@ -135,20 +135,12 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
     </a>
               <div class="ltr:hx-pr-0 hx-overflow-hidden">
-        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/cancelar/cancelar2/"
-    
-  >Cancelar2
-    </a>
-              
-            </li><li class="hx-flex hx-flex-col open"><a
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/facturotas.docs/api/cancelar/cancelarpfx2/"
     
-  >Cancelar Pfx2
+  >Cancelar Archivo PFX
     </a>
   
     <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
@@ -163,9 +155,17 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/cancelar/cancelar2/"
+    
+  >Cancelar CFDI
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/cancelar/cancelarretencioncsd/"
     
-  >cancelarRetencionCSD
+  >Cancelar Retenciones
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -173,7 +173,7 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/cancelar/cancelarsp/"
     
-  >cancelarSP
+  >Cancelar Sector Primario
     </a>
               
             </li></ul>
@@ -188,6 +188,38 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
     </a>
               <div class="ltr:hx-pr-0 hx-overflow-hidden">
         <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarautorizacionespendientes/"
+    
+  >Consultar Autorizaciones Pendientes
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarcfdi/"
+    
+  >Consultar Cfdi
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarcfdisrelacionados/"
+    
+  >Consultar Cfdis Relacionados
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarcreditosdisponibles/"
+    
+  >Consultar Creditos Disponibles
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/consulta/consultarestadosat/"
@@ -217,14 +249,6 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/timbrado/timbradotfd/"
-    
-  >Timbrado Tfd
-    </a>
-              
-            </li><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarconsello/"
     
   >Timbrar Con Sello
@@ -241,14 +265,6 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/timbrado/timbrarjson2/"
-    
-  >Timbrar Json2
-    </a>
-              
-            </li><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarretencion/"
     
   >Timbrar Retencion
@@ -257,9 +273,25 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbradotfd/"
+    
+  >Timbrar Con Timbre Fiscal Digital
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbrarjson2/"
+    
+  >Timbrar JSON &#43; PDF
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarretenciontfd/"
     
-  >Timbrar Retencion Tfd
+  >Timbrar Retenciones Timbre Fiscal Digital
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -267,7 +299,7 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarsp/"
     
-  >Timbrar Sp
+  >Timbrar Sector Primario
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -275,7 +307,7 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrartxt/"
     
-  >Timbrar Txt
+  >Timbrar TXT
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -283,7 +315,7 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrartxt2/"
     
-  >Timbrar Txt2
+  >Timbrar TXT &#43; PDF
     </a>
               
             </li></ul>
@@ -336,20 +368,20 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx-h-[18px] hx-min-w-[18px] hx-rounded-sm hx-p-0.5 hover:hx-bg-gray-800/5 dark:hover:hx-bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx-origin-center hx-transition-transform rtl:-hx-rotate-180"></path></svg></span>
     </a>
               <div class="ltr:hx-pr-0 hx-overflow-hidden">
-        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/cancelar/cancelar2/"
-    
-  >Cancelar2
-    </a>
-              
-            </li><li class="hx-flex hx-flex-col open"><a
+        <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col open"><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/facturotas.docs/api/cancelar/cancelarpfx2/"
     
-  >Cancelar Pfx2
+  >Cancelar Archivo PFX
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/cancelar/cancelar2/"
+    
+  >Cancelar CFDI
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -357,7 +389,7 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/cancelar/cancelarretencioncsd/"
     
-  >cancelarRetencionCSD
+  >Cancelar Retenciones
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -365,7 +397,7 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/cancelar/cancelarsp/"
     
-  >cancelarSP
+  >Cancelar Sector Primario
     </a>
               
             </li></ul>
@@ -380,6 +412,38 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
     </a>
               <div class="ltr:hx-pr-0 hx-overflow-hidden">
         <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarautorizacionespendientes/"
+    
+  >Consultar Autorizaciones Pendientes
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarcfdi/"
+    
+  >Consultar Cfdi
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarcfdisrelacionados/"
+    
+  >Consultar Cfdis Relacionados
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarcreditosdisponibles/"
+    
+  >Consultar Creditos Disponibles
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/consulta/consultarestadosat/"
@@ -409,14 +473,6 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/timbrado/timbradotfd/"
-    
-  >Timbrado Tfd
-    </a>
-              
-            </li><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarconsello/"
     
   >Timbrar Con Sello
@@ -433,14 +489,6 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/timbrado/timbrarjson2/"
-    
-  >Timbrar Json2
-    </a>
-              
-            </li><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarretencion/"
     
   >Timbrar Retencion
@@ -449,9 +497,25 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbradotfd/"
+    
+  >Timbrar Con Timbre Fiscal Digital
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbrarjson2/"
+    
+  >Timbrar JSON &#43; PDF
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarretenciontfd/"
     
-  >Timbrar Retencion Tfd
+  >Timbrar Retenciones Timbre Fiscal Digital
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -459,7 +523,7 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarsp/"
     
-  >Timbrar Sp
+  >Timbrar Sector Primario
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -467,7 +531,7 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrartxt/"
     
-  >Timbrar Txt
+  >Timbrar TXT
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -475,7 +539,7 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrartxt2/"
     
-  >Timbrar Txt2
+  >Timbrar TXT &#43; PDF
     </a>
               
             </li></ul>
@@ -567,12 +631,12 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
         </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
           <a href="/facturotas.docs/api/cancelar/">Cancelar</a>
-        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Cancelar Pfx2</div>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Cancelar Archivo PFX</div>
   </div>
 
         <div class="content">
-          
-          <h1>cancelarPFX2</h1><p>Esta sección detalla la operación para solicitar la cancelación de un CFDI utilizando un archivo PFX que contiene el Certificado de Sello Digital (CSD) del emisor.</p>
+          <h1>Cancelar Archivo PFX</h1>
+          <p>Esta sección detalla la operación para solicitar la cancelación de un CFDI utilizando un archivo PFX que contiene el Certificado de Sello Digital (CSD) del emisor.</p>
 <h3>Descripción de la Operación<span class="hx-absolute -hx-mt-20" id="descripción-de-la-operación"></span>
     <a href="#descripci%c3%b3n-de-la-operaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Esta operación permite realizar la solicitud de cancelación de un CFDI (versión 3.3 o 4.0) directamente ante el SAT. A diferencia de otros métodos, esta operación simplifica el envío de credenciales al requerir un único archivo <code>.pfx</code> que contiene tanto el certificado como la llave privada, protegido por una contraseña.</p>
 <p>Se debe especificar uno de los motivos de cancelación definidos por el SAT. Opcionalmente, se debe proporcionar el folio fiscal (UUID) del CFDI que sustituye al cancelado.</p>
@@ -692,13 +756,24 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-0"
-  role="tabpanel" tabindex="0"  data-state="selected" ><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se utiliza la herramienta <code>svcutil</code> de .NET para generar el cliente a partir del WSDL.</p>
-<ul>
-<li><strong>Desarrollo:</strong> <code>dotnet svcutil https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></li>
-<li><strong>Producción:</strong> <code>dotnet svcutil https://app.facturaloplus.com/ws/servicio.do?wsdl</code></li>
-</ul>
+  role="tabpanel" tabindex="0"  data-state="selected" ><h3>Herramienta svcutil<span class="hx-absolute -hx-mt-20" id="herramienta-svcutil"></span>
+    <a href="#herramienta-svcutil" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Descarga e instala la herramienta <a href="https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-svcutil-guide?tabs=dotnetsvcutil2x" target="_blank" rel="noopener">svcutil</a></p>
+<p>Ejecuta el comando siguiente (<strong>DESARROLLO</strong>)</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>svcutil.exe https://dev.facturaloplus.com/ws/servicio.do?wsdl /out:ServicioTimbradoClient.cs /config:app.config</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<p>Esto genera dos archivos: ServicioTimbradoClient.cs y la configuración en app.config</p>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.IO;
@@ -774,18 +849,31 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-</div></div>
+</div>
+</div>
 
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-1"
-  role="tabpanel"><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se utiliza la herramienta <code>wsimport</code> del JDK para generar las clases de cliente.</p>
-<ul>
-<li><strong>Desarrollo:</strong> <code>wsimport -keep -verbose https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></li>
-<li><strong>Producción:</strong> <code>wsimport -keep -verbose https://app.facturaloplus.com/ws/servicio.do?wsdl</code></li>
-</ul>
+  role="tabpanel"><h3>Herramienta wsimport<span class="hx-absolute -hx-mt-20" id="herramienta-wsimport"></span>
+    <a href="#herramienta-wsimport" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Java incluye la herramienta wsimport en el JDK para generar las clases cliente a partir de un WSDL.</p>
+<p>Ejecuta el siguiente comando en tu terminal para el ambiente de DESARROLLO:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>wsimport -keep -p com.facturaloplus.cliente https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<p>-keep: Conserva los archivos fuente .java generados.</p>
+<p>-p: Especifica el paquete (package) donde se guardarán las clases.</p>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.nio.file.Files;
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.nio.file.Paths;
@@ -856,13 +944,29 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-</div></div>
+</div>
+</div>
 
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-2"
-  role="tabpanel"><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se utiliza la librería <code>zeep</code>. Para instalarla, ejecuta: <code>pip install zeep</code></p>
+  role="tabpanel"><h3>Herramienta Zeep<span class="hx-absolute -hx-mt-20" id="herramienta-zeep"></span>
+    <a href="#herramienta-zeep" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Para interactuar con servicios SOAP en Python, la librería zeep es una excelente opción. Proporciona una interfaz limpia y moderna.</p>
+<p>Instala la librería usando pip:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>pip install zeep</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>El siguiente código muestra una implementación robusta utilizando zeep y asyncio para realizar llamadas asíncronas al servicio web.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
@@ -916,13 +1020,16 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-</div></div>
+</div>
+</div>
 
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-3"
-  role="tabpanel"><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se requiere la extensión <code>php-soap</code>. Generalmente viene incluida con PHP, pero si no, se puede instalar con <code>apt-get install php-soap</code> (Debian/Ubuntu) o <code>yum install php-soap</code> (CentOS/RHEL). Asegúrate de que esté habilitada en tu <code>php.ini</code>.</p>
+  role="tabpanel"><h3>Herramienta SoapClient<span class="hx-absolute -hx-mt-20" id="herramienta-soapclient"></span>
+    <a href="#herramienta-soapclient" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>PHP tiene soporte nativo para SOAP a través de la extensión SOAP. Asegúrate de que la extensión php-soap esté habilitada en tu archivo php.ini.</p>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>El siguiente código muestra una implementación orientada a objetos para consumir el servicio de timbrado.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
@@ -983,7 +1090,8 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-</div></div>
+</div>
+</div>
 
 </div>
 <h4>Respuesta (Response)<span class="hx-absolute -hx-mt-20" id="respuesta-response"></span>
@@ -1014,7 +1122,7 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
 </div>
 <h5>Códigos de respuesta<span class="hx-absolute -hx-mt-20" id="códigos-de-respuesta"></span>
     <a href="#c%c3%b3digos-de-respuesta" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>
-  Los códigos de respuesta para el timbrado de CFDI son importantes para entender el resultado de la solicitud. A continuación se detallan los códigos más comunes que puedes recibir al realizar una solicitud de timbrado a través de la API.
+  Los códigos de respuesta para la cancelación de CFDI son importantes para entender el resultado de la solicitud. A continuación se detallan los códigos más comunes que puedes recibir al realizar una solicitud de cancelación a través de la API.
 </p>
 <table>
   <thead>
@@ -1153,13 +1261,9 @@ Descripción de la Operación Esta operación permite realizar la solicitud de c
         <div class="hx-mt-16"></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
         href="/facturotas.docs/api/cancelar/cancelar2/"
-        title="Cancelar2"
-        class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
-      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Cancelar2</a><a
-        href="/facturotas.docs/api/cancelar/cancelarretencioncsd/"
-        title="cancelarRetencionCSD"
+        title="Cancelar CFDI"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-ml-auto ltr:hx-pl-4 ltr:hx-text-right rtl:hx-mr-auto rtl:hx-pr-4 rtl:hx-text-left"
-      >cancelarRetencionCSD<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+      >Cancelar CFDI<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
         
       </main>
     </article>

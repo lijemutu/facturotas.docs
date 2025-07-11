@@ -10,22 +10,27 @@
 <link rel="icon" href="/facturotas.docs/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/facturotas.docs/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/facturotas.docs/site.webmanifest" rel="manifest" />
-<title>cancelarRetencionCSD – Facturotas</title>
-  <meta name="description" content="Cancela un CFDI de retenciones utilizando los CSD del emisor." /><link rel="canonical" href="https://lijemutu.github.io/facturotas.docs/api/cancelar/cancelarretencioncsd/" itemprop="url" />
+<title>Cancelar Retenciones – Facturotas</title>
+  <meta name="description" content="Esta sección detalla la operación para solicitar la cancelación de un CFDI de retenciones e información de pagos, utilizando los Certificados de Sello Digital (CSD) del emisor.
+Descripción de la Operación Esta operación permite realizar la solicitud de cancelación de un CFDI de retenciones directamente ante el SAT. Para ello, se requiere el envío de los archivos del Certificado de Sello Digital (.key y .cer) y su contraseña, junto con el folio fiscal (UUID) del comprobante a cancelar y el RFC del emisor." /><link rel="canonical" href="https://lijemutu.github.io/facturotas.docs/api/cancelar/cancelarretencioncsd/" itemprop="url" />
 
-<meta property="og:title" content="cancelarRetencionCSD" />
-<meta property="og:description" content="Cancela un CFDI de retenciones utilizando los CSD del emisor." />
+<meta property="og:title" content="Cancelar Retenciones" />
+<meta property="og:description" content="Esta sección detalla la operación para solicitar la cancelación de un CFDI de retenciones e información de pagos, utilizando los Certificados de Sello Digital (CSD) del emisor.
+Descripción de la Operación
+    Esta operación permite realizar la solicitud de cancelación de un CFDI de retenciones directamente ante el SAT. Para ello, se requiere el envío de los archivos del Certificado de Sello Digital (.key y .cer) y su contraseña, junto con el folio fiscal (UUID) del comprobante a cancelar y el RFC del emisor." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://lijemutu.github.io/facturotas.docs/api/cancelar/cancelarretencioncsd/" /><meta property="article:section" content="api" />
 
 
 
-  <meta itemprop="name" content="cancelarRetencionCSD">
-  <meta itemprop="description" content="Cancela un CFDI de retenciones utilizando los CSD del emisor.">
-  <meta itemprop="wordCount" content="1574">
+  <meta itemprop="name" content="Cancelar Retenciones">
+  <meta itemprop="description" content="Esta sección detalla la operación para solicitar la cancelación de un CFDI de retenciones e información de pagos, utilizando los Certificados de Sello Digital (CSD) del emisor.
+Descripción de la Operación Esta operación permite realizar la solicitud de cancelación de un CFDI de retenciones directamente ante el SAT. Para ello, se requiere el envío de los archivos del Certificado de Sello Digital (.key y .cer) y su contraseña, junto con el folio fiscal (UUID) del comprobante a cancelar y el RFC del emisor.">
+  <meta itemprop="wordCount" content="1251">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="cancelarRetencionCSD">
-  <meta name="twitter:description" content="Cancela un CFDI de retenciones utilizando los CSD del emisor.">
+  <meta name="twitter:title" content="Cancelar Retenciones">
+  <meta name="twitter:description" content="Esta sección detalla la operación para solicitar la cancelación de un CFDI de retenciones e información de pagos, utilizando los Certificados de Sello Digital (CSD) del emisor.
+Descripción de la Operación Esta operación permite realizar la solicitud de cancelación de un CFDI de retenciones directamente ante el SAT. Para ello, se requiere el envío de los archivos del Certificado de Sello Digital (.key y .cer) y su contraseña, junto con el folio fiscal (UUID) del comprobante a cancelar y el RFC del emisor.">
 
     <link rel="preload" href="/facturotas.docs/css/compiled/main.min.e0bb0f28123bf084d555fc9253c6d2aa1443b2dfcde6044741a207eabdc3ddb8.css" as="style" integrity="sha256-4LsPKBI78ITVVfySU8bSqhRDst/N5gRHQaIH6r3D3bg=" />
     <link href="/facturotas.docs/css/compiled/main.min.e0bb0f28123bf084d555fc9253c6d2aa1443b2dfcde6044741a207eabdc3ddb8.css" rel="stylesheet" integrity="sha256-4LsPKBI78ITVVfySU8bSqhRDst/N5gRHQaIH6r3D3bg=" />
@@ -133,17 +138,17 @@
         <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/cancelar/cancelar2/"
+    href="/facturotas.docs/api/cancelar/cancelarpfx2/"
     
-  >Cancelar2
+  >Cancelar Archivo PFX
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/cancelar/cancelarpfx2/"
+    href="/facturotas.docs/api/cancelar/cancelar2/"
     
-  >Cancelar Pfx2
+  >Cancelar CFDI
     </a>
               
             </li><li class="hx-flex hx-flex-col open"><a
@@ -151,7 +156,7 @@
       sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/facturotas.docs/api/cancelar/cancelarretencioncsd/"
     
-  >cancelarRetencionCSD
+  >Cancelar Retenciones
     </a>
   
     <ul class='hx-flex hx-flex-col hx-gap-1 hx-relative before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] dark:before:hx-bg-neutral-800 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-pr-3 rtl:before:hx-right-0 ltr:hx-ml-3 rtl:hx-mr-3'><li>
@@ -168,7 +173,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/cancelar/cancelarsp/"
     
-  >cancelarSP
+  >Cancelar Sector Primario
     </a>
               
             </li></ul>
@@ -183,6 +188,38 @@
     </a>
               <div class="ltr:hx-pr-0 hx-overflow-hidden">
         <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarautorizacionespendientes/"
+    
+  >Consultar Autorizaciones Pendientes
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarcfdi/"
+    
+  >Consultar Cfdi
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarcfdisrelacionados/"
+    
+  >Consultar Cfdis Relacionados
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarcreditosdisponibles/"
+    
+  >Consultar Creditos Disponibles
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/consulta/consultarestadosat/"
@@ -212,14 +249,6 @@
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/timbrado/timbradotfd/"
-    
-  >Timbrado Tfd
-    </a>
-              
-            </li><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarconsello/"
     
   >Timbrar Con Sello
@@ -236,14 +265,6 @@
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/timbrado/timbrarjson2/"
-    
-  >Timbrar Json2
-    </a>
-              
-            </li><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarretencion/"
     
   >Timbrar Retencion
@@ -252,9 +273,25 @@
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbradotfd/"
+    
+  >Timbrar Con Timbre Fiscal Digital
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbrarjson2/"
+    
+  >Timbrar JSON &#43; PDF
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarretenciontfd/"
     
-  >Timbrar Retencion Tfd
+  >Timbrar Retenciones Timbre Fiscal Digital
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -262,7 +299,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarsp/"
     
-  >Timbrar Sp
+  >Timbrar Sector Primario
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -270,7 +307,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrartxt/"
     
-  >Timbrar Txt
+  >Timbrar TXT
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -278,7 +315,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrartxt2/"
     
-  >Timbrar Txt2
+  >Timbrar TXT &#43; PDF
     </a>
               
             </li></ul>
@@ -334,17 +371,17 @@
         <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/cancelar/cancelar2/"
+    href="/facturotas.docs/api/cancelar/cancelarpfx2/"
     
-  >Cancelar2
+  >Cancelar Archivo PFX
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/cancelar/cancelarpfx2/"
+    href="/facturotas.docs/api/cancelar/cancelar2/"
     
-  >Cancelar Pfx2
+  >Cancelar CFDI
     </a>
               
             </li><li class="hx-flex hx-flex-col open"><a
@@ -352,7 +389,7 @@
       sidebar-active-item hx-bg-primary-100 hx-font-semibold hx-text-primary-800 contrast-more:hx-border contrast-more:hx-border-primary-500 dark:hx-bg-primary-400/10 dark:hx-text-primary-600 contrast-more:dark:hx-border-primary-500"
     href="/facturotas.docs/api/cancelar/cancelarretencioncsd/"
     
-  >cancelarRetencionCSD
+  >Cancelar Retenciones
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -360,7 +397,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/cancelar/cancelarsp/"
     
-  >cancelarSP
+  >Cancelar Sector Primario
     </a>
               
             </li></ul>
@@ -375,6 +412,38 @@
     </a>
               <div class="ltr:hx-pr-0 hx-overflow-hidden">
         <ul class='hx-relative hx-flex hx-flex-col hx-gap-1 before:hx-absolute before:hx-inset-y-1 before:hx-w-px before:hx-bg-gray-200 before:hx-content-[""] ltr:hx-ml-3 ltr:hx-pl-3 ltr:before:hx-left-0 rtl:hx-mr-3 rtl:hx-pr-3 rtl:before:hx-right-0 dark:before:hx-bg-neutral-800'><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarautorizacionespendientes/"
+    
+  >Consultar Autorizaciones Pendientes
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarcfdi/"
+    
+  >Consultar Cfdi
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarcfdisrelacionados/"
+    
+  >Consultar Cfdis Relacionados
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/consulta/consultarcreditosdisponibles/"
+    
+  >Consultar Creditos Disponibles
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/consulta/consultarestadosat/"
@@ -404,14 +473,6 @@
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/timbrado/timbradotfd/"
-    
-  >Timbrado Tfd
-    </a>
-              
-            </li><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarconsello/"
     
   >Timbrar Con Sello
@@ -428,14 +489,6 @@
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
-    href="/facturotas.docs/api/timbrado/timbrarjson2/"
-    
-  >Timbrar Json2
-    </a>
-              
-            </li><li class="hx-flex hx-flex-col "><a
-    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
-      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarretencion/"
     
   >Timbrar Retencion
@@ -444,9 +497,25 @@
             </li><li class="hx-flex hx-flex-col "><a
     class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbradotfd/"
+    
+  >Timbrar Con Timbre Fiscal Digital
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
+    href="/facturotas.docs/api/timbrado/timbrarjson2/"
+    
+  >Timbrar JSON &#43; PDF
+    </a>
+              
+            </li><li class="hx-flex hx-flex-col "><a
+    class="hx-flex hx-items-center hx-justify-between hx-gap-2 hx-cursor-pointer hx-rounded hx-px-2 hx-py-1.5 hx-text-sm hx-transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarretenciontfd/"
     
-  >Timbrar Retencion Tfd
+  >Timbrar Retenciones Timbre Fiscal Digital
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -454,7 +523,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrarsp/"
     
-  >Timbrar Sp
+  >Timbrar Sector Primario
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -462,7 +531,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrartxt/"
     
-  >Timbrar Txt
+  >Timbrar TXT
     </a>
               
             </li><li class="hx-flex hx-flex-col "><a
@@ -470,7 +539,7 @@
       hx-text-gray-500 hover:hx-bg-gray-100 hover:hx-text-gray-900 contrast-more:hx-border contrast-more:hx-border-transparent contrast-more:hx-text-gray-900 contrast-more:hover:hx-border-gray-900 dark:hx-text-neutral-400 dark:hover:hx-bg-primary-100/5 dark:hover:hx-text-gray-50 contrast-more:dark:hx-text-gray-50 contrast-more:dark:hover:hx-border-gray-50"
     href="/facturotas.docs/api/timbrado/timbrartxt2/"
     
-  >Timbrar Txt2
+  >Timbrar TXT &#43; PDF
     </a>
               
             </li></ul>
@@ -562,12 +631,12 @@
         </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         <div class="hx-whitespace-nowrap hx-transition-colors hx-min-w-[24px] hx-overflow-hidden hx-text-ellipsis hover:hx-text-gray-900 dark:hover:hx-text-gray-100">
           <a href="/facturotas.docs/api/cancelar/">Cancelar</a>
-        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">cancelarRetencionCSD</div>
+        </div><svg class="hx-w-3.5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx-whitespace-nowrap hx-transition-colors hx-font-medium hx-text-gray-700 contrast-more:hx-font-bold contrast-more:hx-text-current dark:hx-text-gray-100 contrast-more:dark:hx-text-current">Cancelar Retenciones</div>
   </div>
 
         <div class="content">
-          <h1>cancelarRetencionCSD</h1>
-          <h1>cancelarRetencionCSD</h1><p>Esta sección detalla la operación para solicitar la cancelación de un CFDI de retenciones e información de pagos, utilizando los Certificados de Sello Digital (CSD) del emisor.</p>
+          <h1>Cancelar Retenciones</h1>
+          <p>Esta sección detalla la operación para solicitar la cancelación de un CFDI de retenciones e información de pagos, utilizando los Certificados de Sello Digital (CSD) del emisor.</p>
 <h3>Descripción de la Operación<span class="hx-absolute -hx-mt-20" id="descripción-de-la-operación"></span>
     <a href="#descripci%c3%b3n-de-la-operaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Esta operación permite realizar la solicitud de cancelación de un CFDI de retenciones directamente ante el SAT. Para ello, se requiere el envío de los archivos del Certificado de Sello Digital (<code>.key</code> y <code>.cer</code>) y su contraseña, junto con el folio fiscal (UUID) del comprobante a cancelar y el RFC del emisor.</p>
 <p>A diferencia de la cancelación de CFDI de ingresos, la cancelación de retenciones no requiere motivo, RFC receptor ni total.</p>
@@ -672,13 +741,24 @@
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-0"
-  role="tabpanel" tabindex="0"  data-state="selected" ><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se utiliza la herramienta <code>svcutil</code> de .NET para generar el cliente a partir del WSDL.</p>
-<ul>
-<li><strong>Desarrollo:</strong> <code>dotnet svcutil https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></li>
-<li><strong>Producción:</strong> <code>dotnet svcutil https://app.facturaloplus.com/ws/servicio.do?wsdl</code></li>
-</ul>
+  role="tabpanel" tabindex="0"  data-state="selected" ><h3>Herramienta svcutil<span class="hx-absolute -hx-mt-20" id="herramienta-svcutil"></span>
+    <a href="#herramienta-svcutil" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Descarga e instala la herramienta <a href="https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-svcutil-guide?tabs=dotnetsvcutil2x" target="_blank" rel="noopener">svcutil</a></p>
+<p>Ejecuta el comando siguiente (<strong>DESARROLLO</strong>)</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>svcutil.exe https://dev.facturaloplus.com/ws/servicio.do?wsdl /out:ServicioTimbradoClient.cs /config:app.config</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<p>Esto genera dos archivos: ServicioTimbradoClient.cs y la configuración en app.config</p>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.IO;
@@ -746,18 +826,31 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-</div></div>
+</div>
+</div>
 
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-1"
-  role="tabpanel"><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se utiliza la herramienta <code>wsimport</code> del JDK para generar las clases de cliente.</p>
-<ul>
-<li><strong>Desarrollo:</strong> <code>wsimport -keep -verbose https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></li>
-<li><strong>Producción:</strong> <code>wsimport -keep -verbose https://app.facturaloplus.com/ws/servicio.do?wsdl</code></li>
-</ul>
+  role="tabpanel"><h3>Herramienta wsimport<span class="hx-absolute -hx-mt-20" id="herramienta-wsimport"></span>
+    <a href="#herramienta-wsimport" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Java incluye la herramienta wsimport en el JDK para generar las clases cliente a partir de un WSDL.</p>
+<p>Ejecuta el siguiente comando en tu terminal para el ambiente de DESARROLLO:</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>wsimport -keep -p com.facturaloplus.cliente https://dev.facturaloplus.com/ws/servicio.do?wsdl</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<p>-keep: Conserva los archivos fuente .java generados.</p>
+<p>-p: Especifica el paquete (package) donde se guardarán las clases.</p>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.nio.file.Files;
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.nio.file.Paths;
@@ -825,13 +918,29 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-</div></div>
+</div>
+</div>
 
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-2"
-  role="tabpanel"><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se utiliza la librería <code>zeep</code>. Para instalarla, ejecuta: <code>pip install zeep</code></p>
+  role="tabpanel"><h3>Herramienta Zeep<span class="hx-absolute -hx-mt-20" id="herramienta-zeep"></span>
+    <a href="#herramienta-zeep" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Para interactuar con servicios SOAP en Python, la librería zeep es una excelente opción. Proporciona una interfaz limpia y moderna.</p>
+<p>Instala la librería usando pip:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><pre><code>pip install zeep</code></pre></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>El siguiente código muestra una implementación robusta utilizando zeep y asyncio para realizar llamadas asíncronas al servicio web.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> asyncio
@@ -884,13 +993,16 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-</div></div>
+</div>
+</div>
 
   <div
   class="hextra-tabs-panel hx-rounded hx-pt-6 hx-hidden data-[state=selected]:hx-block"
   id="tabs-panel-3"
-  role="tabpanel"><h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
-    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Herramienta y Configuración:</strong> Se requiere la extensión <code>php-soap</code>. Generalmente viene incluida con PHP, pero si no, se puede instalar con <code>apt-get install php-soap</code> (Debian/Ubuntu) o <code>yum install php-soap</code> (CentOS/RHEL). Asegúrate de que esté habilitada en tu <code>php.ini</code>.</p>
+  role="tabpanel"><h3>Herramienta SoapClient<span class="hx-absolute -hx-mt-20" id="herramienta-soapclient"></span>
+    <a href="#herramienta-soapclient" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>PHP tiene soporte nativo para SOAP a través de la extensión SOAP. Asegúrate de que la extensión php-soap esté habilitada en tu archivo php.ini.</p>
+<h3>Implementación<span class="hx-absolute -hx-mt-20" id="implementación"></span>
+    <a href="#implementaci%c3%b3n" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>El siguiente código muestra una implementación orientada a objetos para consumir el servicio de timbrado.</p>
 <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
 
 <div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
@@ -949,7 +1061,8 @@
     <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
   </button>
 </div>
-</div></div>
+</div>
+</div>
 
 </div>
 <h4>Respuesta (Response)<span class="hx-absolute -hx-mt-20" id="respuesta-response"></span>
@@ -980,7 +1093,7 @@
 </div>
 <h5>Códigos de respuesta<span class="hx-absolute -hx-mt-20" id="códigos-de-respuesta"></span>
     <a href="#c%c3%b3digos-de-respuesta" class="subheading-anchor" aria-label="Permalink for this section"></a></h5><p>
-  Los códigos de respuesta para el timbrado de CFDI son importantes para entender el resultado de la solicitud. A continuación se detallan los códigos más comunes que puedes recibir al realizar una solicitud de timbrado a través de la API.
+  Los códigos de respuesta para la cancelación de CFDI de retenciones son importantes para entender el resultado de la solicitud. A continuación se detallan los códigos más comunes que puedes recibir al realizar una solicitud de cancelación a través de la API.
 </p>
 <table>
   <thead>
@@ -992,123 +1105,113 @@
   </thead>
   <tbody>
     <tr>
-      <td>200</td>
-      <td>UUID Cancelado exitosamente</td>
-      <td>Se considera una solicitud de cancelación exitosa , sin embargo esto no asegura su cancelación</td>
-    </tr>
-    <tr>
-      <td>202</td>
-      <td>UUID Previamente cancelado</td>
-      <td>Se considera previamente cancelado. Estatus cancelado ante el SAT</td>
-    </tr>
-    <tr>
-      <td>203</td>
-      <td>UUID No corresponde el RFC del emisor y de quien solicita la cancelación</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>205</td>
-      <td>No existe</td>
-      <td>El SAT da una prórroga de 72 hrs para que el comprobante aparezca con estatus Vigente posterior al envío por parte del proovedor de Certificación de CFDI. Puede que algunos comprobantes no aparezcan al momento, es necesario esperar por lo menos 72 hrs</td>
-    </tr>
-    <tr>
-      <td>CA 1000</td>
-      <td>CA 1000 - El xml proporcionado está mal formado o es inválido</td>
-      <td>El comprobante no corresponde a la estructura de un XML o tiene mal la estructura</td>
-    </tr>
-    <tr>
-      <td>CA 2000</td>
-      <td>CA 2000 - No fue posible cancelar el CFDI, en estos momentos existe una intermitencia en el servicio de cancelación del SAT, por favor inente más tarde, el error que regresa el SAT es:</td>
-      <td>Adicional al mensaje se agregara el mensaje generado por el servicio SAT</td>
-    </tr>
-    <tr>
-      <td>CA 2100</td>
-      <td>CA 2100 - No fue posible cancelar el CFDI, por favor intentelo más tarde, si el problema persiste contacte a soporte técnico.</td>
-      <td>Hubo una intermitencia con el servicio del SAT y/o servicio, por favor intentelo más tarde.</td>
-    </tr>
-    <tr>
-      <td>CA 3000</td>
-      <td>CA 2300 - No fue posible cancelar el CFDI, por favor intentelo más tarde, si el problema persiste contacte a soporte técnico</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>CA203</td>
-      <td>CA203 - El UUID tiene un fallo correspondiente al emisor</td>
-      <td>Acuse con error en Folio 203</td>
-    </tr>
-    <tr>
-      <td>CA204</td>
-      <td>CA204 - El SAT no ve que el UUID sea aplicable para cancelación</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>CA205</td>
-      <td>CA205 - El UUID no existe</td>
-      <td>Acuse con error en folio 205</td>
-    </tr>
-    <tr>
-      <td>CA300</td>
-      <td>CA300 - La autenticación es incorrecta</td>
-      <td>El comprobante está mal formado, verifique los esquemas del comprobante</td>
-    </tr>
-    <tr>
-      <td>CA301</td>
-      <td>CA301 - El XML está mal formado o es incorrecto</td>
-      <td>El comprobante está mal formado, verifique los esquemas del comprobante</td>
-    </tr>
-    <tr>
-      <td>CA302</td>
-      <td>CA302 - Sello mal formado o inválido</td>
-      <td>El sello no es válido o fue alterado</td>
-    </tr>
-    <tr>
-      <td>CA303</td>
-      <td>CA303 - Sello no corresponde a emisor o caduco</td>
-      <td>El sello no fue generado con el certificado del emisor del comprobante</td>
-    </tr>
-    <tr>
-      <td>CA304</td>
-      <td>CA304 - Certificado revocado o caduco</td>
-      <td>El certificado con el que se emitió el comprobante fue revocado o se encuentra caduco</td>
-    </tr>
-    <tr>
-      <td>CA305</td>
-      <td>CA305 - La fecha de emisión no está dentro de la vigencia del CSD del Emisor</td>
-      <td>La fecha de emisión del comprobante no se encuentra dentro de la vigencia del certificado con cual fue sellado</td>
-    </tr>
-    <tr>
-      <td>CA306</td>
-      <td>CA306 - El certificado no es de tipo CSD</td>
-      <td>Los comprobantes únicamente se pueden emitir y timbrar usando CSD</td>
-    </tr>
-    <tr>
-      <td>CA307</td>
-      <td>CA307 - El CFDI contiene un timbre previo</td>
-      <td>El comprobante ya cuenta con un complemento TFD</td>
-    </tr>
-    <tr>
-      <td>CA308</td>
-      <td>CA308 - Certificado no expedido por el SAT</td>
-      <td>El certificado que se utiliza para timbrar no fue generado por el SAT</td>
-    </tr>
-    <tr>
-      <td>CA309</td>
-      <td>CA309 - No existe cancelación que corresponda con el ID proporcionado</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>CASD</td>
-      <td>CASD - Acuse sin descripción específica</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>CACFDI33</td>
-      <td>CACFDI33 - Problemas con los campos</td>
-      <td>El error puede ser generado por varias opciones: Se está usando un Certificado FIEL en lugar de CSD, No se están enviando todos los campos necesarios.</td>
-    </tr>
-    <tr>
       <td>300</td>
       <td>API KEY Inválida o inexistente</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1000</td>
+      <td>Error al autenticar el servicio de cancelación</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1001</td>
+      <td>Error durante la cancelación servicio SAT</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1002</td>
+      <td>Error el objeto de cancelación viene vacío</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1003</td>
+      <td>Error dato folios a cancelar es inválido</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1004</td>
+      <td>Error el resultado del servicio del SAT es vacío o inválido</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1005</td>
+      <td>Error el folio de seguimiento es inválido</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1006</td>
+      <td>Mensaje SAT</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1201</td>
+      <td>UUID Solicitud de cancelación correcta</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1202</td>
+      <td>UUID previamente cancelado</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1203</td>
+      <td>UUID no corresponde con el emisor</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1205</td>
+      <td>UUID no existe</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1300</td>
+      <td>autenticación no válida</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1301</td>
+      <td>XML mal formado</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1302</td>
+      <td>Estructura de folios no válida</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1303</td>
+      <td>Estructura de RFC no válida</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1304</td>
+      <td>Estructura de fecha no válida</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1305</td>
+      <td>Certificado no corresponde con al emisor</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1306</td>
+      <td>Certificado no vigente</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1307</td>
+      <td>Uso de FIEL no permitido</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1308</td>
+      <td>Certificado revocado o caduco</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>CR1309</td>
+      <td>Firma mal formada o inválida</td>
       <td></td>
     </tr>
   </tbody>
@@ -1118,14 +1221,14 @@
         </div>
         <div class="hx-mt-16"></div>
         <div class="hx-mb-8 hx-flex hx-items-center hx-border-t hx-pt-8 dark:hx-border-neutral-800 contrast-more:hx-border-neutral-400 dark:contrast-more:hx-border-neutral-400 print:hx-hidden"><a
-        href="/facturotas.docs/api/cancelar/cancelarpfx2/"
-        title="Cancelar Pfx2"
+        href="/facturotas.docs/api/cancelar/cancelar2/"
+        title="Cancelar CFDI"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-pr-4 rtl:hx-pl-4"
-      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Cancelar Pfx2</a><a
+      ><svg class="hx-inline hx-h-5 hx-shrink-0 ltr:hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Cancelar CFDI</a><a
         href="/facturotas.docs/api/cancelar/cancelarsp/"
-        title="cancelarSP"
+        title="Cancelar Sector Primario"
         class="hx-flex hx-max-w-[50%] hx-items-center hx-gap-1 hx-py-4 hx-text-base hx-font-medium hx-text-gray-600 hx-transition-colors [word-break:break-word] hover:hx-text-primary-600 dark:hx-text-gray-300 md:hx-text-lg ltr:hx-ml-auto ltr:hx-pl-4 ltr:hx-text-right rtl:hx-mr-auto rtl:hx-pr-4 rtl:hx-text-left"
-      >cancelarSP<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+      >Cancelar Sector Primario<svg class="hx-inline hx-h-5 hx-shrink-0 rtl:-hx-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
         
       </main>
     </article>

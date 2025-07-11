@@ -1,4 +1,6 @@
-# cancelarPFX2
+---
+title: Cancelar Archivo PFX
+---
 
 Esta sección detalla la operación para solicitar la cancelación de un CFDI utilizando un archivo PFX que contiene el Certificado de Sello Digital (CSD) del emisor.
 
@@ -40,11 +42,17 @@ La respuesta de esta operación es idéntica a la de la operación `cancelar2`.
 {{< tabs items="C#,Java,Python,PHP" >}}
 
   {{< tab >}}
-  ### Implementación
+  ### Herramienta svcutil
+  Descarga e instala la herramienta [svcutil](https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-svcutil-guide?tabs=dotnetsvcutil2x)
   
-  **Herramienta y Configuración:** Se utiliza la herramienta `svcutil` de .NET para generar el cliente a partir del WSDL.
-  *   **Desarrollo:** `dotnet svcutil https://dev.facturaloplus.com/ws/servicio.do?wsdl`
-  *   **Producción:** `dotnet svcutil https://app.facturaloplus.com/ws/servicio.do?wsdl`
+  Ejecuta el comando siguiente (**DESARROLLO**)
+
+  ```
+  svcutil.exe https://dev.facturaloplus.com/ws/servicio.do?wsdl /out:ServicioTimbradoClient.cs /config:app.config
+  ```
+  Esto genera dos archivos: ServicioTimbradoClient.cs y la configuración en app.config
+
+  ### Implementación
 
   ```csharp
   using System;
@@ -117,11 +125,20 @@ La respuesta de esta operación es idéntica a la de la operación `cancelar2`.
   {{< /tab >}}
 
   {{< tab >}}
-  ### Implementación
+  ### Herramienta wsimport
+  Java incluye la herramienta wsimport en el JDK para generar las clases cliente a partir de un WSDL.
 
-  **Herramienta y Configuración:** Se utiliza la herramienta `wsimport` del JDK para generar las clases de cliente.
-  *   **Desarrollo:** `wsimport -keep -verbose https://dev.facturaloplus.com/ws/servicio.do?wsdl`
-  *   **Producción:** `wsimport -keep -verbose https://app.facturaloplus.com/ws/servicio.do?wsdl`
+  Ejecuta el siguiente comando en tu terminal para el ambiente de DESARROLLO:
+
+  ```
+  wsimport -keep -p com.facturaloplus.cliente https://dev.facturaloplus.com/ws/servicio.do?wsdl
+  ```
+
+  -keep: Conserva los archivos fuente .java generados.
+
+  -p: Especifica el paquete (package) donde se guardarán las clases.
+
+  ### Implementación
 
   ```java
   import java.nio.file.Files;
@@ -189,10 +206,16 @@ La respuesta de esta operación es idéntica a la de la operación `cancelar2`.
   {{< /tab >}}
 
   {{< tab >}}
+  ### Herramienta Zeep
+  Para interactuar con servicios SOAP en Python, la librería zeep es una excelente opción. Proporciona una interfaz limpia y moderna.
+
+  Instala la librería usando pip:
+  ```
+  pip install zeep
+  ```
+
   ### Implementación
-
-  **Herramienta y Configuración:** Se utiliza la librería `zeep`. Para instalarla, ejecuta: `pip install zeep`
-
+  El siguiente código muestra una implementación robusta utilizando zeep y asyncio para realizar llamadas asíncronas al servicio web.
   ```python
   import asyncio
   import base64
@@ -241,10 +264,11 @@ La respuesta de esta operación es idéntica a la de la operación `cancelar2`.
   {{< /tab >}}
 
   {{< tab >}}
-  ### Implementación
+  ### Herramienta SoapClient
+  PHP tiene soporte nativo para SOAP a través de la extensión SOAP. Asegúrate de que la extensión php-soap esté habilitada en tu archivo php.ini.
 
-  **Herramienta y Configuración:** Se requiere la extensión `php-soap`. Generalmente viene incluida con PHP, pero si no, se puede instalar con `apt-get install php-soap` (Debian/Ubuntu) o `yum install php-soap` (CentOS/RHEL). Asegúrate de que esté habilitada en tu `php.ini`.
-
+  ### Implementación 
+  El siguiente código muestra una implementación orientada a objetos para consumir el servicio de timbrado.
   ```php
   <?php
   class CancelarPfxService {

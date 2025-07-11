@@ -36,10 +36,14 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   {{< tab >}}
   ### Herramienta svcutil
-  Ejecuta el comando para generar el cliente SOAP:
+  Descarga e instala la herramienta [svcutil](https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-svcutil-guide?tabs=dotnetsvcutil2x)
+  
+  Ejecuta el comando siguiente (**DESARROLLO**)
+
   ```
   svcutil.exe https://dev.facturaloplus.com/ws/servicio.do?wsdl /out:ServicioTimbradoClient.cs /config:app.config
   ```
+  Esto genera dos archivos: ServicioTimbradoClient.cs y la configuración en app.config
 
   ### Implementación
 
@@ -52,40 +56,40 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
    /// Genera un XML de ejemplo para un CFDI 4.0 sin el atributo 'sello'.
    /// </summary>
    private static string GetXmlCfdiSinSello() => """ 
-        <?xml version="1.0" encoding="UTF-8"?>
+        <?xml version=\"1.0\" encoding=\"UTF-8\"?>
         <cfdi:Comprobante
-            xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 cfdv40.xsd" 
-            Version="4.0"
-            Serie="F"
-            Folio="123"
-            Fecha="2025-07-05T12:00:00"
-            SubTotal="100.00"
-            Moneda="MXN"
-            Total="116.00"
-            TipoDeComprobante="I"
-            Exportacion="01"
-            MetodoPago="PUE"
-            FormaPago="01"
-            NoCertificado="30001000000300023708"
-            Certificado="MIIC..."
-            Sello=""
-            LugarExpedicion="64000">
-            <cfdi:Emisor Rfc="ABC010101XYZ" Nombre="Empresa Ejemplo" RegimenFiscal="601"/>
-            <cfdi:Receptor Rfc="XAXX010101000" Nombre="Publico en General" DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" UsoCFDI="G03"/>
+            xmlns:cfdi=\"http://www.sat.gob.mx/cfd/4\"
+            xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+            xsi:schemaLocation=\"http://www.sat.gob.mx/cfd/4 cfdv40.xsd\" 
+            Version=\"4.0\"
+            Serie=\"F\"
+            Folio=\"123\"
+            Fecha=\"2025-07-05T12:00:00\"
+            SubTotal=\"100.00\"
+            Moneda=\"MXN\"
+            Total=\"116.00\"
+            TipoDeComprobante=\"I\"
+            Exportacion=\"01\"
+            MetodoPago=\"PUE\"
+            FormaPago=\"01\"
+            NoCertificado=\"30001000000300023708\"
+            Certificado=\"MIIC...\"
+            Sello=\"\"
+            LugarExpedicion=\"64000\">
+            <cfdi:Emisor Rfc=\"ABC010101XYZ\" Nombre=\"Empresa Ejemplo\" RegimenFiscal=\"601\"/>
+            <cfdi:Receptor Rfc=\"XAXX010101000\" Nombre=\"Publico en General\" DomicilioFiscalReceptor=\"64000\" RegimenFiscalReceptor=\"616\" UsoCFDI=\"G03\"/>
             <cfdi:Conceptos>
-                <cfdi:Concepto ObjetoImp="02" ClaveProdServ="01010101" ClaveUnidad="ACT" Cantidad="1" Descripcion="Servicio" ValorUnitario="100.00" Importe="100.00">
+                <cfdi:Concepto ObjetoImp=\"02\" ClaveProdServ=\"01010101\" ClaveUnidad=\"ACT\" Cantidad=\"1\" Descripcion=\"Servicio\" ValorUnitario=\"100.00\" Importe=\"100.00\">
                     <cfdi:Impuestos>
                         <cfdi:Traslados>
-                            <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
+                            <cfdi:Traslado Base=\"100.00\" Impuesto=\"002\" TipoFactor=\"Tasa\" TasaOCuota=\"0.160000\" Importe=\"16.00\"/>
                         </cfdi:Traslados>
                     </cfdi:Impuestos>
                 </cfdi:Concepto>
             </cfdi:Conceptos>
-            <cfdi:Impuestos TotalImpuestosTrasladados="16.00">
+            <cfdi:Impuestos TotalImpuestosTrasladados=\"16.00\">
                <cfdi:Traslados>
-                     <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
+                     <cfdi:Traslado Base=\"100.00\" Impuesto=\"002\" TipoFactor=\"Tasa\" TasaOCuota=\"0.160000\" Importe=\"16.00\"/>
                </cfdi:Traslados>
             </cfdi:Impuestos>
         </cfdi:Comprobante>
@@ -136,10 +140,17 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   {{< tab >}}
   ### Herramienta wsimport
-  Ejecuta el comando para generar las clases cliente:
+  Java incluye la herramienta wsimport en el JDK para generar las clases cliente a partir de un WSDL.
+
+  Ejecuta el siguiente comando en tu terminal para el ambiente de DESARROLLO:
+
   ```
   wsimport -keep -p com.facturaloplus.cliente https://dev.facturaloplus.com/ws/servicio.do?wsdl
   ```
+
+  -keep: Conserva los archivos fuente .java generados.
+
+  -p: Especifica el paquete (package) donde se guardarán las clases.
 
   ### Implementación
 
@@ -154,30 +165,30 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
     public String generarXmlCfdiSinSello() {
         return """
-        <?xml version="1.0" encoding="UTF-8"?>
+        <?xml version=\"1.0\" encoding=\"UTF-8\"?>
         <cfdi:Comprobante
-            xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 cfdv40.xsd" 
-            Version="4.0" Serie="F" Folio="123" Fecha="2025-07-05T12:00:00"
-            SubTotal="100.00" Moneda="MXN" Total="116.00" TipoDeComprobante="I"
-            Exportacion="01" MetodoPago="PUE" FormaPago="01"
-            NoCertificado="30001000000300023708" Certificado="MIIC..." Sello=""
-            LugarExpedicion="64000">
-            <cfdi:Emisor Rfc="ABC010101XYZ" Nombre="Empresa Ejemplo" RegimenFiscal="601"/>
-            <cfdi:Receptor Rfc="XAXX010101000" Nombre="Publico en General" DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" UsoCFDI="G03"/>
+            xmlns:cfdi=\"http://www.sat.gob.mx/cfd/4\"
+            xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+            xsi:schemaLocation=\"http://www.sat.gob.mx/cfd/4 cfdv40.xsd\" 
+            Version=\"4.0\" Serie=\"F\" Folio=\"123\" Fecha=\"2025-07-05T12:00:00\"
+            SubTotal=\"100.00\" Moneda=\"MXN\" Total=\"116.00\" TipoDeComprobante=\"I\"
+            Exportacion=\"01\" MetodoPago=\"PUE\" FormaPago=\"01\"
+            NoCertificado=\"30001000000300023708\" Certificado=\"MIIC...\" Sello=\"\"
+            LugarExpedicion=\"64000\">
+            <cfdi:Emisor Rfc=\"ABC010101XYZ\" Nombre=\"Empresa Ejemplo\" RegimenFiscal=\"601\"/>
+            <cfdi:Receptor Rfc=\"XAXX010101000\" Nombre=\"Publico en General\" DomicilioFiscalReceptor=\"64000\" RegimenFiscalReceptor=\"616\" UsoCFDI=\"G03\"/>
             <cfdi:Conceptos>
-                <cfdi:Concepto ObjetoImp="02" ClaveProdServ="01010101" ClaveUnidad="ACT" Cantidad="1" Descripcion="Servicio" ValorUnitario="100.00" Importe="100.00">
+                <cfdi:Concepto ObjetoImp=\"02\" ClaveProdServ=\"01010101\" ClaveUnidad=\"ACT\" Cantidad=\"1\" Descripcion=\"Servicio\" ValorUnitario=\"100.00\" Importe=\"100.00\">
                     <cfdi:Impuestos>
                         <cfdi:Traslados>
-                            <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
+                            <cfdi:Traslado Base=\"100.00\" Impuesto=\"002\" TipoFactor=\"Tasa\" TasaOCuota=\"0.160000\" Importe=\"16.00\"/>
                         </cfdi:Traslados>
                     </cfdi:Impuestos>
                 </cfdi:Concepto>
             </cfdi:Conceptos>
-            <cfdi:Impuestos TotalImpuestosTrasladados="16.00">
+            <cfdi:Impuestos TotalImpuestosTrasladados=\"16.00\">
                <cfdi:Traslados>
-                     <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
+                     <cfdi:Traslado Base=\"100.00\" Impuesto=\"002\" TipoFactor=\"Tasa\" TasaOCuota=\"0.160000\" Importe=\"16.00\"/>
                </cfdi:Traslados>
             </cfdi:Impuestos>
         </cfdi:Comprobante>
@@ -233,42 +244,45 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   {{< tab >}}
   ### Herramienta Zeep
+  Para interactuar con servicios SOAP en Python, la librería zeep es una excelente opción. Proporciona una interfaz limpia y moderna.
+
   Instala la librería usando pip:
   ```
   pip install zeep
   ```
 
   ### Implementación
+  El siguiente código muestra una implementación robusta utilizando zeep y asyncio para realizar llamadas asíncronas al servicio web.
   ```python
   import asyncio
   from zeep.asyncio import AsyncClient
 
   def generar_xml_cfdi_sin_sello() -> str:
       return """\
-        <?xml version="1.0" encoding="UTF-8"?>
+        <?xml version=\"1.0\" encoding=\"UTF-8\"?>
         <cfdi:Comprobante
-            xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 cfdv40.xsd" 
-            Version="4.0" Serie="F" Folio="123" Fecha="2025-07-05T12:00:00"
-            SubTotal="100.00" Moneda="MXN" Total="116.00" TipoDeComprobante="I"
-            Exportacion="01" MetodoPago="PUE" FormaPago="01"
-            NoCertificado="30001000000300023708" Certificado="MIIC..." Sello=""
-            LugarExpedicion="64000">
-            <cfdi:Emisor Rfc="ABC010101XYZ" Nombre="Empresa Ejemplo" RegimenFiscal="601"/>
-            <cfdi:Receptor Rfc="XAXX010101000" Nombre="Publico en General" DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" UsoCFDI="G03"/>
+            xmlns:cfdi=\"http://www.sat.gob.mx/cfd/4\"
+            xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+            xsi:schemaLocation=\"http://www.sat.gob.mx/cfd/4 cfdv40.xsd\" 
+            Version=\"4.0\" Serie=\"F\" Folio=\"123\" Fecha=\"2025-07-05T12:00:00\"
+            SubTotal=\"100.00\" Moneda=\"MXN\" Total=\"116.00\" TipoDeComprobante=\"I\"
+            Exportacion=\"01\" MetodoPago=\"PUE\" FormaPago=\"01\"
+            NoCertificado=\"30001000000300023708\" Certificado=\"MIIC...\" Sello=\"\"
+            LugarExpedicion=\"64000\">
+            <cfdi:Emisor Rfc=\"ABC010101XYZ\" Nombre=\"Empresa Ejemplo\" RegimenFiscal=\"601\"/>
+            <cfdi:Receptor Rfc=\"XAXX010101000\" Nombre=\"Publico en General\" DomicilioFiscalReceptor=\"64000\" RegimenFiscalReceptor=\"616\" UsoCFDI=\"G03\"/>
             <cfdi:Conceptos>
-                <cfdi:Concepto ObjetoImp="02" ClaveProdServ="01010101" ClaveUnidad="ACT" Cantidad="1" Descripcion="Servicio" ValorUnitario="100.00" Importe="100.00">
+                <cfdi:Concepto ObjetoImp=\"02\" ClaveProdServ=\"01010101\" ClaveUnidad=\"ACT\" Cantidad=\"1\" Descripcion=\"Servicio\" ValorUnitario=\"100.00\" Importe=\"100.00\">
                     <cfdi:Impuestos>
                         <cfdi:Traslados>
-                            <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
+                            <cfdi:Traslado Base=\"100.00\" Impuesto=\"002\" TipoFactor=\"Tasa\" TasaOCuota=\"0.160000\" Importe=\"16.00\"/>
                         </cfdi:Traslados>
                     </cfdi:Impuestos>
                 </cfdi:Concepto>
             </cfdi:Conceptos>
-            <cfdi:Impuestos TotalImpuestosTrasladados="16.00">
+            <cfdi:Impuestos TotalImpuestosTrasladados=\"16.00\">
                <cfdi:Traslados>
-                     <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
+                     <cfdi:Traslado Base=\"100.00\" Impuesto=\"002\" TipoFactor=\"Tasa\" TasaOCuota=\"0.160000\" Importe=\"16.00\"/>
                </cfdi:Traslados>
             </cfdi:Impuestos>
         </cfdi:Comprobante>      
@@ -293,8 +307,8 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   async def main():
       service = TimbradoService("https://dev.facturaloplus.com/ws/servicio.do?wsdl")
-      api_key = "TU_API_KEY_AQUI"
-      xml_cfdi = generar_xml_cfdi_sin_sello()
+      api_key = "TU_API_KEY_AQUI";
+      xml_cfdi = generar_xml_cfdi_sin_sello();
       with open("ruta/a/tu/llave.key.pem", "r") as f:
           key_pem = f.read()
 
@@ -313,41 +327,42 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   {{< tab >}}
   ### Herramienta SoapClient
-  Asegúrate de que la extensión `php-soap` esté habilitada en tu `php.ini`.
+  PHP tiene soporte nativo para SOAP a través de la extensión SOAP. Asegúrate de que la extensión php-soap esté habilitada en tu archivo php.ini.
 
   ### Implementación 
+  El siguiente código muestra una implementación orientada a objetos para consumir el servicio de timbrado.
   ```php
   <?php
   function generarXmlCfdiSinSello(): string {
       return <<<'XML'
-        <?xml version="1.0" encoding="UTF-8"?>
+        <?xml version=\"1.0\" encoding=\"UTF-8\"?>
         <cfdi:Comprobante
-            xmlns:cfdi="http://www.sat.gob.mx/cfd/4"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 cfdv40.xsd" 
-            Version="4.0" Serie="F" Folio="123" Fecha="2025-07-05T12:00:00"
-            SubTotal="100.00" Moneda="MXN" Total="116.00" TipoDeComprobante="I"
-            Exportacion="01" MetodoPago="PUE" FormaPago="01"
-            NoCertificado="30001000000300023708" Certificado="MIIC..." Sello=""
-            LugarExpedicion="64000">
-            <cfdi:Emisor Rfc="ABC010101XYZ" Nombre="Empresa Ejemplo" RegimenFiscal="601"/>
-            <cfdi:Receptor Rfc="XAXX010101000" Nombre="Publico en General" DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" UsoCFDI="G03"/>
+            xmlns:cfdi=\"http://www.sat.gob.mx/cfd/4\"
+            xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+            xsi:schemaLocation=\"http://www.sat.gob.mx/cfd/4 cfdv40.xsd\" 
+            Version=\"4.0\" Serie=\"F\" Folio=\"123\" Fecha=\"2025-07-05T12:00:00\"
+            SubTotal=\"100.00\" Moneda=\"MXN\" Total=\"116.00\" TipoDeComprobante=\"I\"
+            Exportacion=\"01\" MetodoPago=\"PUE\" FormaPago=\"01\"
+            NoCertificado=\"30001000000300023708\" Certificado=\"MIIC...\" Sello=\"\"
+            LugarExpedicion=\"64000\">
+            <cfdi:Emisor Rfc=\"ABC010101XYZ\" Nombre=\"Empresa Ejemplo\" RegimenFiscal=\"601\"/>
+            <cfdi:Receptor Rfc=\"XAXX010101000\" Nombre=\"Publico en General\" DomicilioFiscalReceptor=\"64000\" RegimenFiscalReceptor=\"616\" UsoCFDI=\"G03\"/>
             <cfdi:Conceptos>
-                <cfdi:Concepto ObjetoImp="02" ClaveProdServ="01010101" ClaveUnidad="ACT" Cantidad="1" Descripcion="Servicio" ValorUnitario="100.00" Importe="100.00">
+                <cfdi:Concepto ObjetoImp=\"02\" ClaveProdServ=\"01010101\" ClaveUnidad=\"ACT\" Cantidad=\"1\" Descripcion=\"Servicio\" ValorUnitario=\"100.00\" Importe=\"100.00\">
                     <cfdi:Impuestos>
                         <cfdi:Traslados>
-                            <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
+                            <cfdi:Traslado Base=\"100.00\" Impuesto=\"002\" TipoFactor=\"Tasa\" TasaOCuota=\"0.160000\" Importe=\"16.00\"/>
                         </cfdi:Traslados>
                     </cfdi:Impuestos>
                 </cfdi:Concepto>
             </cfdi:Conceptos>
-            <cfdi:Impuestos TotalImpuestosTrasladados="16.00">
+            <cfdi:Impuestos TotalImpuestosTrasladados=\"16.00\">
                <cfdi:Traslados>
-                     <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
+                     <cfdi:Traslado Base=\"100.00\" Impuesto=\"002\" TipoFactor=\"Tasa\" TasaOCuota=\"0.160000\" Importe=\"16.00\"/>
                </cfdi:Traslados>
             </cfdi:Impuestos>
         </cfdi:Comprobante>
-  XML;
+XML;
   }
 
   class TimbradoService {
@@ -401,6 +416,7 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
   {{< /tab >}}
 
 {{< /tabs >}}
+
 
 #### Respuesta (Response)
 

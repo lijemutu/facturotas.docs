@@ -1,4 +1,6 @@
-# timbrarRetencionTFD
+---
+title: Timbrar Retenciones Timbre Fiscal Digital
+---
 
 ### Descripción de la Operación
 
@@ -29,10 +31,14 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   {{< tab >}}
   ### Herramienta svcutil
-  Ejecuta el comando para generar el cliente SOAP:
+  Descarga e instala la herramienta [svcutil](https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-svcutil-guide?tabs=dotnetsvcutil2x)
+  
+  Ejecuta el comando siguiente (**DESARROLLO**)
+
   ```
   svcutil.exe https://dev.facturaloplus.com/ws/servicio.do?wsdl /out:ServicioTimbradoClient.cs /config:app.config
   ```
+  Esto genera dos archivos: ServicioTimbradoClient.cs y la configuración en app.config
 
   ### Implementación
 
@@ -98,10 +104,17 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   {{< tab >}}
   ### Herramienta wsimport
-  Ejecuta el comando para generar las clases cliente:
+  Java incluye la herramienta wsimport en el JDK para generar las clases cliente a partir de un WSDL.
+
+  Ejecuta el siguiente comando en tu terminal para el ambiente de DESARROLLO:
+
   ```
   wsimport -keep -p com.facturaloplus.cliente https://dev.facturaloplus.com/ws/servicio.do?wsdl
   ```
+
+  -keep: Conserva los archivos fuente .java generados.
+
+  -p: Especifica el paquete (package) donde se guardarán las clases.
 
   ### Implementación
 
@@ -176,12 +189,15 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   {{< tab >}}
   ### Herramienta Zeep
+  Para interactuar con servicios SOAP en Python, la librería zeep es una excelente opción. Proporciona una interfaz limpia y moderna.
+
   Instala la librería usando pip:
   ```
   pip install zeep
   ```
 
   ### Implementación
+  El siguiente código muestra una implementación robusta utilizando zeep y asyncio para realizar llamadas asíncronas al servicio web.
   ```python
   import asyncio
   from zeep.asyncio import AsyncClient
@@ -223,27 +239,28 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   async def main():
       service = TimbradoService("https://dev.facturaloplus.com/ws/servicio.do?wsdl")
-      api_key = "TU_API_KEY_AQUI"
-      xml = generar_xml_retencion()
+      api_key = "TU_API_KEY_AQUI";
+      xml = generar_xml_retencion();
 
       resultado = await service.timbrar_retencion_tfd_async(api_key, xml);
 
       if resultado.code == "200":
-          print("¡Timbrado de TFD para Retención Exitoso!")
-          print(resultado.data)
+          print("¡Timbrado de TFD para Retención Exitoso!");
+          print(resultado.data);
       else:
-          print(f"Error: {resultado.code} - {resultado.message}")
+          print(f"Error: {resultado.code} - {resultado.message}");
 
   if __name__ == "__main__":
-      asyncio.run(main())
+      asyncio.run(main());
   ```
   {{< /tab >}}
 
   {{< tab >}}
   ### Herramienta SoapClient
-  Asegúrate de que la extensión `php-soap` esté habilitada en tu `php.ini`.
+  PHP tiene soporte nativo para SOAP a través de la extensión SOAP. Asegúrate de que la extensión php-soap esté habilitada en tu archivo php.ini.
 
   ### Implementación 
+  El siguiente código muestra una implementación orientada a objetos para consumir el servicio de timbrado.
   ```php
   <?php
   function generarXmlRetencion(): string {
@@ -336,6 +353,4 @@ El campo `data` contendrá únicamente el XML del Timbre Fiscal Digital (TFD).
 ```
 
 ##### Códigos de respuesta
-{{< codigos-timbrado >}}
-
-```
+{{< codigos-timbrado-retenciones >}}

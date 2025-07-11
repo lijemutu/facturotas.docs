@@ -1,4 +1,6 @@
-# timbrarTXT2
+---
+title: Timbrar TXT + PDF
+---
 
 Esta operación extiende la funcionalidad de `timbrarTXT`, permitiendo no solo generar y timbrar un CFDI a partir de un layout de texto plano (TXT), sino también obtener una representación en formato PDF del comprobante, personalizada con una plantilla y un logotipo.
 

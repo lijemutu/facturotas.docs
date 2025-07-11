@@ -1,4 +1,6 @@
-# timbrarTXT
+---
+title: Timbrar TXT
+---
 
 Esta sección detalla la operación del servicio de timbrado a partir de un layout en formato de texto plano (TXT), permitiendo generar, sellar y obtener el XML timbrado de un Comprobante Fiscal Digital (CFDI) de forma simplificada.
 

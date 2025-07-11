@@ -1,4 +1,6 @@
-# timbrarSP
+---
+title: Timbrar Sector Primario
+---
 
 Esta sección detalla la operación del servicio de timbrado especializado para el Sector Primario.
 
@@ -35,10 +37,14 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   {{< tab >}}
   ### Herramienta svcutil
-  Ejecuta el comando para generar el cliente SOAP:
+  Descarga e instala la herramienta [svcutil](https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-svcutil-guide?tabs=dotnetsvcutil2x)
+  
+  Ejecuta el comando siguiente (**DESARROLLO**)
+
   ```
   svcutil.exe https://dev.facturaloplus.com/ws/servicio.do?wsdl /out:ServicioTimbradoClient.cs /config:app.config
   ```
+  Esto genera dos archivos: ServicioTimbradoClient.cs y la configuración en app.config
 
   ### Implementación
 
@@ -109,10 +115,17 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   {{< tab >}}
   ### Herramienta wsimport
-  Ejecuta el comando para generar las clases cliente:
+  Java incluye la herramienta wsimport en el JDK para generar las clases cliente a partir de un WSDL.
+
+  Ejecuta el siguiente comando en tu terminal para el ambiente de DESARROLLO:
+
   ```
   wsimport -keep -p com.facturaloplus.cliente https://dev.facturaloplus.com/ws/servicio.do?wsdl
   ```
+
+  -keep: Conserva los archivos fuente .java generados.
+
+  -p: Especifica el paquete (package) donde se guardarán las clases.
 
   ### Implementación
 
@@ -192,12 +205,15 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   {{< tab >}}
   ### Herramienta Zeep
+  Para interactuar con servicios SOAP en Python, la librería zeep es una excelente opción. Proporciona una interfaz limpia y moderna.
+
   Instala la librería usando pip:
   ```
   pip install zeep
   ```
 
   ### Implementación
+  El siguiente código muestra una implementación robusta utilizando zeep y asyncio para realizar llamadas asíncronas al servicio web.
   ```python
   import asyncio
   from zeep.asyncio import AsyncClient
@@ -216,7 +232,7 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
             NoCertificado="30001000000300023708" Certificado="MIIC..." Sello="..."
             LugarExpedicion="60123">
             <cfdi:Emisor Rfc="ABC010101XYZ" Nombre="Productor Agrícola Ejemplo" RegimenFiscal="621"/>
-            <cfdi:Receptor Rfc="XAXX010101000" Nombre="Comprador General" DomicilioFiscalReceptor="64000" RegimenFiscalReceptor="616" UsoCFDI="G01"/>
+            <cfdi:Receptor Rfc="XAXX010101000" Nombre="Comprador General" DomicilioFiscalReceptor="64000" RegimenFiscal="616" UsoCFDI="G01"/>
             <cfdi:Conceptos>
                 <cfdi:Concepto ObjetoImp="01" ClaveProdServ="01010101" ClaveUnidad="KGM" Cantidad="100" Descripcion="Maíz Blanco" ValorUnitario="50.00" Importe="5000.00"/>
             </cfdi:Conceptos>
@@ -261,9 +277,10 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
 
   {{< tab >}}
   ### Herramienta SoapClient
-  Asegúrate de que la extensión `php-soap` esté habilitada en tu `php.ini`.
+  PHP tiene soporte nativo para SOAP a través de la extensión SOAP. Asegúrate de que la extensión php-soap esté habilitada en tu archivo php.ini.
 
   ### Implementación 
+  El siguiente código muestra una implementación orientada a objetos para consumir el servicio de timbrado.
   ```php
   <?php
   function generarXmlCfdiSectorPrimario(): string {
@@ -288,7 +305,7 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
                 <sp:SectorPrimario Version="1.0" TipoOperacion="Venta"/>
             </cfdi:Complemento>
         </cfdi:Comprobante>
-  XML;
+XML;
   }
 
   class TimbradoService {
@@ -340,6 +357,7 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
   {{< /tab >}}
 
 {{< /tabs >}}
+
 
 #### Respuesta (Response)
 

@@ -1,4 +1,6 @@
-# timbrarJSON2
+---
+title: Timbrar JSON + PDF
+---
 
 Esta operación extiende la funcionalidad de `timbrarJSON`, permitiendo no solo generar y timbrar un CFDI a partir de un layout JSON, sino también obtener una representación en formato PDF del comprobante utilizando una plantilla predefinida.
 
@@ -677,10 +679,7 @@ La estructura de la respuesta SOAP es similar a las anteriores, pero el contenid
          <return xsi:type="tns:RespuestaTimbrado">
             <code xsi:type="xsd:string">200</code>
             <message xsi:type="xsd:string">OK</message>
-            <data xsi:type="xsd:string"><![CDATA[{
-  "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48Y2ZkaT...",
-  "pdf": "JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PC9UeXBlL0NhdGFsb2cvT3V0bGlu..."
-}]]></data>
+            <data xsi:type="xsd:string"></data>
          </return>
       </ns1:timbrarJSON2Response>
    </SOAP-ENV:Body>
