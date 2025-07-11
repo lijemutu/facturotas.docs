@@ -4022,7 +4022,7 @@
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;plantilla&lt;/code&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Identificador numérico de la plantilla a utilizar para la generación del PDF.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Identificador numérico de la plantilla a utilizar para la generación del PDF. &lt;a href=&#34;../../../herramientas/plantillas&#34; &gt;Galería de plantillas&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -6669,7 +6669,7 @@
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;plantilla&lt;/code&gt;&lt;/td&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
-          &lt;td style=&#34;text-align: left&#34;&gt;Identificador numérico de la plantilla a utilizar para la generación del PDF.&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Identificador numérico de la plantilla a utilizar para la generación del PDF.       &lt;a href=&#34;../../../herramientas/plantillas&#34; &gt;Galería de plantillas&lt;/a&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;logob64&lt;/code&gt;&lt;/td&gt;

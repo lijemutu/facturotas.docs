@@ -16,7 +16,7 @@ Esta operación toma un layout JSON, lo convierte en un CFDI (versión 3.3 o 4.0
 | `jsonB64`   | `string`     | Cadena en formato Base64 que contiene el layout JSON con la información del CFDI a generar.  [Conversor Base 64](../../../herramientas/convertidorBase64)              |
 | `keyPEM`    | `string`     | Contenido del archivo de la llave privada (`.key`) en formato PEM.                                         |
 | `cerPEM`    | `string`     | Contenido del archivo del certificado de llave pública (`.cer`) en formato PEM.                              |
-| `plantilla` | `string`     | Identificador numérico de la plantilla a utilizar para la generación del PDF.                              |
+| `plantilla` | `string`     | Identificador numérico de la plantilla a utilizar para la generación del PDF. [Galería de plantillas](../../../herramientas/plantillas)                              |
 
 ### Parámetros de Salida (Output) - RespuestaTimbrado
 

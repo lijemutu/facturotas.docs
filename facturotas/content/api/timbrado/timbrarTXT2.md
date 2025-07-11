@@ -16,7 +16,7 @@ Esta operación toma un layout TXT, lo convierte en un CFDI (versión 4.0), lo s
 | `txtB64`    | `string`     | Cadena en formato Base64 que contiene el layout TXT con la información del CFDI a generar.  [Conversor Base 64](../../../herramientas/convertidorBase64)              |
 | `keyPEM`    | `string`     | Contenido del archivo de la llave privada (`.key`) en formato PEM.                                         |
 | `cerPEM`    | `string`     | Contenido del archivo del certificado de llave pública (`.cer`) en formato PEM.                              |
-| `plantilla` | `string`     | Identificador numérico de la plantilla a utilizar para la generación del PDF.                              |
+| `plantilla` | `string`     | Identificador numérico de la plantilla a utilizar para la generación del PDF.       [Galería de plantillas](../../../herramientas/plantillas)                                               |
 | `logob64`   | `string`     | Imagen (logo) de la empresa en formato PNG y codificada en Base64. [Conversor Base 64](../../../herramientas/convertidorBase64) |
 
 ### Parámetros de Salida (Output) - RespuestaTimbrado
