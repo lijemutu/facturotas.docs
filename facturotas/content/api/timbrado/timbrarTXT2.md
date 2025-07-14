@@ -131,6 +131,13 @@ El campo `data` de la respuesta contiene un JSON con la siguiente estructura:
       return new RespuestaTimbrado { Code = response.code, Message = response.message, Data = response.data };
   }
 
+  public class RespuestaTimbrado
+   {
+      public string? Code { get; set; }
+      public string? Message { get; set; }
+      public string? Data { get; set; }
+   }
+
   // Ejemplo de uso
   public async Task EjemploUsoTimbrarTxt2Async()
   {

@@ -116,6 +116,13 @@ A continuación se presenta un ejemplo de cómo construir la solicitud y procesa
         }
     }
 
+    public class RespuestaTimbrado
+   {
+      public string? Code { get; set; }
+      public string? Message { get; set; }
+      public string? Data { get; set; }
+   }
+
    // Ejemplo de uso
    public async Task EjemploUsoTimbrarConSelloAsync()
    {

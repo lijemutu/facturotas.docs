@@ -68,6 +68,13 @@ Para realizar la consulta, es necesario proporcionar los datos exactos del compr
         }
     }
 
+    public class consultarEstadoSATResponse
+   {
+      public string? Estado { get; set; }
+      public string? EsCancelable { get; set; }
+      public string? EstatusCancelacion { get; set; }
+   }
+
    // Ejemplo de uso
    public async Task EjemploUsoConsultarEstadoAsync()
    {

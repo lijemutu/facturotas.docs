@@ -58,6 +58,13 @@ Esta operación permite conocer el saldo actual de timbres para poder realizar o
         }
     }
 
+    public class RespuestaCreditos
+   {
+      public string? Code { get; set; }
+      public string? Message { get; set; }
+      public string? Data { get; set; }
+   }
+
    // Ejemplo de uso
    public async Task EjemploUsoConsultarCreditosAsync()
    {
@@ -68,15 +75,15 @@ Esta operación permite conocer el saldo actual de timbres para poder realizar o
 
        var resultado = await ConsultarCreditosAsync(request);
 
-       if (resultado != null && resultado.code == "200")
+       if (resultado != null && resultado.Code == "200")
        {
            Console.WriteLine("¡Consulta Exitosa!");
-           Console.WriteLine($"Mensaje: {resultado.message}");
-           Console.WriteLine($"Créditos Disponibles: {resultado.data}");
+           Console.WriteLine($"Mensaje: {resultado.Message}");
+           Console.WriteLine($"Créditos Disponibles: {resultado.Data}");
        }
        else
        {
-           Console.WriteLine($"Error: {resultado?.message}");
+           Console.WriteLine($"Error: {resultado?.Message}");
        }
    }
   ```

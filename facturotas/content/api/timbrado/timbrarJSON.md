@@ -1,3 +1,6 @@
+---
+weight: 2
+---
 # timbrarJSON
 
 Esta sección detalla la operación del servicio de timbrado a partir de un layout JSON, permitiendo generar, sellar y obtener el XML timbrado de un Comprobante Fiscal Digital (CFDI) sin necesidad de construir el XML manualmente.
@@ -245,6 +248,13 @@ El JSON enviado en el parámetro `jsonB64` debe seguir la siguiente estructura. 
            Console.WriteLine($"Error al timbrar con JSON: {ex.Message}");
            throw;
        }
+   }
+
+   public class RespuestaTimbrado
+   {
+      public string? Code { get; set; }
+      public string? Message { get; set; }
+      public string? Data { get; set; }
    }
 
    // Ejemplo de uso

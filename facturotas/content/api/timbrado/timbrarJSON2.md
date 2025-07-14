@@ -1,5 +1,6 @@
 ---
 title: Timbrar JSON + PDF
+weight: 1
 ---
 
 Esta operación extiende la funcionalidad de `timbrarJSON`, permitiendo no solo generar y timbrar un CFDI a partir de un layout JSON, sino también obtener una representación en formato PDF del comprobante utilizando una plantilla predefinida.
@@ -228,6 +229,16 @@ El campo `data` de la respuesta contiene un JSON con la siguiente estructura:
   {
       public string Xml { get; set; }
       public string Pdf { get; set; }
+  }
+
+  /// <summary>
+  /// Define la estructura del objeto de respuesta para mayor claridad.
+  /// </summary>
+  public class RespuestaTimbrado
+  {
+      public string? Code { get; set; }
+      public string? Message { get; set; }
+      public string? Data { get; set; }
   }
 
   public async Task<RespuestaTimbrado> TimbrarJson2Async(string apiKey, string jsonLayout, string keyPem, string cerPem, string plantilla)

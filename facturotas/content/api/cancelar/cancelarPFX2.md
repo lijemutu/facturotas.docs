@@ -91,6 +91,14 @@ La respuesta de esta operación es idéntica a la de la operación `cancelar2`.
         }
     }
 
+    public class RespuestaCancelar
+   {
+      public string? Code { get; set; }
+      public string? Message { get; set; }
+      public string? Data { get; set; }
+      public string? Status { get; set; }
+   }
+
    // Ejemplo de uso
    public async Task EjemploUsoCancelarPfxAsync()
    {

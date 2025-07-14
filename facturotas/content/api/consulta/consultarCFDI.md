@@ -61,6 +61,13 @@ Para realizar la consulta, solo es necesario proporcionar la `apikey` y el `uuid
         }
     }
 
+    public class RespuestaConsultarCFDI
+   {
+      public string? Code { get; set; }
+      public string? Message { get; set; }
+      public string? Data { get; set; }
+   }
+
    // Ejemplo de uso
    public async Task EjemploUsoConsultarCFDIAsync()
    {
@@ -72,16 +79,16 @@ Para realizar la consulta, solo es necesario proporcionar la `apikey` y el `uuid
 
        var resultado = await ConsultarCFDIAsync(request);
 
-       if (resultado != null && resultado.code == "200")
+       if (resultado != null && resultado.Code == "200")
        {
            Console.WriteLine("¡Consulta Exitosa!");
-           Console.WriteLine($"Mensaje: {resultado.message}");
+           Console.WriteLine($"Mensaje: {resultado.Message}");
            Console.WriteLine("XML del CFDI:");
-           Console.WriteLine(resultado.data);
+           Console.WriteLine(resultado.Data);
        }
        else
        {
-           Console.WriteLine($"Error: {resultado?.message}");
+           Console.WriteLine($"Error: {resultado?.Message}");
        }
    }
   ```

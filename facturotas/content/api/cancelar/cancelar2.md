@@ -91,6 +91,14 @@ Se debe especificar uno de los motivos de cancelación definidos por el SAT. Opc
         }
     }
 
+    public class RespuestaCancelar
+   {
+      public string? Code { get; set; }
+      public string? Message { get; set; }
+      public string? Data { get; set; }
+      public string? Status { get; set; }
+   }
+
    // Ejemplo de uso
    public async Task EjemploUsoCancelarAsync()
    {

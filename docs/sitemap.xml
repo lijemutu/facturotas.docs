@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/</loc>
+  </url><url>
+    <loc>https://lijemutu.github.io/facturotas.docs/guias/getting-started/</loc>
+  </url><url>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarjson2/</loc>
+  </url><url>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/consulta/</loc>
+  </url><url>
+    <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarjson/</loc>
+  </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/guias/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/herramientas/convertidorbase64/</loc>
@@ -17,8 +27,6 @@
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/cancelar/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/api/consulta/</loc>
-  </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/consulta/consultarautorizacionespendientes/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/consulta/consultarcfdi/</loc>
@@ -29,15 +37,9 @@
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/consulta/consultarestadosat/</loc>
   </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/api/endpoints_timbrado/</loc>
-  </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/</loc>
-  </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrado/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarconsello/</loc>
-  </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarjson/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarretencion/</loc>
   </url><url>
@@ -56,8 +58,6 @@
     <loc>https://lijemutu.github.io/facturotas.docs/tags/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbradotfd/</loc>
-  </url><url>
-    <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarjson2/</loc>
   </url><url>
     <loc>https://lijemutu.github.io/facturotas.docs/api/timbrado/timbrarretenciontfd/</loc>
   </url><url>

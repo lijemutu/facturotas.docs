@@ -68,6 +68,13 @@ La respuesta incluye un código de estado, un mensaje descriptivo y, en caso de 
         }
     }
 
+    public class RespuestaRelacionados
+   {
+      public string? Code { get; set; }
+      public string? Message { get; set; }
+      public string? Data { get; set; }
+   }
+
    // Ejemplo de uso
    public async Task EjemploUsoConsultarRelacionadosAsync()
    {
@@ -82,15 +89,15 @@ La respuesta incluye un código de estado, un mensaje descriptivo y, en caso de 
 
        var resultado = await ConsultarRelacionadosAsync(request);
 
-       if (resultado != null && resultado.code == "200")
+       if (resultado != null && resultado.Code == "200")
        {
            Console.WriteLine("¡Consulta Exitosa!");
-           Console.WriteLine($"Mensaje: {resultado.message}");
-           Console.WriteLine($"Datos: {resultado.data}");
+           Console.WriteLine($"Mensaje: {resultado.Message}");
+           Console.WriteLine($"Datos: {resultado.Data}");
        }
        else
        {
-           Console.WriteLine($"Error: {resultado?.message}");
+           Console.WriteLine($"Error: {resultado?.Message}");
        }
    }
   ```

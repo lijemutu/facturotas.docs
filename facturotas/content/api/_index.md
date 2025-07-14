@@ -27,4 +27,4 @@ Nuestra API de timbrado se especializa en la emisión e integración de Comproba
 * **Timbrado MultiPAC**: Balanceador de carga que redirige el timbrado entre PACs para evitar intermitencias, de forma transparente para el cliente. Todas las solicitudes son seguras vía HTTPS.
 
 
-[Endpoints](endpoints)
+[Timbrado](timbrado)
