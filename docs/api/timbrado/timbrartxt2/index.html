@@ -26,7 +26,7 @@ Descripción de la Operación
   <meta itemprop="name" content="Timbrar TXT &#43; PDF">
   <meta itemprop="description" content="Esta operación extiende la funcionalidad de timbrarTXT, permitiendo no solo generar y timbrar un CFDI a partir de un layout de texto plano (TXT), sino también obtener una representación en formato PDF del comprobante, personalizada con una plantilla y un logotipo.
 Descripción de la Operación Esta operación toma un layout TXT, lo convierte en un CFDI (versión 4.0), lo sella con los certificados proporcionados y lo timbra. Como resultado, devuelve una estructura JSON que contiene tanto el XML del CFDI timbrado como el contenido del PDF generado en formato Base64.">
-  <meta itemprop="wordCount" content="1653">
+  <meta itemprop="wordCount" content="1706">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Timbrar TXT &#43; PDF">
   <meta name="twitter:description" content="Esta operación extiende la funcionalidad de timbrarTXT, permitiendo no solo generar y timbrar un CFDI a partir de un layout de texto plano (TXT), sino también obtener una representación en formato PDF del comprobante, personalizada con una plantilla y un logotipo.
@@ -637,6 +637,10 @@ Descripción de la Operación Esta operación toma un layout TXT, lo convierte e
         </a>
       </li>
       <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
+        <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#estructura-del-json-en-el-campo-data">Estructura del JSON en el campo data
+        </a>
+      </li>
+      <li class="hx-my-2 hx-scroll-my-6 hx-scroll-py-6">
         <a class="ltr:hx-pl-4 rtl:hx-pr-4 hx-inline-block hx-text-gray-500 hover:hx-text-gray-900 dark:hx-text-gray-400 dark:hover:hx-text-gray-300 contrast-more:hx-text-gray-900 contrast-more:hx-underline contrast-more:dark:hx-text-gray-50 hx-w-full hx-break-words" href="#ejemplo-de-c%c3%b3digo">Ejemplo de Código
         </a>
       </li>
@@ -781,6 +785,29 @@ Descripción de la Operación Esta operación toma un layout TXT, lo convierte e
   </button>
 </div>
 </div>
+<p><strong>Consulta el archivo completo aquí:</strong><br>
+<a href="../layout_cfdi40.txt" ><code>TXT</code></a></p>
+<h3>Estructura del JSON en el campo <code>data</code><span class="hx-absolute -hx-mt-20" id="estructura-del-json-en-el-campo-data"></span>
+    <a href="#estructura-del-json-en-el-campo-data" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>El campo <code>data</code> de la respuesta contiene un JSON con la siguiente estructura:</p>
+<div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code">
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;XML&#34;</span>: <span style="color:#e6db74">&#34;PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48Y2ZkaT...&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;PDF&#34;</span>: <span style="color:#e6db74">&#34;&lt;?xml version=&#34;</span><span style="color:#ae81ff">1.0</span><span style="color:#e6db74">&#34; encoding=&#34;</span><span style="color:#960050;background-color:#1e0010">UTF</span><span style="color:#ae81ff">-8</span><span style="color:#e6db74">&#34;?&gt;&lt;cfdi:Comprobante...&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0">
+  <button
+    class="hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50"
+    title="Copy code"
+  >
+    <div class="copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4"></div>
+    <div class="success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4"></div>
+  </button>
+</div>
+</div>
+<ul>
+<li><code>XML</code>: String con el contenido del CFDI timbrado.</li>
+<li><code>PDF</code>: String en formato Base64 con el contenido del archivo PDF.</li>
+</ul>
 <h3>Ejemplo de Código<span class="hx-absolute -hx-mt-20" id="ejemplo-de-código"></span>
     <a href="#ejemplo-de-c%c3%b3digo" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain">
   <div class="hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800"><button
@@ -852,8 +879,8 @@ Descripción de la Operación Esta operación toma un layout TXT, lo convierte e
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Clase para deserializar la respuesta en el campo &#39;data&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RespuestaData</span>
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Xml { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Pdf { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> XML { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> PDF { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;RespuestaTimbrado&gt; TimbrarTxt2Async(<span style="color:#66d9ef">string</span> apiKey, <span style="color:#66d9ef">string</span> txtLayout, <span style="color:#66d9ef">string</span> keyPem, <span style="color:#66d9ef">string</span> cerPem, <span style="color:#66d9ef">string</span> plantilla, <span style="color:#66d9ef">string</span> logoB64)
@@ -894,10 +921,10 @@ Descripción de la Operación Esta operación toma un layout TXT, lo convierte e
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> respuestaData = JsonSerializer.Deserialize&lt;RespuestaData&gt;(resultado.Data);
 </span></span><span style="display:flex;"><span>        
 </span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;--- XML Timbrado ---&#34;</span>);
-</span></span><span style="display:flex;"><span>        Console.WriteLine(respuestaData.Xml);
+</span></span><span style="display:flex;"><span>        Console.WriteLine(respuestaData.XML);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Guardar el PDF</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> pdfBytes = Convert.FromBase64String(respuestaData.Pdf);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> pdfBytes = Convert.FromBase64String(respuestaData.PDF);
 </span></span><span style="display:flex;"><span>        File.WriteAllBytes(<span style="color:#e6db74">&#34;comprobante.pdf&#34;</span>, pdfBytes);
 </span></span><span style="display:flex;"><span>        Console.WriteLine(<span style="color:#e6db74">&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74"></span>PDF guardado como comprobante.pdf<span style="color:#e6db74">&#34;);

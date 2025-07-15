@@ -1,0 +1,22 @@
+COMPROBANTE|4.0|Serie|Folio|Fecha|FormaPago|NoCertificado|CondicionesDePago|SubTotal|Descuento|Moneda|TipoCambio|Total|TipoDeComprobante|Exportacion|MetodoPago|LugarExpedicion|Confirmacion|
+INFORMACIONGLOBAL|Periodicidad|Meses|Año|
+CFDIRELACIONADOS|numeroCfdiRelacionados|TipoRelacion|
+CFDIRELACIONADO|UUID-1|UUID-2|...|UUID-N|
+EMISOR|Rfc|Nombre|RegimenFiscal|FacAtrAdquirente|
+RECEPTOR|Rfc|Nombre|DomicilioFiscalReceptor|ResidenciaFiscal|NumRegIdTrib|RegimenFiscalReceptor|UsoCFDI|
+CONCEPTOS|numeroConceptos|
+	CONCEPTO|ClaveProdServ|NoIdentificacion|Cantidad|ClaveUnidad|Unidad|Descripcion|ValorUnitario|Importe|Descuento|ObjetoImp|
+		IMPUESTOSCONCEPTO|numeroTraslados|numeroRetenciones|
+			TRASLADOCONCEPTO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+			RETENCIONCONCEPTO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+		ACUENTATERCEROS|RfcACuentaTerceros|NombreACuentaTerceros|RegimenFiscalACuentaTerceros|DomicilioFiscalACuentaTerceros|
+		INFORMACIONADUANERA|numeroNumerosPedimento|
+			NUMEROSPEDIMENTO|pedimento-1|pedimento-2|...|pedimento-N|
+		CUENTAPREDIAL|numeroNumeros|
+			NUMEROS|numero-1|numero-2|...|numero-N|
+IMPUESTOS|numeroTraslados|numeroRetenciones|TotalImpuestosTrasladados|TotalImpuestosRetenidos|
+	TRASLADO|Base|Impuesto|TipoFactor|TasaOCuota|Importe|
+	RETENCION|Impuesto|Importe|
+CORREO|correo1|correo2|...|correoN|
+CAMPOS_EXTRA|numeroCamposExtra|
+	CAMPO_EXTRA|llave|valor|descripcion|

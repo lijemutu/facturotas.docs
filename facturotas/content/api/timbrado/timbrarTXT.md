@@ -56,6 +56,9 @@ CAMPOS_EXTRA|numeroCamposExtra|
 	CAMPO_EXTRA|llave|valor|descripcion|
 ```
 
+**Consulta el archivo completo aquí:**  
+[`TXT`](../layout_cfdi40.txt)
+
 ### Ejemplo de Código
 
 #### Solicitud (Request)

@@ -97,23 +97,31 @@ El JSON enviado en el parámetro `jsonB64` debe seguir la siguiente estructura. 
         }
       ]
     }
-  }
+  },
+  "CamposPDF": {
+    "tipoComprobante": "Factura",
+    "Comentarios": "Aquí van los comentarios de la factura"
+  },
+  "logo": "cadena_en_base64_del_archivo_del_logo"
 }
 ```
 
-<!-- #### Estructura del JSON en el campo `data` TODO por hacer pruebas
+**Consulta el archivo completo aquí:**  
+[`JSON`](../layout_cfdi40_campospdf_correo.json)
+
+#### Estructura del JSON de salida en el campo `data` 
 
 El campo `data` de la respuesta contiene un JSON con la siguiente estructura:
 
 ```json
 {
-  "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48Y2ZkaT...",
-  "pdf": "JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PC9UeXBlL0NhdGFsb2cvT3V0bGlu..."
+  "XML": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48Y2ZkaT...",
+  "PDF": "<?xml version="1.0" encoding="UTF-8"?><cfdi:Comprobante..."
 }
 ```
 
-- `xml`: String con el contenido del CFDI timbrado.
-- `pdf`: String en formato Base64 con el contenido del archivo PDF. -->
+- `XML`: String con el contenido del CFDI timbrado.
+- `PDF`: String en formato Base64 con el contenido del archivo PDF.
 
 ### Ejemplo de Código
 
@@ -227,8 +235,8 @@ El campo `data` de la respuesta contiene un JSON con la siguiente estructura:
   // Clase para deserializar la respuesta en el campo 'data'
   public class RespuestaData
   {
-      public string Xml { get; set; }
-      public string Pdf { get; set; }
+      public string XML { get; set; }
+      public string PDF { get; set; }
   }
 
   /// <summary>
@@ -270,10 +278,10 @@ El campo `data` de la respuesta contiene un JSON con la siguiente estructura:
           var respuestaData = JsonSerializer.Deserialize<RespuestaData>(resultado.Data);
           
           Console.WriteLine("--- XML Timbrado ---");
-          Console.WriteLine(respuestaData.Xml);
+          Console.WriteLine(respuestaData.XML);
 
           // Guardar el PDF
-          var pdfBytes = Convert.FromBase64String(respuestaData.Pdf);
+          var pdfBytes = Convert.FromBase64String(respuestaData.PDF);
           File.WriteAllBytes("comprobante.pdf", pdfBytes);
           Console.WriteLine("\nPDF guardado como comprobante.pdf");
       }

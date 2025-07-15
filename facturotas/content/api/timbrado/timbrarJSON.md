@@ -32,6 +32,8 @@ La respuesta de esta operación es idéntica a la de la operación `timbrar`.
 
 El JSON enviado en el parámetro `jsonB64` debe seguir la siguiente estructura. Los valores vacíos deben enviarse como `""`. [Conversor Base 64](../../../herramientas/convertidorBase64)
 
+
+
 ```json
 {
   "Comprobante": {
@@ -98,9 +100,16 @@ El JSON enviado en el parámetro `jsonB64` debe seguir la siguiente estructura. 
         }
       ]
     }
-  }
+  },
+  "CamposPDF": {
+    "tipoComprobante": "Factura",
+    "Comentarios": "Aquí van los comentarios de la factura"
+  },
+  "logo": "cadena_en_base64_del_archivo_del_logo"
 }
 ```
+**Consulta el archivo completo aquí:**  
+[`JSON`](../layout_cfdi40_campospdf_correo.json)
 
 ### Ejemplo de Código
 
@@ -741,7 +750,7 @@ La estructura de la respuesta SOAP es la misma que la de la operación `timbrar`
       <ns1:timbrarJSONResponse xmlns:ns1="urn:ws_api">
          <return xsi:type="tns:RespuestaTimbrado">
             <code xsi:type="xsd:string">CÓDIGO</code>
-            <message xsi:type="xsd:string">MENSAJE</message>
+            <message xsi:type="xsd:string">MENSAJE</code>
             <data xsi:type="xsd:string"><![CDATA[CFDI TIMBRADO]]></data>
          </return>
       </ns1:timbrarJSONResponse>
