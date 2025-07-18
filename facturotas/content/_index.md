@@ -4,7 +4,7 @@ cascade:
   type: docs
 ---
 
-![Logo Facturotas](logo.png)
+[![Logo Facturotas](logo.png)](https://facturotas.com)
 
 Bienvenido a la documentación de nuestra API de facturación electrónica. Nuestra API SOAP está diseñada para que puedas integrar de forma simple y robusta los flujos de timbrado, consulta y cancelación de Comprobantes Fiscales Digitales por Internet (CFDI) directamente en tus aplicaciones o sistemas ERP.
 
