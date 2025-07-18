@@ -59,6 +59,10 @@ CAMPOS_EXTRA|numeroCamposExtra|
 **Consulta el archivo completo aquí:**  
 [`TXT`](../layout_cfdi40.txt)
 
+{{< callout type="warning" >}}
+  El NoCertificado se puede encontrar en la FIEL como NO. Serie
+{{< /callout >}}
+
 ### Ejemplo de Código
 
 #### Solicitud (Request)

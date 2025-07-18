@@ -31,6 +31,10 @@ La respuesta de esta operación es idéntica a la de la operación `timbrar`.
 
 A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta.
 
+{{< callout type="warning" >}}
+  El NoCertificado se puede encontrar en la FIEL como NO. Serie
+{{< /callout >}}
+
 #### Solicitud (Request)
 
 {{< tabs items="C#,Java,Python,PHP" >}}

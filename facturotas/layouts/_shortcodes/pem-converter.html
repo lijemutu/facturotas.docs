@@ -1,0 +1,187 @@
+<style>
+.pem-converter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.pem-converter-section {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+}
+.pem-converter-title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.pem-converter-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.pem-converter-input-group input[type="file"] {
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+}
+.pem-converter-output textarea {
+  width: 100%;
+  height: 300px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+.pem-converter-controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.pem-converter-controls button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.pem-converter-controls button:hover {
+    background-color: #0056b3;
+}
+</style>
+
+<div class="pem-converter-container">
+  <!-- .key to .key.pem Converter -->
+  <div class="pem-converter-section">
+    <div class="pem-converter-title">Convertir .key a .key.pem</div>
+    <div class="pem-converter-input-group">
+      <label for="key-file-input">Sube tu archivo .key:</label>
+      <input type="file" id="key-file-input" accept=".key">
+    </div>
+    <div class="pem-converter-output">
+      <label for="key-pem-output">Salida en formato .key.pem:</label>
+      <textarea id="key-pem-output" readonly placeholder="Resultado en .key.pem..."></textarea>
+    </div>
+    <div class="pem-converter-controls">
+      <button id="key-copy-btn">Copiar al Portapapeles</button>
+      <button id="key-download-btn">Descargar</button>
+      <button id="key-clear-btn">Limpiar</button>
+    </div>
+  </div>
+
+  <!-- .cer to .cer.pem Converter -->
+  <div class="pem-converter-section">
+    <div class="pem-converter-title">Convertir .cer a .cer.pem</div>
+    <div class="pem-converter-input-group">
+      <label for="cer-file-input">Sube tu archivo .cer:</label>
+      <input type="file" id="cer-file-input" accept=".cer">
+    </div>
+    <div class="pem-converter-output">
+      <label for="cer-pem-output">Salida en formato .cer.pem:</label>
+      <textarea id="cer-pem-output" readonly placeholder="Resultado en .cer.pem..."></textarea>
+    </div>
+    <div class="pem-converter-controls">
+      <button id="cer-copy-btn">Copiar al Portapapeles</button>
+      <button id="cer-download-btn">Descargar</button>
+      <button id="cer-clear-btn">Limpiar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  function setupConverter(inputId, outputId, copyBtnId, clearBtnId, downloadBtnId, header, footer, downloadFilename) {
+    const fileInput = document.getElementById(inputId);
+    const outputTextarea = document.getElementById(outputId);
+    const copyBtn = document.getElementById(copyBtnId);
+    const clearBtn = document.getElementById(clearBtnId);
+    const downloadBtn = document.getElementById(downloadBtnId);
+
+    if (!fileInput || !outputTextarea || !copyBtn || !clearBtn || !downloadBtn) {
+      return;
+    }
+
+    fileInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (!file) {
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const binaryString = e.target.result;
+        const base64String = btoa(binaryString);
+        const pemString = `${header}\n${base64String.match(/.{1,64}/g).join('\n')}\n${footer}`;
+        outputTextarea.value = pemString;
+      };
+      reader.onerror = () => {
+        outputTextarea.value = 'Error al leer el archivo.';
+      };
+      reader.readAsBinaryString(file);
+    });
+
+    copyBtn.addEventListener('click', () => {
+      if (outputTextarea.value) {
+        navigator.clipboard.writeText(outputTextarea.value).then(() => {
+          const originalText = copyBtn.textContent;
+          copyBtn.textContent = '¡Copiado!';
+          setTimeout(() => {
+            copyBtn.textContent = originalText;
+          }, 2000);
+        });
+      }
+    });
+
+    clearBtn.addEventListener('click', () => {
+      fileInput.value = '';
+      outputTextarea.value = '';
+    });
+
+    downloadBtn.addEventListener('click', () => {
+      if (outputTextarea.value) {
+        const blob = new Blob([outputTextarea.value], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = downloadFilename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+    });
+  }
+
+  // Setup for .key to .key.pem
+  setupConverter(
+    'key-file-input',
+    'key-pem-output',
+    'key-copy-btn',
+    'key-clear-btn',
+    'key-download-btn',
+    '-----BEGIN PRIVATE KEY-----',
+    '-----END PRIVATE KEY-----',
+    'private.key.pem'
+  );
+
+  // Setup for .cer to .cer.pem
+  setupConverter(
+    'cer-file-input',
+    'cer-pem-output',
+    'cer-copy-btn',
+    'cer-clear-btn',
+    'cer-download-btn',
+    '-----BEGIN CERTIFICATE-----',
+    '-----END CERTIFICATE-----',
+    'certificate.cer.pem'
+  );
+})();
+</script>

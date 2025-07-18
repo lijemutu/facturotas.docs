@@ -23,6 +23,10 @@ Esta operación permite timbrar un (Comprobante Fiscal Digital por Internet) CFD
 
 A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta utilizando el servicio Web.
 
+{{< callout type="warning" >}}
+  El NoCertificado se puede encontrar en la FIEL como NO. Serie
+{{< /callout >}}
+
 #### Solicitud (Request)
 
 {{< tabs items="C#,Java,Python,PHP" >}}

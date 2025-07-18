@@ -59,6 +59,10 @@ CAMPOS_EXTRA|numeroCamposExtra|
 **Consulta el archivo completo aquí:**  
 [`TXT`](../layout_cfdi40.txt)
 
+{{< callout type="warning" >}}
+  El NoCertificado se puede encontrar en la FIEL como NO. Serie
+{{< /callout >}}
+
 ### Estructura del JSON en el campo `data`
 
 El campo `data` de la respuesta contiene un JSON con la siguiente estructura:

@@ -92,6 +92,14 @@
 &lt;/table&gt;
 &lt;h3&gt;Estructura del JSON de Entrada&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;estructura-del-json-de-entrada&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#estructura-del-json-de-entrada&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El JSON enviado en el parámetro &lt;code&gt;jsonB64&lt;/code&gt; debe seguir la siguiente estructura. Los valores vacíos deben enviarse como &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;. &lt;a href=&#34;../../../herramientas/convertidorBase64&#34; &gt;Conversor Base 64&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;El NoCertificado se puede encontrar en la FIEL como NO. Serie&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
@@ -999,6 +1007,14 @@
 &lt;/table&gt;
 &lt;h3&gt;Estructura del JSON de Entrada&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;estructura-del-json-de-entrada&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#estructura-del-json-de-entrada&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El JSON enviado en el parámetro &lt;code&gt;jsonB64&lt;/code&gt; debe seguir la siguiente estructura. Los valores vacíos deben enviarse como &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt;. &lt;a href=&#34;../../../herramientas/convertidorBase64&#34; &gt;Conversor Base 64&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;El NoCertificado se puede encontrar en la FIEL como NO. Serie&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
 
 &lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
@@ -1939,6 +1955,14 @@
 &lt;/table&gt;
 &lt;h3&gt;Ejemplo de Código&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;ejemplo-de-código&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#ejemplo-de-c%c3%b3digo&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta utilizando el servicio Web.&lt;/p&gt;
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;El NoCertificado se puede encontrar en la FIEL como NO. Serie&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h4&gt;Solicitud (Request)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;solicitud-request&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#solicitud-request&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain&#34;&gt;
   &lt;div class=&#34;hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800&#34;&gt;&lt;button
@@ -2912,6 +2936,14 @@
 &lt;/table&gt;
 &lt;h3&gt;Ejemplo de Código&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;ejemplo-de-código&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#ejemplo-de-c%c3%b3digo&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta.&lt;/p&gt;
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;El NoCertificado se puede encontrar en la FIEL como NO. Serie&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h4&gt;Solicitud (Request)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;solicitud-request&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#solicitud-request&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain&#34;&gt;
   &lt;div class=&#34;hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800&#34;&gt;&lt;button
@@ -4084,6 +4116,14 @@
 &lt;/table&gt;
 &lt;h3&gt;Ejemplo de Código&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;ejemplo-de-código&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#ejemplo-de-c%c3%b3digo&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta utilizando el servicio Web.&lt;/p&gt;
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;El NoCertificado se puede encontrar en la FIEL como NO. Serie&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h4&gt;Solicitud (Request)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;solicitud-request&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#solicitud-request&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain&#34;&gt;
   &lt;div class=&#34;hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800&#34;&gt;&lt;button
@@ -5526,6 +5566,14 @@
 &lt;/table&gt;
 &lt;h3&gt;Ejemplo de Código&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;ejemplo-de-código&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#ejemplo-de-c%c3%b3digo&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A continuación se presenta un ejemplo de cómo construir la solicitud y procesar la respuesta.&lt;/p&gt;
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;El NoCertificado se puede encontrar en la FIEL como NO. Serie&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h4&gt;Solicitud (Request)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;solicitud-request&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#solicitud-request&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain&#34;&gt;
   &lt;div class=&#34;hx-mt-4 hx-flex hx-w-max hx-min-w-full hx-border-b hx-border-gray-200 hx-pb-px dark:hx-border-neutral-800&#34;&gt;&lt;button
@@ -6149,6 +6197,14 @@
 &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Consulta el archivo completo aquí:&lt;/strong&gt;&lt;br&gt;
 &lt;a href=&#34;../layout_cfdi40.txt&#34; &gt;&lt;code&gt;TXT&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;El NoCertificado se puede encontrar en la FIEL como NO. Serie&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h3&gt;Ejemplo de Código&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;ejemplo-de-código&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#ejemplo-de-c%c3%b3digo&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;Solicitud (Request)&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;solicitud-request&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#solicitud-request&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;div class=&#34;hextra-scrollbar hx-overflow-x-auto hx-overflow-y-hidden hx-overscroll-x-contain&#34;&gt;
@@ -6831,6 +6887,14 @@
 &lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;Consulta el archivo completo aquí:&lt;/strong&gt;&lt;br&gt;
 &lt;a href=&#34;../layout_cfdi40.txt&#34; &gt;&lt;code&gt;TXT&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;hx-overflow-x-auto hx-mt-6 hx-flex hx-rounded-lg hx-border hx-py-2 ltr:hx-pr-4 rtl:hx-pl-4 contrast-more:hx-border-current contrast-more:dark:hx-border-current hx-border-yellow-100 hx-bg-yellow-50 hx-text-yellow-900 dark:hx-border-yellow-200/30 dark:hx-bg-yellow-700/30 dark:hx-text-yellow-200&#34;&gt;
+  &lt;div class=&#34;ltr:hx-pl-3 ltr:hx-pr-2 rtl:hx-pr-3 rtl:hx-pl-2&#34;&gt;&lt;div class=&#34;hx-select-none hx-text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx-w-full hx-min-w-0 hx-leading-7&#34;&gt;
+    &lt;div class=&#34;hx-mt-6 hx-leading-7 first:hx-mt-0&#34;&gt;El NoCertificado se puede encontrar en la FIEL como NO. Serie&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h3&gt;Estructura del JSON en el campo &lt;code&gt;data&lt;/code&gt;&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;estructura-del-json-en-el-campo-data&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#estructura-del-json-en-el-campo-data&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El campo &lt;code&gt;data&lt;/code&gt; de la respuesta contiene un JSON con la siguiente estructura:&lt;/p&gt;
 &lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;

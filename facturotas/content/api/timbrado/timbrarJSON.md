@@ -32,6 +32,9 @@ La respuesta de esta operación es idéntica a la de la operación `timbrar`.
 
 El JSON enviado en el parámetro `jsonB64` debe seguir la siguiente estructura. Los valores vacíos deben enviarse como `""`. [Conversor Base 64](../../../herramientas/convertidorBase64)
 
+{{< callout type="warning" >}}
+  El NoCertificado se puede encontrar en la FIEL como NO. Serie
+{{< /callout >}}
 
 
 ```json

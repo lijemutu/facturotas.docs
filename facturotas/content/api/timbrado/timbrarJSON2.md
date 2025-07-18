@@ -31,6 +31,10 @@ Esta operación toma un layout JSON, lo convierte en un CFDI (versión 3.3 o 4.0
 
 El JSON enviado en el parámetro `jsonB64` debe seguir la siguiente estructura. Los valores vacíos deben enviarse como `""`. [Conversor Base 64](../../../herramientas/convertidorBase64)
 
+{{< callout type="warning" >}}
+  El NoCertificado se puede encontrar en la FIEL como NO. Serie
+{{< /callout >}}
+
 ```json
 {
   "Comprobante": {
